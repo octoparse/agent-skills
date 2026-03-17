@@ -89,7 +89,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "post-level",
+    "record_granularity_confidence": "high",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Google Maps Email Finder",
@@ -187,7 +190,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "post-level",
+    "record_granularity_confidence": "high",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Google Maps Leads Scraper (by Keywords)",
@@ -263,7 +269,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Google Search Scraper",
@@ -429,7 +438,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "listing-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Twitter Advanced Search Scraper",
@@ -638,7 +650,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "post-level",
+    "record_granularity_confidence": "high",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "🔥 LinkedIn Job Scraper (No Login Required)",
@@ -749,7 +764,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Google Maps Store Listing Scraper (Japan)",
@@ -796,7 +814,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "listing-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Twitter Scraper (by Account URL)",
@@ -913,7 +934,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "profile-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Google Maps Reviews Scraper",
@@ -961,7 +985,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "review-level",
+    "record_granularity_confidence": "high",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Pagesjaunes Business Info Scraper",
@@ -996,7 +1023,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Superpages Scraper",
@@ -1050,7 +1080,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "post-level",
+    "record_granularity_confidence": "high",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "🔥 Indeed Job Scraper",
@@ -1112,7 +1145,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "post-level",
+    "record_granularity_confidence": "high",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "TikTok Video Details & Comments Scraper",
@@ -1171,7 +1207,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "post-level",
+    "record_granularity_confidence": "high",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Twitter Scraper (by hashtag)",
@@ -1220,7 +1259,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "post-level",
+    "record_granularity_confidence": "high",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "JP Indeed Job Listing Scraper by keywords",
@@ -1273,7 +1315,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "listing-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Amazon Reviews Scraper",
@@ -1324,7 +1369,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "review-level",
+    "record_granularity_confidence": "high",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Twitter (X) Comments Scraper",
@@ -1379,7 +1427,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "post-level",
+    "record_granularity_confidence": "high",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Google Maps Leads Scraper (by URLs)",
@@ -1438,7 +1489,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "listing-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Google SERP scraper (Top 5 results)",
@@ -1476,7 +1530,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Amazon Product Scraper (for US)",
@@ -1545,7 +1602,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Itown Listing scraper",
@@ -1584,7 +1644,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "listing-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "TikTok Search Scraper (No Login Required)",
@@ -1644,7 +1707,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "post-level",
+    "record_granularity_confidence": "high",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "YouTube Channel Scraper",
@@ -1701,7 +1767,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "post-level",
+    "record_granularity_confidence": "high",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Google Search Email Finder (Premium)",
@@ -1867,7 +1936,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "listing-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Reddit Post & Comments Scraper",
@@ -1915,7 +1987,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "post-level",
+    "record_granularity_confidence": "high",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "🔥 Indeed Job Scraper (by URL)",
@@ -1961,7 +2036,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "post-level",
+    "record_granularity_confidence": "high",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Twitter Advanced Search Comments Scraper",
@@ -2148,7 +2226,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "profile-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Naver Map Scraper(by Keyword)",
@@ -2186,7 +2267,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Yellow Pages Scraper (Cloud)",
@@ -2227,7 +2311,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "YouTube Comments & Replies Scraper",
@@ -2283,7 +2370,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "post-level",
+    "record_granularity_confidence": "high",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Leboncoin Data Scraper",
@@ -2329,7 +2419,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Amazon Review Details Scraper (for Japan)",
@@ -2373,7 +2466,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "review-level",
+    "record_granularity_confidence": "high",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "TikTok Profile Scraper",
@@ -2432,7 +2528,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "profile-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Social Media Finder",
@@ -2461,7 +2560,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "profile-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "JP Indeed Job Listings Scraper by URL (cloud only)",
@@ -2499,7 +2601,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "listing-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Itown page details_cloud only",
@@ -2532,7 +2637,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "listing-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Stepstone Listing Job Scraper",
@@ -2574,7 +2682,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "listing-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Zillow Listing Scraper (by URL)",
@@ -2611,7 +2722,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "listing-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Reddit Subreddit Scraper",
@@ -2661,7 +2775,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "post-level",
+    "record_granularity_confidence": "high",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Coupang Review Scraper(cloud)",
@@ -2688,7 +2805,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "review-level",
+    "record_granularity_confidence": "high",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Idealista Listing Pages Scraper",
@@ -2730,7 +2850,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "listing-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Coupang Product List Scraper(cloud ver.)",
@@ -2765,7 +2888,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Gelbe Seiten Listing Scraper (Cloud by keyword pairs)",
@@ -2798,7 +2924,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "listing-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Amazon Details ASIN Scraper (for germany)",
@@ -2848,7 +2977,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Reddit Search Scraper",
@@ -2906,7 +3038,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "post-level",
+    "record_granularity_confidence": "high",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "TikTok Video Details Scraper",
@@ -2952,7 +3087,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "post-level",
+    "record_granularity_confidence": "high",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Google Job Scraper (by Keywords)",
@@ -3002,7 +3140,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "listing-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Idealista Details Scraper",
@@ -3044,7 +3185,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Amazon Product Scraper (for germany)",
@@ -3094,7 +3238,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Helloasso Association Emails Scraper",
@@ -3136,7 +3283,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Wallapop Scraper (by Urls)",
@@ -3180,7 +3330,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Mercari Product Listings Scraper",
@@ -3219,7 +3372,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "listing-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "AliExpress Scraper",
@@ -3277,7 +3433,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Amazon Japan Product Details Scraper",
@@ -3325,7 +3484,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Google Maps advanced Scraper for Japan",
@@ -3409,7 +3571,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "post-level",
+    "record_granularity_confidence": "high",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Zillow Profile Scraper",
@@ -3452,7 +3617,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "profile-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Immobiliare Listing Scraper (Cloud Only)",
@@ -3501,7 +3669,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "listing-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Amazon Review Scraper (for UK)",
@@ -3560,7 +3731,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "review-level",
+    "record_granularity_confidence": "high",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Pagesjaunes Emails Scraper",
@@ -3617,7 +3791,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Zillow Details Scraper",
@@ -3702,7 +3879,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "post-level",
+    "record_granularity_confidence": "high",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Gelbe Seiten Details Scraper (Cloud by URLs)",
@@ -3744,7 +3924,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Seloger biens à vendre Scraper",
@@ -3793,7 +3976,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "listing-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Transfermarkt.de TOP Scorers Scraper",
@@ -3828,7 +4014,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "listing-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Naver Shopping/Smart Store Scraper",
@@ -3873,7 +4062,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Pagesblanches Info Scraper",
@@ -3915,7 +4107,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Idealista Real Estate Listing Scraper (Italy)",
@@ -3962,7 +4157,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "listing-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Google Maps Shop Listing (for Germany)",
@@ -4003,7 +4201,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "listing-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Amazon Product Details Scraper (for Spain)",
@@ -4054,7 +4255,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Amazon Reviews Scraper (for Italy)",
@@ -4109,7 +4313,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "review-level",
+    "record_granularity_confidence": "high",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Vinted Data Scraper (by URL)",
@@ -4153,7 +4360,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Stepstone Listing Scraper nach URLs",
@@ -4187,7 +4397,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "listing-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Ali Express Product List Scraper(Korean Version)",
@@ -4248,7 +4461,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Idealista Real Estate Detail Scraper (Italy)",
@@ -4289,7 +4505,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Malt freelance Info Scraper",
@@ -4328,7 +4547,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Tripadvisor Hotel Details Scraper（for Japan）",
@@ -4372,7 +4594,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Tripadvisor Hotel Listings Scraper（for Japan）",
@@ -4430,7 +4655,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "listing-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Tripadvisor Review Scraper (for Germany)",
@@ -4470,7 +4698,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "review-level",
+    "record_granularity_confidence": "high",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Haken Rikunabi Job Scraper",
@@ -4511,7 +4742,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Booking Hôtel Info Scraper",
@@ -4559,7 +4793,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "TripAdvisor Hotel Reviews Scraper",
@@ -4616,7 +4853,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "review-level",
+    "record_granularity_confidence": "high",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Amazon Review Scraper (for France)",
@@ -4674,7 +4914,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "review-level",
+    "record_granularity_confidence": "high",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Groupon Scraper",
@@ -4717,7 +4960,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Google Maps Scraper (store details by keyword for spanish)",
@@ -4764,7 +5010,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Amazon Japan URLs Scraper",
@@ -4805,7 +5054,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Google News Scraper (Cloud)",
@@ -4854,7 +5106,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "article-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Subito Listing Scraper",
@@ -4895,7 +5150,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "listing-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Hoteles Details Scraper",
@@ -4929,7 +5187,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "SeasonalJobs Scraper",
@@ -4979,7 +5240,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Otto Scraper (Produkt Details)",
@@ -5017,7 +5281,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Rushbet Scraper",
@@ -5061,7 +5328,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Transfermarkt.de Overall Game Schedule Scraper",
@@ -5094,7 +5364,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Zillow Listing Scraper (by keyword)",
@@ -5138,7 +5411,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "listing-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Wallapop Scraper (by Keywords)",
@@ -5182,7 +5458,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Leroy Merlin Product Scraper",
@@ -5221,7 +5500,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Mercari Product Details Scraping by URL (Cloud Only)",
@@ -5263,7 +5545,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Kompass Leads Scraper (for Germany)",
@@ -5295,7 +5580,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Stepstone Details Job Scraper",
@@ -5334,7 +5622,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "eBay Produits Détails Scraper",
@@ -5369,7 +5660,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "eInforma Details Scraper",
@@ -5411,7 +5705,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Amazon Prime Scraper",
@@ -5463,7 +5760,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Amazon Product Listing Scraper (for UK)",
@@ -5505,7 +5805,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "listing-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "TripAdvisor Scraper (Hotel Details)",
@@ -5551,7 +5854,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "TripAdvisor Scraper (Hotel Listing)",
@@ -5609,7 +5915,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "listing-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Gmarket product information scarper",
@@ -5637,7 +5946,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "low",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Twitter People Search Scraper",
@@ -5751,7 +6063,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "post-level",
+    "record_granularity_confidence": "high",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Ebay Details Scraper (By Search Keywords)",
@@ -5798,7 +6113,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "listing-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "galaxus",
@@ -5830,7 +6148,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "low",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Shein Scraper (Product Listing by Keyword)",
@@ -5871,7 +6192,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "listing-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Flipkart Product Scraper",
@@ -5909,7 +6233,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Flipkart Listing Scraper",
@@ -5954,7 +6281,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "listing-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Amazon Product Details Scraper (for India)",
@@ -6022,7 +6352,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Amazon Product Listing Scraper (for India)",
@@ -6072,7 +6405,10 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "listing-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   },
   {
     "name": "Amazon Product Details Scraper (for UK)",
@@ -6121,6 +6457,9 @@
     "notes": [
       "Seeded from internal MCP-stable template spreadsheet.",
       "Input fields may be incomplete and should be backfilled from template details or INPUT.md."
-    ]
+    ],
+    "record_granularity": "detail-level",
+    "record_granularity_confidence": "medium",
+    "record_granularity_source": "heuristic_v1"
   }
 ]
