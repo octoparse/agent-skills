@@ -117,17 +117,28 @@ Use evidence in this order, from strongest to weakest:
 
 2. Stable template index
 - `references/stable-templates.json`
+- treat this file as the slim index, not the full template knowledge base
+- use it first for fast filtering, category narrowing, input/output matching, and initial chain design
+- do not expect it to contain every execution detail or every template nuance
 
-3. Template input metadata
+3. Template-specific docs in the sibling `templates/` directory
+- if a candidate template has a dedicated folder in `templates/`, read that folder after the slim index
+- prefer:
+  - `TEMPLATE.md`
+  - `LIMITATIONS.md`
+  - `FAQ.md`
+- use these files to refine or override slim-index assumptions when they provide stronger evidence
+
+4. Template input metadata
 - use Octoparse MCP template detail tools when available
 - input field names from template metadata are strong evidence for downstream requirements
 
-4. Official Octoparse template detail pages
+5. Official Octoparse template detail pages
 - use the template description
 - use FAQ and "How to Use" sections
 - use the template page's data preview or parameter definitions when visible
 
-5. Inference
+6. Inference
 - infer only when stronger evidence is unavailable
 - clearly label inferred conclusions as inferred
 
@@ -145,7 +156,16 @@ Follow this process every time:
 - If the user gives an approximate or incorrect template name, normalize it to the most likely actual template.
 - If there is ambiguity, say which template you are assuming.
 
-3. Determine the target data goal
+3. Check the slim index first
+- read `references/stable-templates.json` before opening heavier sources
+- use it to shortlist likely templates by category, record granularity, input fields, output fields, and collection stages
+- use `placeholder` and `remark` to clarify ambiguous input semantics, especially when field names are inconsistent
+
+4. Open template-specific docs only when needed
+- if the shortlisted template has a folder in the sibling `templates/` directory, read its `TEMPLATE.md`, `LIMITATIONS.md`, and `FAQ.md`
+- use these files to resolve ambiguity, special constraints, or language/site-specific behavior
+
+5. Determine the target data goal
 Examples:
 - listing discovery
 - details enrichment
@@ -155,7 +175,7 @@ Examples:
 - article body extraction
 - product detail expansion
 
-4. Determine required downstream input fields
+6. Determine required downstream input fields
 Read the downstream template input requirements first.
 
 Examples:
@@ -163,25 +183,25 @@ Examples:
 - detail scraper may require `listing URL` or `product URL`
 - contact enrichment may require `website URL`
 
-5. Determine candidate upstream output fields
+7. Determine candidate upstream output fields
 Use documented outputs first.
 If output docs are missing, infer carefully from template description and data preview.
 
-6. Compare field compatibility
+8. Compare field compatibility
 Decide whether the upstream output can feed the downstream input:
 - directly
 - indirectly through a transformation
 - not at all
 - only through an intermediate template
 
-7. Recommend the best chain
+9. Recommend the best chain
 Prefer:
 - stable MCP-supported templates
 - chains with documented field compatibility
 - fewer steps when data quality is equal
 - richer chains when the user's goal explicitly requires enrichment
 
-8. Explain risks
+10. Explain risks
 Always note:
 - inferred links
 - field uncertainty
@@ -254,6 +274,11 @@ Use phrases like:
 ## Stable template preference
 
 Prefer templates marked as stable in `references/stable-templates.json`.
+
+Remember:
+- `references/stable-templates.json` is a slim retrieval index
+- use it for fast first-pass reasoning
+- use sibling `templates/` docs for deeper per-template validation when available
 
 If a non-stable or undocumented template is required to complete the chain:
 - say so clearly
