@@ -27,8 +27,15 @@ Default recommendations:
 
 - `1577 Google Maps Scraper` for discovery
 - `941 Google Maps Reviews Scraper` only when reviews are explicitly needed
+- `1386 Contact Details Scraper` as the default website-based contact enrichment step
 - `1463 Superpages Scraper` or `944 Yellow Pages Scraper (Cloud)` when a stable directory workflow is a better fit
 - `1683 Gelbe Seiten Details Scraper (Cloud by URLs)` for German directory detail enrichment
+
+Typical chains:
+
+- `Google Maps Scraper -> Contact Details Scraper`
+- `Google Maps Scraper -> Google Maps Reviews Scraper`
+- `Superpages Scraper -> Contact Details Scraper`
 
 ## b2b-company-leads
 
@@ -51,10 +58,17 @@ Typical outputs:
 Default recommendations:
 
 - `15 Google Search Scraper` for broad discovery
+- `1386 Contact Details Scraper` as the default website-based contact enrichment step
 - `2150 Google Search Email Finder (Premium)` when the request is explicitly email-focused
+
+Typical chains:
+
+- `Google Search Scraper -> Contact Details Scraper`
+- `Google Search Scraper -> Google Search Email Finder (Premium)`
 
 ## Common Rules
 
 - Prefer one primary recommendation.
 - Add one alternative only when it covers a meaningfully different geography, directory source, or enrichment need.
 - Do not widen to the full lead-generation category until the shortlist clearly fails.
+- If an upstream template provides a website URL, prefer `Contact Details Scraper` as the default enrichment choice before exploring weaker alternatives.

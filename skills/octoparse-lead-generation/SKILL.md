@@ -7,24 +7,11 @@ description: Recommend and run Octoparse lead-generation workflows. Use this ski
 
 Use this skill to turn a lead-generation request into a small recommended Octoparse template set or template chain.
 
-This skill does not replace the Octoparse Lead Generation category or Octoparse MCP tools. It sits above them and narrows the decision space:
+This skill narrows the decision space:
 
 - the category page shows what exists
-- MCP tools can inspect, create, and run templates
-- this skill decides what the agent should recommend first
-
-## What This Skill Is For
-
-Use this skill when the user wants:
-
-- local business leads
-- company leads
-- outreach targets
-- business emails, phones, websites, or contact enrichment
-- a smaller recommended template set instead of the full lead catalog
-- a lead workflow without knowing template names
-
-Do not default to the full lead-generation category. Start from the curated shortlist in `references/lead-template-shortlist.json`.
+- MCP tools inspect, create, and run templates
+- this skill chooses the small recommended set to use first
 
 ## Prerequisites
 
@@ -66,15 +53,12 @@ Do not search the whole template catalog first unless the shortlist clearly cann
 Apply these rules strictly:
 
 - Prefer the curated shortlist over the full lead-generation category.
-- Keep recommendations tight:
-  - one primary recommendation
-  - one or two alternatives only when materially helpful
+- Keep recommendations tight: one primary recommendation, then one or two alternatives only when materially helpful.
 - Do not treat Amazon or generic product-review templates as lead-generation defaults.
 - Do not treat review-only templates as lead-discovery templates.
-- For Google Maps:
-  - prefer `1577 Google Maps Scraper` as the default discovery template
-  - prefer `941 Google Maps Reviews Scraper` only when reviews are explicitly needed
-  - do not fan out into many near-duplicate Google Maps templates unless the shortlist fails
+- Treat `Contact Details Scraper` as the default contact-enrichment template.
+- Whenever an upstream template can provide a business `website URL`, prefer chaining it into `Contact Details Scraper` for lead enrichment.
+- For Google Maps, prefer `1577 Google Maps Scraper` for discovery and `941 Google Maps Reviews Scraper` only when reviews are explicitly needed.
 - If the user's request is not satisfied by the shortlist, say so clearly and then widen the search using Octoparse MCP tools.
 
 ## Output Preferences
@@ -84,20 +68,16 @@ When the user asks for help, infer or confirm the delivery mode.
 Supported modes:
 
 - `quick answer`
-  - return the best template or template chain in chat
 - `task setup`
-  - identify the template and the key parameters needed to create the task
 - `run and sample`
-  - create or run a task, then summarize a small result sample
 - `export-ready`
-  - design the workflow for export-oriented collection, including recommended next enrichment steps
 
 Defaults:
 
-- if the user only wants guidance, use `quick answer`
-- if the user asks to create something, use `task setup`
-- if the user asks to test or verify output, use `run and sample`
-- if the user asks for a list, deliverable, or large dataset, use `export-ready`
+- guidance only -> `quick answer`
+- create something -> `task setup`
+- test or verify output -> `run and sample`
+- list, deliverable, or large dataset -> `export-ready`
 
 Ask at most one concise follow-up question if a missing preference would materially change execution.
 
@@ -138,6 +118,7 @@ Use it to quickly determine:
 - which track applies
 - which templates are primary defaults
 - which templates are discovery templates versus enrichment templates
+- which typical chains are preferred
 - what key inputs and outputs matter
 - which languages are good defaults
 
@@ -161,15 +142,6 @@ If execution is requested and one essential detail is missing, ask one concise f
 ### Step 4: Select the Best Template or Chain
 
 Use the shortest chain that satisfies the user.
-
-Typical patterns:
-
-- `local-business-leads`
-  - discovery template only
-  - discovery template -> reviews template
-- `b2b-company-leads`
-  - search discovery template only
-  - search discovery template -> email-focused template
 
 Keep the output focused:
 
@@ -200,6 +172,11 @@ If the user wants action:
 - create the task when enough inputs are known
 - run a small sample only if requested or if it is the clearest way to verify fit
 
+If the chain includes website-driven enrichment:
+
+- prefer `Contact Details Scraper`
+- explain that it accepts website URLs and enriches leads with emails, phones, and other contact fields
+
 ### Step 7: Summarize Fields, Risks, and Next Steps
 
 Always include:
@@ -222,6 +199,8 @@ Examples:
 
 - `Google Maps Scraper`
 - `Google Maps Scraper -> Google Maps Reviews Scraper`
+- `Google Maps Scraper -> Contact Details Scraper`
+- `Google Search Scraper -> Contact Details Scraper`
 - `Google Search Scraper -> Google Search Email Finder (Premium)`
 
 ### Why This Fits
@@ -237,6 +216,7 @@ List the main fields the user should expect.
 Always mention important caveats, such as:
 
 - a discovery template may not return email directly
+- website-based enrichment depends on an upstream website URL field
 - a review template enriches local-business leads but is not a lead source on its own
 - the shortlist is intentionally narrow and may exclude valid but lower-priority variants
 - geography or language may require a regional directory template instead of the default English/global option
@@ -251,16 +231,6 @@ State the best next action:
 - run a sample
 - stop at recommendation
 
-## Default Shortlist Logic
-
-Default shortlist behavior:
-
-- for Google Maps local-business leads, prefer `1577 Google Maps Scraper`
-- add `941 Google Maps Reviews Scraper` only when reviews are explicitly part of the request
-- for English/global B2B company discovery, prefer `15 Google Search Scraper`
-- for email-focused search-based lead discovery, prefer `2150 Google Search Email Finder (Premium)`
-- for regional local-business directories, prefer a single representative stable directory template over many similar variants
-
 ## What Not To Do
 
 Do not:
@@ -271,6 +241,7 @@ Do not:
 - force the user to write CLI commands
 - treat reviews as lead discovery
 - treat product/review catalog scraping as lead-generation by default
+- skip website-based contact enrichment when a strong upstream website URL is already available
 
 ## Success Condition
 
@@ -279,4 +250,3 @@ This skill succeeds when the user gets:
 - a small, defensible recommended template set
 - a clear reason for the recommendation
 - a path to create or run the right task without browsing dozens of templates
-
