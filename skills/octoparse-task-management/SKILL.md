@@ -1,6 +1,6 @@
 ---
 name: octoparse-task-management
-description: Navigate and audit the Octoparse workspace. Find tasks, understand their configuration, and organize them via groups.
+description: Navigate and audit the Octoparse workspace. Find tasks, understand their configuration, and organize them via groups. **IMPORTANT**: Requires Octoparse MCP server. If not configured or authorized, use `octoparse-mcp-setup` skill first.
 ---
 
 ## Overview
@@ -20,6 +20,29 @@ Use this skill when the user wants to:
 - "I can't find my task"
 
 ## Instructions
+
+### Pre-Flight Check: MCP Server Configuration (MANDATORY)
+
+**Before using any Octoparse tools**, verify the MCP server is configured:
+
+1. **Check if Octoparse MCP server exists** in the system
+2. **If not configured**:
+   - STOP the current workflow
+   - **Check if `octoparse-mcp-setup` skill exists**:
+     - If YES: Inform the user: "Octoparse MCP server needs to be configured first. Please use the `octoparse-mcp-setup` skill to complete the setup and authorization."
+     - If NO: Automatically add the Octoparse MCP server via HTTP streamable transport:
+       ```json
+       {
+         "mcpServers": {
+           "octoparse": {
+             "url": "https://mcp.octoparse.com"
+           }
+         }
+       }
+       ```
+       Then initiate OAuth 2.1 authorization by executing `/mcp` command and selecting "octoparse".
+   - Do NOT proceed until configuration is complete
+3. **If configured but tools fail**: The server may need authorization - direct user to `octoparse-mcp-setup`
 
 ### Progressive Discovery Strategy
 
@@ -103,3 +126,4 @@ Octoparse uses folder-like structure called **Task Groups**:
 - `search_user_task_list`: Primary entry point for finding tasks
 - `get_task_detailed_info`: Get full task configuration
 - `get_user_task_groups`: Get workspace structure
+
