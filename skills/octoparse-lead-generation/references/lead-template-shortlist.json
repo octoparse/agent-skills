@@ -1,0 +1,204 @@
+{
+  "version": "2026-03-19",
+  "purpose": "Curated slim shortlist for octoparse-lead-generation. Use this file before widening to the full Octoparse lead-generation catalog.",
+  "tracks": [
+    "local-business-leads",
+    "b2b-company-leads"
+  ],
+  "selection_rules": [
+    "Prefer this shortlist over the full category page.",
+    "Keep recommendations narrow and default to the primary template for each track.",
+    "Treat review templates as enrichment, not discovery.",
+    "Do not treat product or generic review templates as lead-generation defaults.",
+    "For Google Maps, default to template 1577 for discovery and 941 only when reviews are explicitly needed."
+  ],
+  "templates": [
+    {
+      "template_id": 1577,
+      "name": "Google Maps Scraper",
+      "slug": "google-maps-advanced-scraper",
+      "lead_track": "local-business-leads",
+      "language": "en/global",
+      "role": "primary_discovery",
+      "recommended_when": [
+        "The user wants local business leads from Google Maps",
+        "The user needs business names, phones, websites, addresses, ratings, or page URLs",
+        "The user wants a default Google Maps lead template without exploring many variants"
+      ],
+      "key_inputs": [
+        "Search Term (up to 10,000)",
+        "Number of pages (Up to 50)",
+        "Location",
+        "Get Q&As"
+      ],
+      "key_outputs": [
+        "Title",
+        "Review_Count",
+        "Rating",
+        "Address",
+        "Website",
+        "Phone",
+        "Page_URL"
+      ],
+      "keep_reason": "google_maps_primary_kept"
+    },
+    {
+      "template_id": 941,
+      "name": "Google Maps Reviews Scraper",
+      "slug": "google-maps-review-scraper-cloud",
+      "lead_track": "local-business-leads",
+      "language": "en/global",
+      "role": "review_enrichment",
+      "recommended_when": [
+        "The user explicitly wants review text or review-based enrichment",
+        "A Google Maps place details URL is already available or can be obtained first"
+      ],
+      "key_inputs": [
+        "Google Maps Place Details Page URLs (up to 10,000)",
+        "Number of Pages (up to 5,000)"
+      ],
+      "key_outputs": [
+        "name",
+        "Rating",
+        "author_title",
+        "author_review_timestamp",
+        "review_text",
+        "review_img_url"
+      ],
+      "keep_reason": "google_maps_reviews_kept"
+    },
+    {
+      "template_id": 1463,
+      "name": "Superpages Scraper",
+      "slug": "superpages-scraper",
+      "lead_track": "local-business-leads",
+      "language": "en/global",
+      "role": "regional_directory_discovery",
+      "recommended_when": [
+        "The user wants US local-business leads from a directory source instead of Google Maps",
+        "The user wants a stable English directory-based local-business template"
+      ],
+      "key_inputs": [
+        "Keywords (up to 100,000)",
+        "Location"
+      ],
+      "key_outputs": [
+        "Business_name",
+        "Address",
+        "Email",
+        "Telephone",
+        "Website",
+        "Rating",
+        "Review_count"
+      ],
+      "keep_reason": "regional_directory_kept"
+    },
+    {
+      "template_id": 944,
+      "name": "Yellow Pages Scraper (Cloud)",
+      "slug": "yellow-page-scraper-cloud",
+      "lead_track": "local-business-leads",
+      "language": "en/global",
+      "role": "regional_directory_discovery",
+      "recommended_when": [
+        "The user wants directory-based local-business leads in an English/global workflow",
+        "The user is comfortable with company plus zip-code style inputs"
+      ],
+      "key_inputs": [
+        "Company;zip code (with no space between but a semicolon)",
+        "PageSize(The default value is 100)"
+      ],
+      "key_outputs": [
+        "Name",
+        "Location",
+        "Title",
+        "Address",
+        "Phone",
+        "Website",
+        "URL"
+      ],
+      "keep_reason": "regional_directory_kept"
+    },
+    {
+      "template_id": 1683,
+      "name": "Gelbe Seiten Details Scraper (Cloud by URLs)",
+      "slug": "gelbe-seiten-details-scraper-cloud",
+      "lead_track": "local-business-leads",
+      "language": "de",
+      "role": "regional_directory_detail_enrichment",
+      "recommended_when": [
+        "The user needs German local-business leads from a stable directory source",
+        "The user already has listing URLs and wants detail enrichment"
+      ],
+      "key_inputs": [
+        "Listing URLs (up to 10.000)"
+      ],
+      "key_outputs": [
+        "Titel",
+        "Adresse",
+        "Telefonnummer",
+        "Website",
+        "Öffnungszeiten",
+        "Branche",
+        "Beschreibung"
+      ],
+      "keep_reason": "regional_directory_kept"
+    },
+    {
+      "template_id": 15,
+      "name": "Google Search Scraper",
+      "slug": "google-search-scraper",
+      "lead_track": "b2b-company-leads",
+      "language": "en/global",
+      "role": "primary_discovery",
+      "recommended_when": [
+        "The user wants broad B2B company discovery from Google Search",
+        "The user needs company pages, result URLs, or search-discovered targets",
+        "The user wants the default search-based company-lead template"
+      ],
+      "key_inputs": [
+        "All these words",
+        "This exact word or phrase",
+        "Any of these words",
+        "None of these words"
+      ],
+      "key_outputs": [
+        "Title",
+        "Descriptipn",
+        "Detail_URL",
+        "Source_URL",
+        "Displayed_URL",
+        "Position"
+      ],
+      "keep_reason": "google_search_primary_kept"
+    },
+    {
+      "template_id": 2150,
+      "name": "Google Search Email Finder (Premium)",
+      "slug": "google-search-email-finder-premium",
+      "lead_track": "b2b-company-leads",
+      "language": "en/global",
+      "role": "email_focused_discovery",
+      "recommended_when": [
+        "The user wants Google Search based email-focused B2B lead discovery",
+        "The user cares more about finding email-bearing pages than broad result discovery"
+      ],
+      "key_inputs": [
+        "All these words",
+        "This exact word or phrase",
+        "Any of these words",
+        "None of these words"
+      ],
+      "key_outputs": [
+        "Title",
+        "Descriptipn",
+        "Detail_URL",
+        "Source_URL",
+        "Displayed_URL",
+        "Position"
+      ],
+      "keep_reason": "google_search_email_primary_kept"
+    }
+  ]
+}
+
