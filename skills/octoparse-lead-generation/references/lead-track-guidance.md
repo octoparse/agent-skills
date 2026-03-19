@@ -64,7 +64,7 @@ Default recommendations:
 Typical chains:
 
 - `Google Search Scraper -> Contact Details Scraper`
-- `Google Search Scraper -> Google Search Email Finder (Premium)`
+- `Google Search Email Finder (Premium)` as a standalone email-focused workflow
 
 ## Common Rules
 
@@ -72,3 +72,4 @@ Typical chains:
 - Add one alternative only when it covers a meaningfully different geography, directory source, or enrichment need.
 - Do not widen to the full lead-generation category until the shortlist clearly fails.
 - If an upstream template provides a website URL, prefer `Contact Details Scraper` as the default enrichment choice before exploring weaker alternatives.
+- Do not present `Google Search Scraper -> Google Search Email Finder (Premium)` as a default direct chain unless there is explicit evidence of a true output-to-input linkage.

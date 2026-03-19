@@ -44,10 +44,10 @@
     },
     {
       "track": "b2b-company-leads",
-      "workflow": "Google Search Scraper -> Google Search Email Finder (Premium)",
-      "use_when": "The user wants search-based lead discovery with a stronger email-finding emphasis",
-      "field_mapping": "Shared search intent and query strategy, not a strict output-to-input chain",
-      "notes": "This is a paired search workflow, not a website-URL enrichment step."
+      "workflow": "Google Search Email Finder (Premium)",
+      "use_when": "The user wants a direct email-focused Google Search workflow instead of a separate website enrichment step",
+      "field_mapping": "No upstream template required; this template uses the search query directly",
+      "notes": "Do not present this as a default output-to-input chain from Google Search Scraper. It shares search-style inputs but is better treated as a standalone email-focused option."
     }
   ],
   "templates": [
@@ -249,7 +249,8 @@
       "role": "email_focused_discovery",
       "recommended_when": [
         "The user wants Google Search based email-focused B2B lead discovery",
-        "The user cares more about finding email-bearing pages than broad result discovery"
+        "The user cares more about finding email-bearing pages than broad result discovery",
+        "The user does not need a strict upstream-to-downstream template chain and can start from the search query directly"
       ],
       "key_inputs": [
         "All these words",

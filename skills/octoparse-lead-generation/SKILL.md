@@ -201,7 +201,7 @@ Examples:
 - `Google Maps Scraper -> Google Maps Reviews Scraper`
 - `Google Maps Scraper -> Contact Details Scraper`
 - `Google Search Scraper -> Contact Details Scraper`
-- `Google Search Scraper -> Google Search Email Finder (Premium)`
+- `Google Search Email Finder (Premium)`
 
 ### Why This Fits
 
@@ -218,6 +218,7 @@ Always mention important caveats, such as:
 - a discovery template may not return email directly
 - website-based enrichment depends on an upstream website URL field
 - a review template enriches local-business leads but is not a lead source on its own
+- `Google Search Scraper` and `Google Search Email Finder (Premium)` are not a default direct chain just because their search inputs look similar
 - the shortlist is intentionally narrow and may exclude valid but lower-priority variants
 - geography or language may require a regional directory template instead of the default English/global option
 
