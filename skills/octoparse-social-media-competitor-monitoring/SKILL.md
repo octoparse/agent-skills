@@ -1,9 +1,9 @@
 ---
-name: octoparse-competitor-monitoring
+name: octoparse-social-media-competitor-monitoring
 description: Recommend Octoparse workflows for social media competitor monitoring. Use this skill whenever the user wants to monitor competitor accounts, track brand mentions across social media, collect posts, videos, comments, and replies for downstream sentiment analysis, compare competitor content performance, or decide which Octoparse templates should be used for TikTok, Twitter/X, Reddit, YouTube, and related social platforms.
 ---
 
-# Octoparse Competitor Monitoring
+# Octoparse Social Media Competitor Monitoring
 
 Use this skill to recommend Octoparse templates and workflows for social media competitor monitoring.
 
@@ -56,9 +56,9 @@ Use sources in this order:
 
 1. the user request and monitoring goal
 2. `references/request-classifier.md`
-3. `references/competitor-monitoring-shortlist-core.json`
-4. `references/competitor-monitoring-shortlist-secondary.json`
-5. `references/competitor-monitoring-guidance.md`
+3. `references/social-media-competitor-monitoring-shortlist-core.json`
+4. `references/social-media-competitor-monitoring-shortlist-secondary.json`
+5. `references/social-media-competitor-monitoring-guidance.md`
 6. Octoparse MCP template details and official template pages when more evidence is needed
 7. `octoparse-link-template` if a multi-template chain must be validated
 
@@ -79,7 +79,7 @@ Default `secondary` platforms:
 - `LinkedIn`
 - `Gab`
 
-Secondary and regional platforms are stored in `references/competitor-monitoring-shortlist-secondary.json`.
+Secondary and regional platforms are stored in `references/social-media-competitor-monitoring-shortlist-secondary.json`.
 
 ## Recommendation Rules
 
