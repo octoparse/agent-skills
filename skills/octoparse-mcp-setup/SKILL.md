@@ -1,13 +1,7 @@
 ---
 name: octoparse-mcp-setup
-description: Configure and authorize the Octoparse MCP server. Use when the Octoparse MCP server is not configured or needs authorization. Supports both OAuth 2.1 and API Key authentication methods.
+description: Configure and authorize the Octoparse MCP server with OAuth 2.1 or API Key authentication.
 ---
-
-## Overview
-
-This skill handles the one-time setup required for all Octoparse skills. It configures the MCP server with your choice of authentication method:
-1. **OAuth 2.1** - Dynamic client registration with browser login
-2. **API Key** - Direct API key authentication
 
 ## When to use
 
@@ -15,44 +9,101 @@ Use this skill when:
 - Octoparse MCP server is not detected in the system
 - User receives "MCP server not found" or connection errors
 - Authorization is required before using Octoparse tools
-- Any Octoparse skill fails due to missing MCP configuration
+- User asks to configure Octoparse MCP for a specific IDE/editor
 
 ## Authentication Methods
 
-You must choose ONE authentication method (cannot use both simultaneously):
+Choose ONE method:
 
-### Option 1: OAuth 2.1 (Recommended for most users)
-- Browser-based login to your Octoparse account
-- Automatic token management
-- Best for interactive use
+1. **OAuth 2.1** - Browser-based login (recommended for interactive use)
+2. **API Key** - Direct API key authentication (for automated/headless environments)
 
-### Option 2: API Key (For automated/headless environments)
-- Direct API key authentication
-- No browser interaction required
-- Best for scripts and automated workflows
+## Decision Tree
+
+```
+Start
+  │
+  ▼
+Step 1: Detect Client
+  │
+  ├── Claude/Cursor/Gemini/Qwen ──► Use mcpServers format
+  ├── VS Code/TRAE ───────────────► Use servers format
+  └── OpenClaw ───────────────────► Use mcporter + stdio
+  │
+  ▼
+Step 2: Check Current Status
+  │
+  ├── Already configured & working ──► EXIT (inform user)
+  └── Not configured / Invalid ─────► Continue
+  │
+  ▼
+Step 3: Choose Auth Method
+  │
+  ├── OAuth 2.1 ──► Path A
+  │   ├── OAuth succeeds ──► DONE
+  │   └── OAuth fails 3x ──► Offer API Key fallback
+  │
+  └── API Key ────► Path B
+      ├── API Key obtained ──► Configure & Verify
+      └── API Key fails 3x ──► Suggest regenerating key
+```
+
+## Token Optimization Note
+
+**To minimize token usage:**
+- For basic configuration, use the JSON examples in Step A1/B2 directly
+- Read reference files ONLY when:
+  - Need client-specific options (trust, tool filtering, etc.)
+  - Troubleshooting client-specific errors
+  - User asks for advanced configuration
 
 ## Instructions
 
-### Step 1: Check Current MCP Status
+### Step 1: Detect MCP Client
 
-First, verify if Octoparse MCP server is already configured:
-- Check if `octoparse` MCP server exists in the system
-- If already configured and authorized, inform user and exit
+**Primary detection** (check current runtime environment):
+- Check environment variables:
+  - `CLYDE_CODE_VERSION` or `CLAUDE_CODE_VERSION` → **Claude Code**
+  - `CURSOR_VERSION` → **Cursor**
+  - `GEMINI_CLI_VERSION` → **Gemini CLI**
+  - `QWEN_CODE_VERSION` → **Qwen Code**
+  - `VSCODE_PID` or `VSCODE_CWD` → **VS Code** (may need confirmation)
+  - `TRAE_VERSION` → **TRAE**
+  - `OPENCLAW_VERSION` → **OpenClaw**
+- Check execution context (which AI assistant invoked this skill)
 
-### Step 2: Choose Authentication Method
+**Secondary detection** (if primary unclear, check config files):
+1. **Claude Code**: `~/.claude/settings.json` or `.claude/settings.json`
+2. **Cursor**: `~/.cursor/mcp.json` or `.cursor/mcp.json`
+3. **VS Code**: `.vscode/mcp.json` or VS Code settings
+4. **Gemini CLI**: `~/.gemini/settings.json` or `.gemini/settings.json`
+5. **Qwen Code**: `~/.qwen/settings.json` or `.qwen/settings.json`
+6. **TRAE**: `.trae/mcp.json`
+7. **OpenClaw**: `~/.config/openclaw/openclaw.json5` or `~/.openclaw/openclaw.json`
 
-**Ask the user to choose one authentication method:**
+**If multiple clients detected:** Ask the user which one to configure.
 
-```
-Please choose an authentication method for Octoparse MCP server:
+### Step 2: Check Current MCP Status
 
-1. OAuth 2.1 - Login via browser (recommended for most users)
-2. API Key - Use direct API key authentication
+**Check if already configured:**
+1. Read the detected client's config file
+2. Look for `octoparse` entry:
+   - In `mcpServers` (Claude/Cursor/Gemini/Qwen)
+   - In `servers` (VS Code/TRAE)
+   - In `mcp.servers` with `command` field (OpenClaw)
+3. If found:
+   - **OAuth**: Try calling `get_user_account_info()`
+   - **API Key**: Check if `headers.x-api-key` is set, then test connection
+4. **If test succeeds:** Already configured and authorized, inform user and EXIT
+5. **If test fails:** Configuration exists but invalid, proceed to reconfigure
 
-Which would you prefer? (Enter 1 or 2)
-```
+### Step 3: Choose Authentication Method
 
-**Wait for user response** and proceed with the selected method below.
+Ask the user to choose:
+- **1. OAuth 2.1** - Browser login (recommended for interactive use)
+- **2. API Key** - Direct API key (for automated/headless environments)
+
+If user cannot decide, recommend OAuth 2.1 for interactive use.
 
 ---
 
@@ -60,165 +111,231 @@ Which would you prefer? (Enter 1 or 2)
 
 ### Step A1: Add MCP Server Configuration
 
-If Octoparse MCP is not configured:
+Configure based on the detected client. Use the appropriate format below:
 
-1. **Add the MCP server** using the appropriate configuration method:
-   ```json
-   {
-     "mcpServers": {
-       "octoparse": {
-         "url": "https://mcp.octoparse.com"
-       }
-     }
-   }
-   ```
+**For Claude Code / Cursor / Gemini CLI / Qwen Code** (uses `mcpServers`):
+```json
+{
+  "mcpServers": {
+    "octoparse": {
+      "type": "http",
+      "url": "https://mcp.octoparse.com"
+    }
+  }
+}
+```
 
-2. **Re-initialize the MCP connection** to apply the new configuration
+**For VS Code** (in `.vscode/mcp.json`, uses `servers`):
+```json
+{
+  "servers": {
+    "octoparse": {
+      "type": "http",
+      "url": "https://mcp.octoparse.com"
+    }
+  }
+}
+```
 
-3. **Confirm addition** - Verify the server now appears in the MCP server list
+**For TRAE** (in `.trae/mcp.json`, uses `servers`):
+```json
+{
+  "servers": {
+    "octoparse": {
+      "type": "http",
+      "url": "https://mcp.octoparse.com"
+    }
+  }
+}
+```
 
-### Step A2: OAuth 2.1 Authorization (Dynamic Client Registration)
+**For OpenClaw** (uses stdio transport with mcporter):
+```json
+{
+  "mcp": {
+    "servers": {
+      "octoparse": {
+        "command": "mcporter",
+        "args": ["run", "stdio", "--server", "octoparse"]
+      }
+    }
+  }
+}
+```
 
-**CRITICAL: Authorization must be completed before using any Octoparse tools.**
+Re-initialize the MCP connection to apply changes.
 
-1. **Initiate authorization flow**:
-   - Execute the `/mcp` command to open the MCP server selection menu
-   - Instruct the user to select the "octoparse" server from the list
+### Step A2: OAuth Authorization
 
-2. **Guide through OAuth flow**:
-   - The system will automatically handle dynamic client registration
-   - If a browser window opens, instruct the user to complete login in the browser
-   - Wait for the authorization callback to complete
+1. Execute `/mcp` command and select "octoparse" server
+2. Guide user through browser login if prompted
+3. Wait for authorization callback to complete
+4. Verify by calling `get_user_account_info()`
 
-3. **Verify authorization**:
-   - Attempt to call `get_user_account_info()` to confirm connection is working
-   - If successful, authorization is complete
+**Success:** Proceed to Completion Confirmation
 
-4. **Handle failures**:
-   - If authorization fails, report the specific error
-   - Do not proceed until authorization succeeds
+**Failure handling:**
+- **1st failure:** Inform user, ask to check browser and retry
+- **2nd failure:** Check network connectivity, ensure no firewall blocking
+- **3rd failure:** Offer fallback to API Key authentication:
+  > "OAuth authorization unsuccessful after 3 attempts. Would you like to try API Key authentication instead?"
 
 ---
 
 ## Path B: API Key Authentication
 
-### Step B1: Obtain API Key (User Action Required)
+### Step B1: Obtain API Key
 
-**Instruct the user to get their API Key:**
-
+Instruct user to:
 1. Go to: https://www.octoparse.com/console/account-center/api-keys
-2. Log in to your Octoparse account if not already logged in
-3. Click "Create API Key" (or similar button)
-4. Copy the generated API Key
+2. Log in to their Octoparse account
+3. Click "Create API Key"
+4. Copy the API Key and provide it to you
 
-**Wait for the user to provide their API Key.**
+**If user doesn't have Octoparse account:**
+- Provide sign-up link: https://www.octoparse.com
+- Wait for account creation and API key generation
 
-### Step B2: Configure MCP Server with API Key
+**If user cannot access API keys page:**
+- Check if user's subscription plan includes API access
+- Suggest contacting Octoparse support
 
-Once the user provides their API Key:
+### Step B2: Configure MCP Server
 
-1. **Add the MCP server with API Key header**:
-   ```json
-   {
-     "mcpServers": {
-       "octoparse": {
-         "url": "https://mcp.octoparse.com",
-         "headers": {
-           "x-api-key": "{USER_PROVIDED_API_KEY}"
-         }
-       }
-     }
-   }
-   ```
+Configure based on the detected client with API Key:
 
-   **IMPORTANT**: Replace `{USER_PROVIDED_API_KEY}` with the actual API key provided by the user.
+**For Claude Code / Cursor / Gemini CLI / Qwen Code** (uses `mcpServers`):
+```json
+{
+  "mcpServers": {
+    "octoparse": {
+      "type": "http",
+      "url": "https://mcp.octoparse.com",
+      "headers": {
+        "x-api-key": "USER_PROVIDED_API_KEY"
+      }
+    }
+  }
+}
+```
 
-2. **Re-initialize the MCP connection** to apply the new configuration
+**For VS Code** (in `.vscode/mcp.json`, uses `servers`):
+```json
+{
+  "servers": {
+    "octoparse": {
+      "type": "http",
+      "url": "https://mcp.octoparse.com",
+      "headers": {
+        "x-api-key": "USER_PROVIDED_API_KEY"
+      }
+    }
+  }
+}
+```
 
-3. **Confirm addition** - Verify the server now appears in the MCP server list
+**For TRAE** (in `.trae/mcp.json`, uses `servers`):
+```json
+{
+  "servers": {
+    "octoparse": {
+      "type": "http",
+      "url": "https://mcp.octoparse.com",
+      "headers": {
+        "x-api-key": "USER_PROVIDED_API_KEY"
+      }
+    }
+  }
+}
+```
 
-### Step B3: Verify API Key Authentication
+**For OpenClaw** (requires mcporter with API key):
+```bash
+# First configure mcporter with API key
+mcporter config add octoparse https://mcp.octoparse.com
+mcporter config set octoparse header.x-api-key "USER_PROVIDED_API_KEY"
+```
 
-1. **Test the connection**:
-   - Attempt to call `get_user_account_info()` to confirm connection is working
-   - If successful, API key authentication is complete
+Then add to OpenClaw config:
+```json
+{
+  "mcp": {
+    "servers": {
+      "octoparse": {
+        "command": "mcporter",
+        "args": ["run", "stdio", "--server", "octoparse"]
+      }
+    }
+  }
+}
+```
 
-2. **Handle failures**:
-   - If authentication fails with 401/403 errors, the API key may be invalid or expired
-   - Ask the user to:
-     - Verify the API key is copied correctly
-     - Check if the API key is active in their account
-     - Generate a new API key if needed
-   - Do not proceed until authentication succeeds
+Replace `USER_PROVIDED_API_KEY` with the actual key.
+
+Re-initialize the MCP connection to apply changes.
+
+### Step B3: Verify Authentication
+
+Test by calling `get_user_account_info()`.
+
+**Success:** Proceed to Completion Confirmation
+
+**Failure handling:**
+- **1st failure (401/403):** Ask user to verify API key is copied correctly
+- **2nd failure:** Ask user to check if API key is active in their account
+- **3rd failure:**
+  - Check API key format (should start with `op_sk_`)
+  - Verify network connectivity to https://mcp.octoparse.com
+  - Suggest regenerating API key at https://www.octoparse.com/console/account-center/api-keys
+  - If still failing, inform user and exit with error
 
 ---
 
 ## Completion Confirmation
 
-Once setup is complete:
+Once setup is complete, confirm:
+1. **Configuration successful:** "Octoparse MCP server configured for [CLIENT] with [AUTH_METHOD]"
+2. **Capability unlocked:** User can now use other Octoparse skills
+3. **Resume original request:** If this was triggered by another skill, signal that the original request can proceed
 
-1. **Confirm the authentication method used**:
-   - For OAuth: "Octoparse MCP server is now configured with OAuth 2.1 authorization"
-   - For API Key: "Octoparse MCP server is now configured with API Key authentication"
+Example confirmation message:
+> ✅ Octoparse MCP server is now configured for **Claude Code** with **OAuth 2.1** authentication. You can now use Octoparse tools to manage scraping tasks.
 
-2. **Inform user they can now use other Octoparse skills**
-
-3. **If this was triggered by another skill, signal that the original request can proceed**
-
-## Configuration Reference
-
-### OAuth 2.1 Configuration
-
-| Service | URL | Protocol |
-|---------|-----|----------|
-| Octoparse | `https://mcp.octoparse.com` | OAuth 2.1 with Dynamic Client Registration |
-
-**Authorization Details:**
-- **Protocol**: OAuth 2.1
-- **Client Registration**: Dynamic (automatic)
-- **User Action Required**: Browser login to Octoparse account
-- **Scope**: Full Octoparse API access
-
-### API Key Configuration
-
-| Service | URL | Protocol |
-|---------|-----|----------|
-| Octoparse | `https://mcp.octoparse.com` | API Key Authentication |
-
-**API Key Details:**
-- **Header Name**: `x-api-key`
-- **Header Value**: User's API key from https://www.octoparse.com/console/account-center/api-keys
-- **User Action Required**: Create and copy API key from account center
-- **Scope**: Full Octoparse API access
+---
 
 ## Troubleshooting
 
-### OAuth 2.1 Issues
+### General Issues
 
 | Issue | Solution |
 |-------|----------|
-| "Cannot connect to MCP server" | Verify URL is correct: `https://mcp.octoparse.com` |
-| "Authorization timeout" | Ask user to check browser and complete login |
-| "Dynamic registration failed" | Retry authorization flow from Step A2 |
-| "Already authorized" | Skip authorization, configuration is complete |
+| "Cannot connect to MCP server" | Verify URL: `https://mcp.octoparse.com` and type: `http` |
+| "401 Unauthorized" / "403 Forbidden" | API key invalid or expired; verify at https://www.octoparse.com/console/account-center/api-keys |
+| "Authorization timeout" | Ask user to check browser and complete login; check firewall settings |
+| "Transport not supported" | Use `type: "http"` for HTTP Streamable transport |
+| Configuration format error | Ensure using correct structure: `mcpServers` for Claude/Cursor/Gemini/Qwen, `servers` for VS Code/TRAE |
+| Client detection failed | Ask user explicitly: "Which IDE/editor are you using?" |
 
-### API Key Issues
+### Client-Specific Issues
 
-| Issue | Solution |
-|-------|----------|
-| "401 Unauthorized" or "403 Forbidden" | API key is invalid or expired; ask user to verify or regenerate at https://www.octoparse.com/console/account-center/api-keys |
-| "Cannot connect to MCP server" | Verify URL is correct: `https://mcp.octoparse.com` |
-| "Missing x-api-key header" | Ensure the header is configured exactly as: `"x-api-key": "your-api-key"` |
-| "API key not working" | Verify the key is active in the user's Octoparse account center |
+Read the appropriate reference file for detailed client-specific troubleshooting:
+- Claude Code → [references/claude-code.md](references/claude-code.md)
+- Cursor → [references/cursor.md](references/cursor.md)
+- VS Code → [references/vs-code.md](references/vs-code.md)
+- Gemini CLI → [references/gemini-cli.md](references/gemini-cli.md)
+- Qwen Code → [references/qwen-code.md](references/qwen-code.md)
+- TRAE → [references/trae.md](references/trae.md)
+- OpenClaw → [references/openclaw.md](references/openclaw.md)
 
-## Migration Between Methods
+### Switching Authentication Methods
 
-To switch authentication methods:
+- **OAuth → API Key:** Remove OAuth authorization from config, follow Path B
+- **API Key → OAuth:** Remove API key from headers, follow Path A
 
-1. **OAuth → API Key**:
-   - Remove OAuth authorization
-   - Follow Path B (API Key) steps
+### Emergency Fallback
 
-2. **API Key → OAuth**:
-   - Remove the API key from MCP configuration
-   - Follow Path A (OAuth 2.1) steps
+If all configuration attempts fail:
+1. Check Octoparse service status: https://status.octoparse.com
+2. Verify network connectivity: `curl -I https://mcp.octoparse.com`
+3. Try using Octoparse web interface directly: https://www.octoparse.com
+4. Contact Octoparse support: support@octoparse.com
