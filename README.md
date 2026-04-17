@@ -2,176 +2,127 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-Claude Code skills for Octoparse web scraping platform. These skills provide workflow-oriented capabilities that orchestrate Octoparse MCP tools for task creation, management, control, and data export.
+Scenario-oriented Octoparse agent skills, template knowledge packs, and evaluation assets for MCP-enabled assistants. The repository now focuses on higher-level workflows such as lead generation, social media competitor monitoring, template-chain design, and MCP bootstrap instead of low-level task CRUD skills alone.
 
 ## Overview
 
-This repository contains **6 workflow skills** for Claude Code that simplify Octoparse operations:
+This repository currently contains:
 
-| Skill | Purpose | Key Features |
-|-------|---------|--------------|
-| **octoparse-mcp-setup** | Configure and authorize Octoparse MCP server | Auto-detect missing MCP, OAuth 2.1 authorization |
-| **octoparse-template-task** | Create scraping tasks from templates | Template discovery, parameter validation, error correction |
-| **octoparse-task-management** | Find and organize tasks | Progressive discovery, task groups, configuration audit |
-| **octoparse-task-control** | Start/stop cloud tasks | Pre-run checks, batch operations, status monitoring |
-| **octoparse-data-export** | Export scraped data | Incremental/full export, pagination, volume checks |
-| **octoparse-link-template** | Design template chains | Multi-template workflows, data enrichment patterns |
+- **4 skills** under `skills/`
+- **2 template knowledge packs** under `templates/`
+- curated reference files for routing, shortlisting, and chain validation
+- eval assets for scenario skills
+- planning and validation documents under `docs/plans/`
 
-## Quick Start
+## Skill Catalog
 
-### Prerequisites
+| Skill | Type | What it does | Key assets |
+|---|---|---|---|
+| `octoparse-mcp-setup` | setup / utility | Configures the Octoparse MCP server and guides OAuth 2.1 or API key authentication | client-specific reference docs for Claude Code, Cursor, Gemini CLI, Qwen Code, VS Code, TRAE, and OpenClaw |
+| `octoparse-lead-generation` | scenario skill | Recommends and runs lead-generation workflows for local-business and B2B prospecting requests | request classifier, split shortlists, track guidance, evals |
+| `octoparse-social-media-competitor-monitoring` | scenario skill | Recommends workflows for competitor account tracking, brand mention discovery, and comment collection for downstream analysis | request classifier, shortlist files, scenario guidance, evals |
+| `octoparse-link-template` | workflow design skill | Designs and validates multi-template chains, including field mapping and downstream enrichment logic | linking rules, output inference rules, stable template catalog |
 
-- Claude Code with skill support
-- Octoparse account (for authorization)
+## Template Knowledge Packs
 
-### Installation
+The `templates/` directory stores reusable template documentation that scenario skills can cite when recommending or validating workflows.
 
-1. Clone this repository:
-```bash
-git clone https://github.com/octoparse/agent-skills.git
-cd agent-skills/skills
-```
+Current template family:
 
-2. Copy skills to your Claude Code skills directory:
-```bash
-# Default location (may vary by system)
-cp -r octoparse-* ~/.claude/skills/
-```
+| Template | Output level | Primary use | Included docs |
+|---|---|---|---|
+| `google-maps-scraper` | business / detail | local business discovery, lead generation, competitor discovery | `TEMPLATE.md`, `INPUT.md`, `OUTPUT.md`, `LIMITATIONS.md`, `TIPS.md`, `FAQ.md` |
+| `google-maps-reviews-scraper` | review | review analysis, reputation monitoring, downstream sentiment workflows | `TEMPLATE.md`, `INPUT.md`, `OUTPUT.md`, `LIMITATIONS.md`, `TIPS.md`, `FAQ.md` |
 
-### Usage
+These docs are designed to make template behavior explicit:
 
-Once installed, simply ask Claude to perform Octoparse operations:
+- `TEMPLATE.md` explains the use case and fit
+- `INPUT.md` documents required parameters and common mistakes
+- `OUTPUT.md` documents high-value fields and linking value
+- `LIMITATIONS.md`, `TIPS.md`, and `FAQ.md` capture guardrails and operator guidance
 
-- "Create an Amazon product scraper"
-- "Show me all my tasks"
-- "Start my eBay scraper"
-- "Export data from task abc123"
+## How The Repository Is Organized
 
-The skills will automatically handle MCP server configuration and authorization on first use.
-
-## Skill Details
-
-### octoparse-mcp-setup
-
-**Purpose**: First-time setup and authorization for Octoparse MCP server.
-
-**Auto-Configuration Flow**:
-1. Detect if Octoparse MCP server is configured
-2. If missing, automatically add via HTTP streamable transport
-3. Initiate OAuth 2.1 authorization with dynamic client registration
-4. Verify connection before proceeding
-
-**Manual Trigger**: Use this skill explicitly if authorization expires.
-
-### octoparse-template-task
-
-**Purpose**: Create web scraping tasks using Octoparse's pre-defined templates.
-
-**Workflow**:
-1. Template Discovery - Search templates by platform (Amazon, eBay, etc.)
-2. Schema Inspection - Get template parameters and requirements
-3. Parameter Analysis - Validate input formats (MultiInput, TextInput, etc.)
-4. Task Creation - Submit with synchronized UI/Template parameters
-
-**Key Feature**: Automatic error correction for parameter mismatches.
-
-### octoparse-task-management
-
-**Purpose**: Navigate and audit the Octoparse workspace.
-
-**Capabilities**:
-- Find tasks by keyword, group, or status
-- View detailed task configuration
-- Browse task groups/folders
-- Progressive discovery for ambiguous queries
-
-**Example**: "Find my Amazon scraper" → searches, finds, reports task ID and status.
-
-### octoparse-task-control
-
-**Purpose**: Orchestrate task execution on Octoparse's cloud infrastructure.
-
-**Features**:
-- Pre-run compatibility checks (cloud vs local-only)
-- Start/stop individual or batch tasks
-- Status monitoring with state change confirmation
-- Error handling for credits, rate limits, etc.
-
-**Safety**: Validates `runOn` property before starting; rejects local-only tasks.
-
-### octoparse-data-export
-
-**Purpose**: Retrieve and process scraped data results.
-
-**Modes**:
-- **Incremental** (`getAll: false`) - Get only new/unexported records
-- **Full Snapshot** (`getAll: true`) - Get all unexported data with pagination
-
-**Best Practice**: Always check data volume before large exports; warn user if >10,000 records.
-
-### octoparse-link-template
-
-**Purpose**: Design template chains for complex data workflows.
-
-**Use Cases**:
-- Link listing templates to detail templates
-- Enrich data across multiple sources (product + reviews + contact)
-- Build multi-step scraping pipelines
-
-**Reference**: Includes linking rules and stable template catalog in `references/`.
-
-## MCP Server Configuration
-
-All skills use the Octoparse MCP server:
-
-```json
-{
-  "mcpServers": {
-    "octoparse": {
-      "url": "https://mcp.octoparse.com"
-    }
-  }
-}
-```
-
-**Authorization**: OAuth 2.1 with Dynamic Client Registration (handled automatically by `octoparse-mcp-setup`).
-
-## Project Structure
-
-```
-agent-skills/
+```text
+AgentSkills/
+├── docs/
+│   └── plans/                               # Design notes, validation reports, and planning docs
 ├── skills/
-│   ├── octoparse-mcp-setup/          # MCP configuration skill
-│   │   └── SKILL.md
-│   ├── octoparse-template-task/      # Task creation skill
-│   │   └── SKILL.md
-│   ├── octoparse-task-management/    # Task discovery skill
-│   │   └── SKILL.md
-│   ├── octoparse-task-control/       # Task execution skill
-│   │   └── SKILL.md
-│   ├── octoparse-data-export/        # Data retrieval skill
-│   │   └── SKILL.md
-│   └── octoparse-link-template/      # Template chaining skill
+│   ├── octoparse-lead-generation/
+│   │   ├── SKILL.md
+│   │   ├── evals/
+│   │   └── references/
+│   ├── octoparse-link-template/
+│   │   ├── SKILL.md
+│   │   └── references/
+│   ├── octoparse-mcp-setup/
+│   │   ├── SKILL.md
+│   │   └── references/
+│   └── octoparse-social-media-competitor-monitoring/
 │       ├── SKILL.md
-│       └── references/               # Linking rules and template catalog
-│           ├── linking-rules.md
-│           ├── output-inference-rules.md
-│           └── stable-templates.json
-├── LICENSE                           # MIT License
-└── README.md                         # This file
+│       ├── evals/
+│       └── references/
+├── templates/
+│   └── google-maps/
+│       ├── google-maps-scraper/
+│       └── google-maps-reviews-scraper/
+├── CLAUDE.md                               # Project-level guidance and AI-native evaluation standard
+├── LICENSE
+└── README.md
 ```
 
-## Specification
+## Typical Usage
 
-These skills follow the [Agent Skills Specification](https://agentskills.io/specification) format:
+Install one or more skill folders from `skills/` into your assistant's skill directory, then use natural-language prompts to trigger them.
 
-- **SKILL.md** - YAML frontmatter + Markdown instructions
-- **references/** - Optional supplementary documentation
+Example requests:
+
+- "Set up Octoparse MCP in Cursor"
+- "Find the best Octoparse workflow for plumber leads in Berlin"
+- "I need a Google Maps workflow that finds cafes and then pulls reviews"
+- "Help me monitor competitor mentions on TikTok and Reddit"
+- "Can this template feed a downstream contact-enrichment template?"
+
+Recommended usage flow:
+
+1. Use `octoparse-mcp-setup` to connect Octoparse MCP in your client.
+2. Use a scenario skill such as `octoparse-lead-generation` or `octoparse-social-media-competitor-monitoring` to narrow the workflow.
+3. Use `octoparse-link-template` when the request needs a multi-template chain or downstream enrichment.
+4. Use the local docs in `templates/` when you need concrete input/output expectations for a specific template.
+
+## Supported MCP Client References
+
+The repository includes setup references for these clients inside `skills/octoparse-mcp-setup/references/`:
+
+- Claude Code
+- Cursor
+- Gemini CLI
+- Qwen Code
+- VS Code
+- TRAE
+- OpenClaw
+
+These references focus on Octoparse MCP configuration differences per client rather than duplicating the main skill logic.
+
+## Reference and Evaluation Assets
+
+This repository is more than a collection of `SKILL.md` files. It also includes:
+
+- request classifiers that route ambiguous user requests into explicit internal tracks
+- curated shortlist JSON files that keep recommendations narrow and consistent
+- guidance files that encode recommendation rules and scenario boundaries
+- eval datasets in `evals/` for scenario-skill regression checks
+- design and validation material in `docs/plans/`
+
+## Development Notes
+
+If you modify a skill in this repository:
+
+- keep the `SKILL.md` instructions aligned with any supporting files in `references/`
+- update eval assets when scenario behavior changes
+- update template docs when a skill depends on their input/output guarantees
+- review the AI Native Evaluation Standard in [CLAUDE.md](CLAUDE.md)
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) for details.
-
-## Contributing
-
-Contributions welcome! Please open an issue or PR on GitHub.
+MIT License. See [LICENSE](LICENSE) for details.
