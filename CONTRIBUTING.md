@@ -123,6 +123,25 @@ unverified as such (see the verification note at the end of `dataset-capability.
 capability if useful, but leave its tool names and call sequence unwritten. An agent that
 trusts a placeholder will call it, retry, and improvise around the failure.
 
+## Releasing
+
+**Claude Code ships updates only when the manifest `version` changes.** Pushing commits
+without bumping it delivers nothing — `/plugin update` reports "already at the latest
+version" and users stay on whatever they installed. skills.sh follows the repository head
+and does not have this constraint, so the two channels can silently diverge.
+
+Before merging anything user-visible:
+
+1. Bump `version` in **all four places** — `plugin.json`, `.claude-plugin/plugin.json`,
+   and both `metadata.version` and `plugins[0].version` in
+   `.claude-plugin/marketplace.json`. CI fails if they disagree, but nothing forces the
+   bump itself.
+2. Add a `CHANGELOG.md` entry. Semantic versioning: MAJOR for a removed or renamed skill,
+   MINOR for new behaviour, PATCH for corrections.
+3. Call out anything that changes the *advice* the agent gives, not just its plumbing.
+   A wrong cost estimate reaches the user as a wrong decision, so those entries deserve to
+   be readable by someone deciding whether to update.
+
 ## Known limitations
 
 Standing gaps, not bugs. Worth knowing before trusting an area more than it deserves.
