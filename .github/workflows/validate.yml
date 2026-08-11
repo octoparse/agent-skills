@@ -1,0 +1,74 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # Fails when a curated recommendation names a template that has been removed,
+      # moved to maintenance, or switched to local-only — and when a shortlist row's
+      # visible id has drifted from its marker.
+      - name: Curated template references
+        run: python3 scripts/build_catalog.py validate
+
+      # Fails when an eval asserts a renamed file, a template id that no longer
+      # resolves, or drops below a usable number of assertions or negative cases.
+      - name: Eval sets
+        run: python3 scripts/check_evals.py
+
+      # Every skill must parse: frontmatter present, name and description non-empty.
+      - name: Skill frontmatter
+        run: |
+          fail=0
+          for f in skills/*/SKILL.md; do
+            head -1 "$f" | grep -qx -- '---' || { echo "$f: missing frontmatter"; fail=1; continue; }
+            for key in name description; do
+              awk '/^---$/{n++; next} n==1' "$f" | grep -qE "^${key}: .+" \
+                || { echo "$f: frontmatter '${key}' missing or empty"; fail=1; }
+            done
+          done
+          exit $fail
+
+      # Manifests must stay parseable and agree on version — the two plugin
+      # ecosystems keep separate copies, so a bumped release can easily update one
+      # and leave the other serving a stale version string.
+      - name: Manifests
+        run: |
+          python3 - <<'PY'
+          import json, sys
+          paths = ["plugin.json", "mcp.json", ".claude-plugin/plugin.json", ".claude-plugin/marketplace.json"]
+          data = {p: json.load(open(p)) for p in paths}
+          versions = {
+              "plugin.json": data["plugin.json"]["version"],
+              ".claude-plugin/plugin.json": data[".claude-plugin/plugin.json"]["version"],
+              ".claude-plugin/marketplace.json": data[".claude-plugin/marketplace.json"]["metadata"]["version"],
+              "marketplace plugin entry": data[".claude-plugin/marketplace.json"]["plugins"][0]["version"],
+          }
+          if len(set(versions.values())) > 1:
+              for k, v in versions.items():
+                  print(f"  {k}: {v}")
+              sys.exit("manifest versions disagree")
+          print(f"manifests parse; version {next(iter(versions.values()))}")
+          PY
+
+      # Internal links in the skill tree must resolve. A workflow guide pointing at a
+      # renamed reference is invisible until an agent follows it and finds nothing.
+      - name: Internal links
+        run: |
+          fail=0
+          while read -r src target; do
+            name=$(basename "$target")
+            find skills templates -name "$name" | grep -q . || { echo "$src -> $target"; fail=1; }
+          done < <(grep -rhoE '\[[^]]*\]\(([^)]+\.md)\)|`\.\./[a-z-]+\.md`|`references/[a-z/-]+\.md`' skills/ \
+                   | grep -oE '[a-zA-Z0-9./_-]+\.md' | sort -u | sed 's|^|link |')
+          exit $fail

@@ -57,9 +57,24 @@ its marker.
 Run it after any catalog rebuild or workflow edit.
 
 ```bash
-python3 scripts/build_catalog.py validate
-claude plugin validate .
+python3 scripts/build_catalog.py validate   # curated ids still resolve
+python3 scripts/check_evals.py              # eval sets stay wired to reality
+claude plugin validate .                    # Claude Code manifest
 ```
+
+`.github/workflows/validate.yml` runs the first two on every push and pull request,
+plus skill frontmatter, manifest parsing and version agreement across the two plugin
+ecosystems, and internal link resolution across the skill tree.
+
+**CI does not run the behavioural evals.** Those need an agent, an authorized MCP
+connection, and budget — a row of collected data costs against the account's allowance.
+`check_evals.py` instead enforces that the eval set stays honest: no case asserting a
+renamed file, a template id that no longer resolves, a single assertion, or a trigger set
+without negatives. That is the failure mode worth automating, because an eval set nobody
+executes still looks fine in review while quietly asserting against paths that no longer
+exist.
+
+Run the behavioural evals manually against a live connection before a release.
 
 ## Template knowledge packs
 
