@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "octoparse",
+  "version": "2.0.0",
+  "description": "Universal web data extraction through Octoparse cloud templates — leads, contacts, e-commerce prices, product research, reviews, jobs, property, social listening, and search results across hundreds of sites in eight languages.",
+  "author": {
+    "name": "Octoparse",
+    "url": "https://www.octoparse.com"
+  },
+  "homepage": "https://www.octoparse.com/mcp",
+  "repository": "https://github.com/octoparse/agent-skills",
+  "license": "MIT",
+  "keywords": [
+    "octoparse",
+    "web-scraping",
+    "data-extraction",
+    "agent-native",
+    "lead-generation",
+    "price-monitoring",
+    "market-research",
+    "review-analysis",
+    "social-listening",
+    "mcp"
+  ]
+}

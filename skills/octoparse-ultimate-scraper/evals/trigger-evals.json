@@ -1,0 +1,142 @@
+[
+  {
+    "group": "positive-lead-generation",
+    "query": "I need New York restaurant leads from Google Maps with names, websites, and ratings.",
+    "should_trigger": true
+  },
+  {
+    "group": "positive-lead-generation",
+    "query": "Find me plumber leads in Munich with phone numbers.",
+    "should_trigger": true
+  },
+  {
+    "group": "positive-lead-generation",
+    "query": "I already have website URLs and need emails and phones for them.",
+    "should_trigger": true
+  },
+  {
+    "group": "positive-price-monitoring",
+    "query": "Track the price of these Amazon ASINs weekly.",
+    "should_trigger": true
+  },
+  {
+    "group": "positive-price-monitoring",
+    "query": "Watch what my competitor charges on eBay Germany.",
+    "should_trigger": true
+  },
+  {
+    "group": "positive-market-research",
+    "query": "What products are selling best in the beauty category on Amazon?",
+    "should_trigger": true
+  },
+  {
+    "group": "positive-market-research",
+    "query": "Collect product listings and prices from Gmarket for these keywords.",
+    "should_trigger": true
+  },
+  {
+    "group": "positive-reviews",
+    "query": "Pull the reviews for our hotel from TripAdvisor and Booking.",
+    "should_trigger": true
+  },
+  {
+    "group": "positive-reviews",
+    "query": "I want to analyse what customers say about our product on Amazon Japan.",
+    "should_trigger": true
+  },
+  {
+    "group": "positive-company-research",
+    "query": "Look up registry data and filings for these German companies.",
+    "should_trigger": true
+  },
+  {
+    "group": "positive-company-research",
+    "query": "Shortlist software agencies on Clutch and GoodFirms.",
+    "should_trigger": true
+  },
+  {
+    "group": "positive-recruitment",
+    "query": "Who is hiring backend engineers in Japan right now?",
+    "should_trigger": true
+  },
+  {
+    "group": "positive-property-travel",
+    "query": "Collect apartment listings and prices from Suumo in Tokyo.",
+    "should_trigger": true
+  },
+  {
+    "group": "positive-property-travel",
+    "query": "Get hotel rates for Barcelona from Booking.",
+    "should_trigger": true
+  },
+  {
+    "group": "positive-social-listening",
+    "query": "Monitor Twitter and Reddit for mentions of our brand.",
+    "should_trigger": true
+  },
+  {
+    "group": "positive-social-listening",
+    "query": "Help me monitor Korean blog mentions of a competitor brand.",
+    "should_trigger": true
+  },
+  {
+    "group": "positive-serp",
+    "query": "Capture Google and Naver search results for these twenty keywords.",
+    "should_trigger": true
+  },
+  {
+    "group": "positive-dataset-path",
+    "query": "Scrape Temu reviews for these product IDs.",
+    "should_trigger": true
+  },
+  {
+    "group": "positive-generic-scrape",
+    "query": "Can you scrape this website for me?",
+    "should_trigger": true
+  },
+  {
+    "group": "positive-generic-scrape",
+    "query": "I need to extract structured data from a site without writing code.",
+    "should_trigger": true
+  },
+  {
+    "group": "positive-gap-honesty",
+    "query": "Set up Instagram brand monitoring.",
+    "should_trigger": true,
+    "note": "Should trigger and then state that no Instagram template exists, rather than not triggering."
+  },
+  {
+    "group": "positive-gap-honesty",
+    "query": "I need lead generation templates for the Korean market.",
+    "should_trigger": true,
+    "note": "Should trigger and then state that Korea has no lead-generation templates."
+  },
+  {
+    "group": "negative-mcp-setup",
+    "query": "Octoparse MCP server is not connected, help me configure it in Cursor.",
+    "should_trigger": false,
+    "note": "Belongs to octoparse-mcp-setup."
+  },
+  {
+    "group": "negative-seo-tooling",
+    "query": "Check our backlink profile and domain authority with Ahrefs.",
+    "should_trigger": false,
+    "note": "No SEO-metric coverage. May trigger to decline, but must not produce a scraping plan."
+  },
+  {
+    "group": "negative-unrelated",
+    "query": "Write a Python function that reverses a linked list.",
+    "should_trigger": false
+  },
+  {
+    "group": "negative-unrelated",
+    "query": "Summarise this PDF I already downloaded.",
+    "should_trigger": false
+  },
+  {
+    "group": "negative-custom-scraper",
+    "query": "Build me a custom Scrapy spider with rotating proxies.",
+    "should_trigger": false,
+    "note": "Octoparse MCP runs preset templates only; it cannot author custom scraping logic."
+  }
+]

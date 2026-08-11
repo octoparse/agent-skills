@@ -1,0 +1,258 @@
+{
+  "skill_name": "octoparse-ultimate-scraper",
+  "note": "Behavioural evals. Cases 1-6 and 11-14 are migrated from the retired octoparse-lead-generation and octoparse-social-media-competitor-monitoring skills, rebased on the need-shaped workflow guides. Cases 15-22 cover the execution contract verified against the live MCP service.",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I need a list of Chicago dentists from Google Maps with business details, but I do not need email or phone enrichment yet.",
+      "expected_output": "Routes to lead-generation.md, local discovery track, recommends Google Maps Scraper (1577) alone and flags its STANDARD gate and $2/1k price.",
+      "assertions": [
+        "Reads references/workflows/lead-generation.md",
+        "Selects the local discovery track",
+        "Recommends template 1577 as primary",
+        "Does not add Contact Details Scraper when enrichment was explicitly declined",
+        "Flags that 1577 requires a STANDARD account and bills $2 per 1,000 lines"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Please help me get New York restaurant leads and also pull their first batch of Google Maps reviews.",
+      "expected_output": "Discovery via 1577, then a Google Maps reviews template, presented as two runs rather than one.",
+      "assertions": [
+        "Recommends a discovery template before a reviews template",
+        "Points to review-reputation-analysis.md for the reviews pass",
+        "States that reviews need place URLs produced by the discovery run",
+        "Does not present reviews as a lead source"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I want a small outreach list of US SaaS companies with emails.",
+      "expected_output": "B2B discovery track; Google Search Email Finder (Premium) (2150) rather than Google Search Scraper (15).",
+      "assertions": [
+        "Selects the B2B discovery track",
+        "Recommends 2150 because contacts are required",
+        "Does not present 15 and 2150 as a chain",
+        "Does not rule out 2150 because the catalog reports no email field"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "I already have website URLs and need emails and phones for them.",
+      "expected_output": "Contact Details Scraper (1386), free, as a single enrichment pass.",
+      "assertions": [
+        "Recommends 1386",
+        "Notes it is free and takes any website URL",
+        "Does not recommend a discovery template first"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "Find me plumber leads in Munich.",
+      "expected_output": "Germany narrows the choice to a national directory rather than the global Google Maps template.",
+      "assertions": [
+        "Applies the market step after choosing the track",
+        "Prefers a German directory template such as 1059, 908, 1675 or 1678",
+        "Explains why the national directory beats the global template for a single-country ask"
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "I need lead generation templates for the Korean market.",
+      "expected_output": "States plainly that no Korean lead-generation template exists and offers the real alternatives.",
+      "assertions": [
+        "States that Korea has zero lead-generation templates",
+        "Does not substitute a neighbouring-market template",
+        "Offers Korean e-commerce or social templates as the closest real coverage"
+      ],
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "Track the price of these 20 Amazon ASINs in Germany every week.",
+      "expected_output": "Detail-page template for Amazon Germany, plus an explicit statement that there is no scheduler.",
+      "assertions": [
+        "Reads competitor-price-monitoring.md",
+        "Selects an ASIN-keyed detail template such as 99",
+        "States that repeat monitoring means re-running via start_or_stop_task and bills each time",
+        "Does not promise price history from a single run"
+      ],
+      "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "What's selling well in the beauty category right now?",
+      "expected_output": "Bestseller templates from product-market-research.md, with rank explained as ordinal.",
+      "assertions": [
+        "Reads product-market-research.md",
+        "Recommends a bestseller or ranking template such as 2015, 2008 or 2035",
+        "States that rank is ordinal and no template returns units sold"
+      ],
+      "files": []
+    },
+    {
+      "id": 9,
+      "prompt": "Get me the reviews for my product on Amazon US.",
+      "expected_output": "States that no US Amazon review template exists rather than substituting another country.",
+      "assertions": [
+        "States there is no amazon.com review-text template in the cloud set",
+        "Does not offer a German, French, Italian, UK or Japanese Amazon review template as a substitute",
+        "Optionally notes that 2218 carries rating aggregates but not review text"
+      ],
+      "files": []
+    },
+    {
+      "id": 10,
+      "prompt": "I want to analyse the reputation of my hotel across every site guests use.",
+      "expected_output": "Multiple platforms from review-reputation-analysis.md, with sentiment named as a post-export step.",
+      "assertions": [
+        "Recommends more than one platform",
+        "States that no template computes sentiment",
+        "States that review pagination returns a recent slice, not full history"
+      ],
+      "files": []
+    },
+    {
+      "id": 11,
+      "prompt": "I want to monitor Twitter posts mentioning my competitor and collect the comments for sentiment analysis.",
+      "expected_output": "Twitter Advanced Search Comments Scraper (1838) as a single pass; sentiment flagged as downstream.",
+      "assertions": [
+        "Reads social-listening.md",
+        "Recommends 1838 without requiring a separate search pass first",
+        "States that 1838 already runs an internal second stage",
+        "States that sentiment analysis is not a template capability"
+      ],
+      "files": []
+    },
+    {
+      "id": 12,
+      "prompt": "We already have TikTok profile URLs and want to monitor competitor account activity.",
+      "expected_output": "TikTok Profile Scraper (2106) rather than a search template.",
+      "assertions": [
+        "Recommends a profile template because URLs are already held",
+        "Does not recommend a search or hashtag template",
+        "Does not read follower counts as reach"
+      ],
+      "files": []
+    },
+    {
+      "id": 13,
+      "prompt": "Help me monitor Korean blog mentions of a competitor brand.",
+      "expected_output": "Naver Blog SERP Scraper (1640) and Dcinside (1552) as the Korea-appropriate choice.",
+      "assertions": [
+        "Recommends Korean-market templates over global ones",
+        "Names Naver as where Korean brand conversation happens"
+      ],
+      "files": []
+    },
+    {
+      "id": 14,
+      "prompt": "Set up Instagram and Facebook brand monitoring for us.",
+      "expected_output": "States directly that neither platform has a cloud template.",
+      "assertions": [
+        "States that no Instagram template exists",
+        "States that no Facebook template exists",
+        "Does not substitute another platform without saying so"
+      ],
+      "files": []
+    },
+    {
+      "id": 15,
+      "prompt": "Check our backlink profile and domain authority against three competitors.",
+      "expected_output": "Declines: the library has no SEO metrics, and points at a dedicated SEO tool.",
+      "assertions": [
+        "States that no backlink, domain-authority, keyword-volume or traffic template exists",
+        "Does not offer Google Search Scraper as an SEO substitute",
+        "Suggests a dedicated SEO tool instead"
+      ],
+      "files": []
+    },
+    {
+      "id": 16,
+      "prompt": "Scrape Temu reviews for these five product IDs.",
+      "expected_output": "Uses the dataset path, not templates.",
+      "assertions": [
+        "Reads references/dataset-capability.md",
+        "Calls describe_ecommerce_dataset before filtering",
+        "Uses ecommerce_data_task with platform temu and collectionType reviews",
+        "Passes a site code for Temu",
+        "Does not call search_templates or execute_task"
+      ],
+      "files": []
+    },
+    {
+      "id": 17,
+      "prompt": "Run the Amazon Scraper for wireless earbuds on amazon.de.",
+      "expected_output": "Fetches the live schema, reads sourceTree, and builds parameters from it.",
+      "assertions": [
+        "Calls search_templates(id=...) before execute_task",
+        "Passes templateName as the slug amazon-product-scraper-by-keywords, not the display name",
+        "Reads sourceTree to resolve both site and confirm_your_site",
+        "Passes confirm_your_site as an array because its uiType is CheckboxList",
+        "Passes number_of_Pages_to_Scrape as a string"
+      ],
+      "files": []
+    },
+    {
+      "id": 18,
+      "prompt": "Find me a template that scrapes Amazon product listings for Italy.",
+      "expected_output": "Filters search results on executionMode and reports that the Italian listing template is local-only.",
+      "assertions": [
+        "Checks executionMode on every candidate",
+        "Identifies template 1337 as local-only and therefore not runnable via MCP",
+        "Says the template exists but only runs in the Octoparse desktop client",
+        "Does not attempt execute_task on a local-only template"
+      ],
+      "files": []
+    },
+    {
+      "id": 19,
+      "prompt": "Use the LinkedIn Company Profile Scraper on these company URLs.",
+      "expected_output": "Looks the template up by id and passes its placeholder slug verbatim.",
+      "assertions": [
+        "Looks up template 2006 by id rather than by slug search",
+        "Passes templateName as the literal string aaaaaaaaa",
+        "Warns that LinkedIn templates are fragile and may return partial results"
+      ],
+      "files": []
+    },
+    {
+      "id": 20,
+      "prompt": "Export the results of that run.",
+      "expected_output": "Uses both taskId and lotNo, and switches to the curl path for a large result set.",
+      "assertions": [
+        "Passes lotNo as well as taskId to export_data",
+        "Uses directAccess.curlTemplate when the result set is 50 rows or more",
+        "Does not page a large result set through the tool"
+      ],
+      "files": []
+    },
+    {
+      "id": 21,
+      "prompt": "The run timed out before I got the task ID. What now?",
+      "expected_output": "Recovers via search_tasks rather than re-running.",
+      "assertions": [
+        "Calls search_tasks with the taskName as keyword",
+        "States that the task is still running and still billing",
+        "Does not fire a second execute_task for the same intent"
+      ],
+      "files": []
+    },
+    {
+      "id": 22,
+      "prompt": "Which columns will the Contact Details Scraper give me?",
+      "expected_output": "Describes the data without promising column names, because outputSchema under-reports.",
+      "assertions": [
+        "Does not present outputSchema as the definitive field list",
+        "States that the authoritative field set comes from the exported rows",
+        "Describes the kind of data returned rather than naming exact columns before a run"
+      ],
+      "files": []
+    }
+  ]
+}

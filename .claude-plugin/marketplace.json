@@ -1,0 +1,39 @@
+{
+  "name": "octoparse",
+  "owner": {
+    "name": "Octoparse",
+    "url": "https://www.octoparse.com"
+  },
+  "metadata": {
+    "description": "Official Octoparse agent skills — agent-driven web data extraction across ~670 cloud templates",
+    "version": "2.0.0"
+  },
+  "plugins": [
+    {
+      "name": "octoparse",
+      "source": "./",
+      "description": "Universal web data extraction through ~670 Octoparse cloud templates, run via the Octoparse MCP server. Covers lead generation and contact enrichment, e-commerce price monitoring and product research, review and reputation analysis, company and supplier research, job and talent-market research, property and travel listings, social listening, and search-result capture — across Google Maps, Amazon, Temu, TikTok Shop, LinkedIn, Indeed, Yellow Pages, Gelbe Seiten, Pagesjaunes, Naver, Suumo, Booking, and hundreds more sites in English, Japanese, Spanish, French, German, Italian, and Korean.",
+      "version": "2.0.0",
+      "author": {
+        "name": "Octoparse",
+        "url": "https://www.octoparse.com"
+      },
+      "homepage": "https://www.octoparse.com/mcp",
+      "repository": "https://github.com/octoparse/agent-skills",
+      "license": "MIT",
+      "category": "data-extraction",
+      "keywords": [
+        "octoparse",
+        "web-scraping",
+        "data-extraction",
+        "agent-native",
+        "lead-generation",
+        "price-monitoring",
+        "market-research",
+        "review-analysis",
+        "social-listening",
+        "mcp"
+      ]
+    }
+  ]
+}
