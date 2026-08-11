@@ -39,10 +39,10 @@ Coverage is uneven, and saying so up front is better than a weak recommendation:
 | Japan | 11 | Google Maps JP, iTown Page, IPROS, Hot Pepper Beauty |
 | Spain + LatAm | 9 | Yellow Pages Latin, Todo Está En Madrid |
 | Italy | 5 | Pagine Gialle, Pagine Bianche, Europages |
-| **Korea** | **0** | — no lead-generation templates exist |
+| **Korea** | — | not covered; see e-commerce and social |
 
-For Korea, say plainly that no lead-generation template is available and offer the
-closest real alternative (e-commerce or social templates), rather than forcing a
+Korea is not covered for lead generation. Say so and offer the Korean templates that do
+exist — e-commerce and social are its strongest areas — rather than forcing a
 neighbouring-market template.
 
 ## Local discovery
@@ -180,4 +180,4 @@ actually get, and the honest gap. The gap is usually one of:
 - 1577 returns no email; enrichment is a separate, billed step
 - website-based enrichment only covers rows where the upstream website column is filled
 - a national directory covers one country — a multi-market ask needs one run per market
-- Korea has no lead-generation template at all
+- Korea is not covered for lead generation; its coverage is e-commerce and social

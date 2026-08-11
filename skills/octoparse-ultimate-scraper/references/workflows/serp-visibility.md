@@ -3,10 +3,11 @@
 25 cloud templates capturing search engine result pages. Use when the user wants to see
 what a search engine returns — for their brand, a competitor, or a keyword set.
 
-**This library has no SEO metrics.** No backlinks, no domain authority, no keyword
-volume, no CPC, no traffic estimates, no rank tracking over time. Zero templates for
-Ahrefs, Semrush, Moz, SimilarWeb, or Ubersuggest. What you can deliver is the SERP
-itself. Read the [Do not](#do-not) section before answering an SEO question.
+**Scope: search results, not SEO metrics.** These templates capture what an engine
+returns for a query. Backlinks, domain authority, keyword volume, CPC, traffic estimates
+and rank-tracking-over-time are a different class of data and belong to a dedicated SEO
+platform — when a request asks for those, say so and point there rather than substituting
+SERP data. Read the [Do not](#do-not) section first.
 
 `<!-- id:N -->` markers are checked by `scripts/build_catalog.py validate`.
 

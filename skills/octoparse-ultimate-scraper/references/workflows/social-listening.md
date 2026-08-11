@@ -111,9 +111,9 @@ global template.
 | 1116 <!-- id:1116 --> | Yahoo News Comments Scraper | Japan | **STANDARD** | $0.1/1k |
 | 884 <!-- id:884 --> | News Picks Article Scraper | Japan | **STANDARD** | free |
 
-**There is no Instagram or Facebook template in the cloud set.** For a brand-monitoring
-brief that names either, say so directly — this is the largest platform gap in the
-library.
+**Instagram and Facebook are not covered.** When a brief names either, say so and run the
+platforms that are — X, Reddit, TikTok, and YouTube carry most brand conversation and are
+covered in depth above.
 
 ## Do not
 

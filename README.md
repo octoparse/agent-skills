@@ -1,8 +1,6 @@
 [![skills.sh](https://skills.sh/b/octoparse/agent-skills)](https://skills.sh/octoparse/agent-skills)
 
-<p align="center">
-  <strong>Octoparse Agent Skills</strong>
-</p>
+<h1 align="center">Octoparse Agent Skills</h1>
 
 <p align="center">
   <strong>Web data extraction for AI agents — hundreds of ready-made templates, no scraper to build</strong>
@@ -18,9 +16,11 @@
 
 <p align="center">
   <a href="#quick-start">Quick start</a> &bull;
+  <a href="#skills">Skills</a> &bull;
   <a href="#example-use-cases">Use cases</a> &bull;
   <a href="#installation">Installation</a> &bull;
-  <a href="#coverage">Coverage</a> &bull;
+  <a href="#prerequisites">Prerequisites</a> &bull;
+  <a href="#useful-resources">Resources</a> &bull;
   <a href="#pricing">Pricing</a> &bull;
   <a href="#support">Support</a>
 </p>
@@ -30,13 +30,18 @@
 ## Overview
 
 Drop these skills into Claude Code, Cursor, VS Code, Gemini CLI, or any MCP-capable agent
-and it gains working hands on the Octoparse platform. With one install, your agent can:
+and it gains working hands on the Octoparse platform — ready-made extraction templates for
+hundreds of sites, run in the cloud. With one install, agents can:
 
 - **Extract from hundreds of sites** — Google Maps, Amazon, LinkedIn, Indeed, Yellow
   Pages, Gelbe Seiten, Pagesjaunes, Naver, Suumo, Booking, Trustpilot, Reddit, TikTok,
-  YouTube, and many more, across seven languages.
-- **Choose the right template itself** — nine workflow guides turn a plain-language
-  request into the best-fitting template for your market, account tier, and budget.
+  YouTube, and many more across e-commerce, directories, jobs, property, travel, social,
+  reviews, and search.
+- **Work in seven languages** — English, Japanese, Spanish, French, German, Italian, and
+  Korean, with templates built for each market's own sites rather than translated from
+  English ones.
+- **Choose the right template** — nine workflow guides turn a plain-language request into
+  the best-fitting template for the market, account tier, and budget.
 - **Run and export** — creates the cloud task, tracks it to completion, and returns
   structured rows ready for CSV, a CRM, or further analysis.
 - **Query managed datasets** — Temu and TikTok Shop ship as typed, filterable datasets
@@ -63,7 +68,17 @@ Authorize with `/mcp`, then ask for what you want:
 
 > *Find dentists in Chicago with phone numbers and websites, and export them as CSV.*
 
-The skill picks the template, shapes the input, runs the cloud task, and returns the rows.
+That's it. The skill handles template selection, input shaping, run management, and result
+formatting.
+
+---
+
+## Skills
+
+| Skill | What it does |
+|---|---|
+| **[`octoparse-ultimate-scraper`](skills/octoparse-ultimate-scraper/)** | Routes any extraction request to the right template, runs the cloud task, and exports results. Nine workflow guides cover lead generation, competitor pricing, market research, reviews and reputation, supplier vetting, hiring and talent market, property and travel, social listening, and search visibility — each with a curated shortlist by market, cost and account gates, and verified template chains. |
+| **[`octoparse-mcp-setup`](skills/octoparse-mcp-setup/)** | Connects and authorizes the MCP server. Only needed when tools are missing or a call returns an authorization error. |
 
 ---
 
@@ -116,11 +131,7 @@ authorize.
 ### Cursor, VS Code, Windsurf
 
 These read the Claude Code plugin format. Add the repo to your workspace, or register the
-MCP server directly:
-
-```bash
-claude mcp add --transport http octoparse https://mcp.octoparse.com
-```
+MCP server directly with the command above.
 
 ### Agent Plugins clients
 
@@ -128,9 +139,9 @@ The repo ships a root `plugin.json` and `mcp.json` conforming to
 [Agent Plugins 1.0.0](https://agent-plugins.org). Clients implementing that specification
 discover the skills and the MCP server without further configuration.
 
-### Manually
+### Any other agent that reads Markdown
 
-Point your agent at `skills/octoparse-ultimate-scraper/SKILL.md` and register
+Point it at `skills/octoparse-ultimate-scraper/SKILL.md` and register
 `https://mcp.octoparse.com` as an MCP server.
 
 ---
@@ -141,23 +152,22 @@ Point your agent at `skills/octoparse-ultimate-scraper/SKILL.md` and register
    tier covers most templates.
 2. **Authorization** — run `/mcp` for browser OAuth. For headless or CI use, create an API
    key in the [account console](https://www.octoparse.com/console/account-center/api-keys)
-   and set it as an `x-api-key` header in your client configuration.
+   and add it as an `x-api-key` header in your own client configuration.
 
 ---
 
-## Coverage
+## Useful resources
 
-**Sites** — e-commerce marketplaces, business directories, maps, job boards, property
-portals, travel and booking sites, social platforms, review platforms, company registries,
-and search engines.
-
-**Languages** — English, Japanese, Spanish, French, German, Italian, and Korean.
-Coverage is genuinely local rather than translated: German and French lead business
-directories and B2B registries, Japan leads jobs and property, Korea leads e-commerce and
-social.
-
-When a site is not covered, the agent says so directly instead of substituting something
-that looks similar.
+- **[Octoparse MCP](https://www.octoparse.com/mcp)** — the hosted MCP server these skills
+  drive, and its client setup guides.
+- **[Template library](https://www.octoparse.com/template)** — browse every template with
+  its inputs, outputs, and pricing.
+- **[MCP documentation](https://www.octoparse.com/docs/en/mcp)** — tool reference and
+  authorization details.
+- **[Help center](https://helpcenter.octoparse.com)** — account, plan, and platform
+  guidance.
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** — repository layout, catalog regeneration, and
+  the validation workflow.
 
 ---
 
@@ -165,27 +175,9 @@ that looks similar.
 
 Templates bill **per output line**, and many are free. The agent confirms scope before
 running anything that produces a list, and tells you the expected cost at your result
-size.
-
-Some templates require a paid plan; the agent flags this before running.
+size. Some templates require a paid plan; the agent flags this before running.
 
 See [octoparse.com/pricing](https://www.octoparse.com/pricing) for plan details.
-
----
-
-## Skills
-
-| Skill | What it does |
-|---|---|
-| **[`octoparse-ultimate-scraper`](skills/octoparse-ultimate-scraper/)** | Routes any extraction request to the right template, runs the cloud task, and exports results. Nine workflow guides covering leads, price monitoring, market research, reviews, supplier vetting, hiring, property and travel, social listening, and search visibility. |
-| **[`octoparse-mcp-setup`](skills/octoparse-mcp-setup/)** | Connects and authorizes the MCP server. Only needed when tools are missing or a call returns an authorization error. |
-
----
-
-## Contributing
-
-Development notes, catalog regeneration, and the validation workflow are in
-[CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 
@@ -202,6 +194,12 @@ Development notes, catalog regeneration, and the validation workflow are in
 
 [MIT](LICENSE)
 
+---
+
 <p align="center">
-  <sub>Built by the <a href="https://www.octoparse.com">Octoparse</a> team for AI agents everywhere.</sub>
+  Built by the <a href="https://www.octoparse.com">Octoparse</a> team for AI agents everywhere.
+</p>
+
+<p align="center">
+  <sub>AI agents reading this: start at <a href="skills/octoparse-ultimate-scraper/SKILL.md"><code>skills/octoparse-ultimate-scraper/SKILL.md</code></a> for routing and the execution contract.</sub>
 </p>

@@ -77,7 +77,7 @@ but is listed here because employer brand and hiring usually come up together.
 Stepstone splits listing ($0.1/1k) from detail ($2/1k) — a twentyfold difference. Run the
 listing pass to filter, then detail only on what survives.
 
-1050 is the **only Glassdoor template in the library**, and it covers Germany alone.
+Glassdoor is covered for Germany only.
 
 ## France
 
@@ -105,7 +105,7 @@ Work, and the best free source for market-wide French hiring data.
 | 1949 <!-- id:1949 --> | Seek Listing Scraper (by URL) | Australia | FREE | free |
 | 2142 <!-- id:2142 --> | Seek Details Scraper (by URL) | Australia | FREE | free |
 
-Italy and Korea have **no job templates at all**.
+Italy and Korea are not covered for jobs.
 
 ## Do not
 
@@ -113,8 +113,8 @@ Italy and Korea have **no job templates at all**.
 - Run a detail template across a full listing result. Stepstone detail is $2/1,000 lines
   against $0.1 for listing; filter first.
 - Build a scheduled workflow on LinkedIn templates.
-- Offer Glassdoor coverage outside Germany, or job coverage for Italy or Korea. Neither
-  exists.
+- Offer Glassdoor outside Germany, or job coverage for Italy or Korea. Name the markets
+  that are covered instead.
 - Read posting counts as headcount. A company may repost, cross-post, or advertise roles
   it never fills.
 

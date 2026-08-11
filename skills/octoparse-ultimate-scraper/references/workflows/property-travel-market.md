@@ -16,8 +16,9 @@ prices, inventory, and availability for a place.
 | short-term rentals | [Short-term rentals](#short-term-rentals) |
 | flights | [Flights](#flights) |
 
-Japan, France, Spain, and Italy carry real coverage. Germany has essentially none for
-property (1 template) — a notable gap given how strong German coverage is elsewhere.
+Japan, France, Spain, and Italy carry the deepest property coverage. German property is
+not covered here — German strength sits in directories and B2B registries, see
+`lead-generation.md` and `company-supplier-research.md`.
 
 ## Property for sale
 
@@ -100,16 +101,15 @@ For Airbnb reviews rather than listings, see `review-reputation-analysis.md`.
 |---|---|---|---|---|
 | 1568 <!-- id:1568 --> | Check24 Flight Scraper | Germany | FREE | free |
 
-One template, Germany only. Flight coverage is effectively absent — say so rather than
+Flights are covered for Germany only. For any other market, say so rather than
 substituting a travel-aggregator template.
 
 ## Do not
 
 - Promise live availability or bookable rates. Every template returns what the page
   showed at collection time; travel pricing moves within hours.
-- Promise German property data. One rental-adjacent template exists and no sale
-  templates — this is a real gap.
-- Promise flight coverage beyond Check24 Germany.
+- Promise German property data, or flight coverage outside Germany. Point the user at
+  the markets that are covered instead.
 - Use 2156 Zillow Profile for property data — it returns agents.
 - Run detail templates across a whole listing result. Idealista Italy and Seloger both
   bill far more per line for detail than listing.

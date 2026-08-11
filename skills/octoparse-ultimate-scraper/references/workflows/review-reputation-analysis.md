@@ -61,10 +61,9 @@ Amazon review templates are per-country and are the richest in the library.
 | 37 <!-- id:37 --> | Rakuten Product Review Scraper | Japan | FREE | free | 10 |
 | 38 <!-- id:38 --> | Yahoo Shopping Review Scraper (by URL) | Japan | FREE | free | 10 |
 
-There is **no US Amazon review template** in the cloud set. For US Amazon reviews, the
-options are the global product template (2218, `competitor-price-monitoring.md`) which
-carries rating aggregates but not review text, or telling the user plainly that review
-text for amazon.com is not covered.
+Review **text** for amazon.com is not covered. The global product template (2218, see
+`competitor-price-monitoring.md`) carries rating aggregates for US products; offer that,
+and say plainly that per-review text is not available for that marketplace.
 
 ## Travel
 
@@ -128,8 +127,8 @@ Only Japan and Germany are covered. No Glassdoor template exists.
   template computes sentiment. Analysis happens after export, by you or the user.
 - Run a review template as the first step. All of them need URLs or IDs for things
   already found — discovery comes first.
-- Assume one Amazon review template covers several countries, or that a US Amazon
-  review template exists. It does not.
+- Assume one Amazon review template covers several countries, or that review text is
+  available for amazon.com.
 - Reach for a template for Temu or TikTok Shop reviews — use `../dataset-capability.md`
   with `collectionType="reviews"`.
 - Quote review counts as complete. Most platforms cap how deep review pagination goes;
