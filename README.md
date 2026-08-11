@@ -1,3 +1,5 @@
+[![skills.sh](https://skills.sh/b/octoparse/agent-skills)](https://skills.sh/octoparse/agent-skills)
+
 <p align="center">
   <strong>Octoparse Agent Skills</strong>
 </p>
@@ -46,12 +48,18 @@ and it gains working hands on the Octoparse platform. With one install, your age
 
 ## Quick start
 
+```bash
+npx skills add octoparse/agent-skills
+```
+
+Or, in Claude Code:
+
 ```
 /plugin marketplace add octoparse/agent-skills
 /plugin install octoparse
 ```
 
-Run `/mcp` to authorize, then ask for what you want:
+Authorize with `/mcp`, then ask for what you want:
 
 > *Find dentists in Chicago with phone numbers and websites, and export them as CSV.*
 
@@ -80,6 +88,19 @@ when one genuinely helps, and reports what it collected.
 
 ## Installation
 
+### Any agent (20+ supported)
+
+```bash
+npx skills add octoparse/agent-skills
+```
+
+Installs both skills for the agent it detects. Add `--skill octoparse-ultimate-scraper`
+for just the scraper, or `--global` to install user-wide. Then register the MCP server:
+
+```bash
+claude mcp add --transport http octoparse https://mcp.octoparse.com
+```
+
 ### Claude Code
 
 ```
@@ -105,9 +126,9 @@ The repo ships a root `plugin.json` and `mcp.json` conforming to
 [Agent Plugins 1.0.0](https://agent-plugins.org). Clients implementing that specification
 discover the skills and the MCP server without further configuration.
 
-### Any agent that reads Markdown
+### Manually
 
-Point it at `skills/octoparse-ultimate-scraper/SKILL.md` and register
+Point your agent at `skills/octoparse-ultimate-scraper/SKILL.md` and register
 `https://mcp.octoparse.com` as an MCP server.
 
 ---
