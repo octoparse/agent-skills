@@ -123,8 +123,34 @@ unverified as such (see the verification note at the end of `dataset-capability.
 capability if useful, but leave its tool names and call sequence unwritten. An agent that
 trusts a placeholder will call it, retry, and improvise around the failure.
 
+## Known limitations
+
+Standing gaps, not bugs. Worth knowing before trusting an area more than it deserves.
+
+- **Curation rests largely on a snapshot.** 288 templates are recommended; roughly a dozen
+  have been checked against the live service. The rest come from a 2026-07-24 export, and
+  snapshot and service drift in both directions. `validate` proves an id exists in the
+  snapshot, not that the template still runs or that its inputs are unchanged.
+- **Account tier and remaining allowance cannot be queried.** Tier comes from the snapshot
+  and can be wrong either way. Allowance cannot be read at all, so run sizing is an
+  estimate and an exhausted allowance shows up as a partial failure with rows already
+  spent. Both are service-side gaps worth closing.
+- **Template knowledge packs cover 2 of ~670 templates**, both written in March. Their
+  input documentation predates the field-name normalisation and should be re-verified
+  before being trusted.
+- **Behavioural evals do not run in CI.** `check_evals.py` enforces internal consistency
+  only; actual behaviour is a manual pre-release check.
+
 ## Skill quality standard
 
-Every skill change is evaluated against the AI Native standard in [CLAUDE.md](CLAUDE.md).
-The current assessment is in [docs/ai-native-evaluation.md](docs/ai-native-evaluation.md);
-update it when skill behaviour changes.
+[CLAUDE.md](CLAUDE.md) carries a 20-item AI Native checklist. Use it as a review aid when
+writing or reworking a skill — walking it caught two real defects during the restructure,
+a missing polling cap and missing client detection, that ordinary review had passed over.
+
+It measures form, not accuracy: nothing in it asks whether documented behaviour matches
+the running service. A skill can score full marks while instructing an agent to call an
+API that does not work as described. Pair it with the rule above — verify against a live
+call before documenting.
+
+Enforcement lives in CI, not in a written assessment. A committed score is a snapshot that
+stops being true on the next change and that nobody returns to update.
