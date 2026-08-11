@@ -126,7 +126,7 @@ absent.
 
 ### Step 4 — Confirm scope, then run
 
-Skip confirmation for small lookups. For anything that produces a list, settle target site/region, result size, and required fields first — templates bill per output line, and MCP usage on a free account draws on an allowance of 2,000 rows per week.
+Skip confirmation for small lookups. For anything that produces a list, settle target site/region, result size, and required fields first — templates bill per output line, and MCP usage on a free account draws on an allowance of 2,000 rows per month.
 
 Size the run in **rows**, not dollars: that is the limit users actually hit, it applies to free and paid templates alike, and no tool can report how much of the allowance is left. See `references/gotchas.md`.
 

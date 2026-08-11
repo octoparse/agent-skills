@@ -177,8 +177,9 @@ Point it at `skills/octoparse-ultimate-scraper/SKILL.md` and register
 
 ## Pricing
 
-**A free account includes 2,000 rows per week** through MCP and the API — enough to run
-real workloads, and it applies to paid templates too, not just the free ones.
+**A free account includes 2,000 rows per month** through MCP and the API, and it applies
+to paid templates too, not just the free ones — enough to evaluate real workloads before
+committing to a plan.
 
 Beyond that allowance, templates bill per output line and many remain free. The agent
 sizes every run in rows before starting it, so you know what a job will consume before it

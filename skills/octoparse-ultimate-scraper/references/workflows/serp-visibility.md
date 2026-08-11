@@ -75,10 +75,10 @@ yourself:
 
     start_or_stop_task(taskId="<taskId>", action="start")
 
-Each run bills again and draws on the weekly row allowance again. Size it before
-committing to a cadence: a weekly capture of one keyword set is modest, but daily capture
-across several engines multiplies fast. Rows are the limit that bites first on a free
-account.
+Each run bills again and draws on the monthly row allowance again. Size it before
+committing to a cadence: 20 keywords across 2 engines is roughly 200 rows a capture, so a
+weekly rhythm fits inside a free account's 2,000 a month and a daily one does not. Rows
+are the limit that bites first.
 
 ## Do not
 

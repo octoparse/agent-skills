@@ -107,18 +107,19 @@ the current `pricing` string for each — quote that, never a remembered figure.
 
 ### A free account is not limited to free templates
 
-MCP and API usage on a free account carries an allowance of **2,000 rows per week**. Paid
+MCP and API usage on a free account carries an allowance of **2,000 rows per month**. Paid
 templates run against it like any other, so "this template is billed" is not a reason to
 steer a free-tier user away — it is a reason to size the run.
 
-This makes rows, not dollars, the binding constraint for most users. Frame it that way:
-"this will use about 400 of your 2,000 weekly rows" is more useful than a price quote, and
-it is the number that actually stops a run from completing.
+This makes rows, not dollars, the binding constraint for most users, and 2,000 a month is
+tight: a single broad listing pass can consume a quarter of it. Frame every estimate that
+way — "this will use about 400 of your 2,000 monthly rows" is more useful than a price
+quote, and it is the number that actually stops a run from completing.
 
 **You cannot check the remaining allowance.** No tool reports quota — there is no account
 endpoint in the current tool set. So:
 
-- Treat the weekly figure as a budget the user tracks, not one you can verify.
+- Treat the monthly figure as a budget the user tracks, not one you can verify.
 - Size proactively rather than probing. A run that exhausts the allowance fails partway
   and the rows already collected are still spent.
 - When a run stops unexpectedly on a free account and the inputs were valid, an exhausted
@@ -126,8 +127,11 @@ endpoint in the current tool set. So:
 
 Two habits follow. A wide listing pass followed by a narrow detail pass conserves the
 allowance as well as money. And a recurring job — re-running through
-`start_or_stop_task` — draws on it every time, so a daily cadence over a large set will
-exhaust a week's rows long before the week ends.
+`start_or_stop_task` — draws on it every time, which rules out most daily cadences on a
+free account: 100 rows a day is 3,000 a month, already over.
+
+On a free account, propose a cadence the allowance can actually sustain, or say plainly
+that the schedule needs a paid plan.
 
 ### Other consequences
 
@@ -139,24 +143,29 @@ exhaust a week's rows long before the week ends.
   parameter exists. Preflight validates inputs automatically but does not simulate a run.
 - Re-running via `start_or_stop_task(action="start")` bills again.
 
-### Price is live; the account gate is not
+### Three separate limits, only one of them live
 
-`search_templates` returns a current `pricing` string. Use it. Workflow guides deliberately
-describe cost in relative terms only — "detail costs roughly twenty times listing" — so
-they stay correct when prices change.
+They are independent, and confusing them produces bad advice:
 
-The account tier has no field in the service response at all. It comes from the offline
-snapshot, which means it can be wrong in both directions: a template marked `FREE` may
-still fail on entitlement, and a `STANDARD` marking may have since been relaxed. Raise it
-as a caution, act on the actual failure.
+| Limit | Means | Source |
+|---|---|---|
+| **Price** | cost per output line | live, `pricing` from `search_templates` |
+| **Allowance** | 2,000 rows/month on a free account | not queryable — estimate |
+| **Account tier** | whether the template runs at all | offline snapshot only |
 
-### Account level gates templates, not just quota
+`pricing` is live, so quote it. Workflow guides describe cost only in relative terms
+("detail costs roughly twenty times listing") so they stay correct across repricing.
 
-`min_account_level` is `FREE` for 479 templates and `STANDARD` for 193. A `STANDARD`
-template fails for a free account regardless of quota. Notable ones sitting behind the
-gate include `Google Maps Scraper` (1577), `Kompass Leads Scraper` (1053), and
-`Yellow Pages Philippines Scraper` (1447) — which is otherwise free per line, so the
-gate is invisible from the price alone.
+The **account tier has no field in the service response**. It comes from the snapshot and
+can be wrong in both directions — a template marked `FREE` may still fail on entitlement,
+and a `STANDARD` marking may since have been relaxed. Raise it as a caution, then act on
+whatever the run actually does.
+
+A `STANDARD` template fails for a free account **regardless of remaining allowance** — the
+tier gate is not a quota. `Google Maps Scraper` (1577), `Kompass Leads Scraper` (1053) and
+`Yellow Pages Philippines Scraper` (1447) all sit behind it, and 1447 is free per line, so
+price reveals nothing about the gate. Per the snapshot, 479 templates are `FREE` and 193
+are `STANDARD`.
 
 ## Templates that already collect detail pages
 
