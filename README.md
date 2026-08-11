@@ -37,13 +37,13 @@ Drop these skills into Claude Code, Cursor, VS Code, Gemini CLI, or any MCP-capa
 and it gains working hands on the Octoparse platform — ready-made extraction templates for
 hundreds of sites, run in the cloud. With one install, agents can:
 
-- **Extract from hundreds of sites** — Google Maps, Amazon, LinkedIn, Indeed, Yellow
-  Pages, Gelbe Seiten, Pagesjaunes, Naver, Suumo, Booking, Trustpilot, Reddit, TikTok,
-  YouTube, and many more across e-commerce, directories, jobs, property, travel, social,
-  reviews, and search.
-- **Work in seven languages** — English, Japanese, Spanish, French, German, Italian, and
-  Korean, with templates built for each market's own sites rather than translated from
-  English ones.
+- **Extract from hundreds of sites** — Google Maps, Amazon, LinkedIn, Indeed, Trustpilot,
+  Reddit, TikTok, YouTube, and many more across e-commerce, directories, jobs, property,
+  travel, social, reviews, and search.
+- **Reach the sites that matter locally** — Gelbe Seiten and Das Telefonbuch in Germany,
+  Pagesjaunes and Kompass in France, Naver and Gmarket in Korea, Suumo and Hello Work in
+  Japan, Pagine Gialle in Italy, MercadoLibre across Latin America. Regional coverage is
+  built per market, not translated from the English set.
 - **Choose the right template** — nine workflow guides turn a plain-language request into
   the best-fitting template for the market, account tier, and budget.
 - **Run and export** — creates the cloud task, tracks it to completion, and returns
