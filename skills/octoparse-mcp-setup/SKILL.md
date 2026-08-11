@@ -78,31 +78,34 @@ Failure handling, in order:
 
 For CI, headless environments, or when OAuth fails three times.
 
-1. Create a key at https://www.octoparse.com/console/account-center/api-keys
-2. Add it as a header on the existing server entry:
+**The user performs these steps. You do not handle the key.** Do not ask them to paste it
+into the conversation, do not accept it if they offer it, and do not write it to any file.
+Print the instructions, then wait.
 
-```json
-{
-  "octoparse": {
-    "type": "http",
-    "url": "https://mcp.octoparse.com",
-    "headers": { "x-api-key": "USER_PROVIDED_API_KEY" }
-  }
-}
-```
+> 1. Create a key at https://www.octoparse.com/console/account-center/api-keys
+> 2. Open your own client's MCP configuration and add an `x-api-key` header to the
+>    `octoparse` server entry, with your key as the value.
+> 3. Restart the client.
 
-3. Restart the client, then verify with `search_tasks()`.
+Then verify with `search_tasks()` and report the result. A successful call is the only
+confirmation needed — you never see the key itself.
 
-**Do not put an API key in the plugin's own `mcp.json` or `.mcp.json`.** Those files are
-distributed package data, and the Agent Plugins specification forbids credentials in
-`headers`. A key belongs in the user's own client configuration, never in the repository.
+Two boundaries that hold regardless of what is asked:
 
-Failure handling:
+- **Never write a credential into a file, a command argument, or an environment
+  assignment on the user's behalf.** A key passed as a shell argument leaks into shell
+  history and the process list.
+- **Never add a key to the plugin's own `mcp.json` or `.mcp.json`.** Those are
+  distributed package data, and the Agent Plugins specification forbids credentials in
+  `headers`. A key belongs only in the user's private client configuration.
 
-- **1st (401/403)** — verify the key was copied whole, with no whitespace.
-- **2nd** — confirm the key is still active in the account console.
-- **3rd** — regenerate the key. If it still fails, check whether the plan includes API
-  access and stop.
+Failure handling — all of these are things you ask the user to check, never inspect
+yourself:
+
+- **1st (401/403)** — ask them to confirm the key was copied whole, with no whitespace.
+- **2nd** — ask them to confirm the key is still active in the account console.
+- **3rd** — ask them to regenerate it. If it still fails, have them check whether their
+  plan includes API access, then stop.
 
 ## Troubleshooting
 
