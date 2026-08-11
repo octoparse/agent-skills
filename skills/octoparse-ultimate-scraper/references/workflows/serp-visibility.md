@@ -75,9 +75,10 @@ yourself:
 
     start_or_stop_task(taskId="<taskId>", action="start")
 
-Each run bills again. Size it before committing to a cadence: weekly capture of a keyword
-set is modest, but daily capture across several engines multiplies fast. Quote the cost
-from the live `pricing` at the user's result size.
+Each run bills again and draws on the weekly row allowance again. Size it before
+committing to a cadence: a weekly capture of one keyword set is modest, but daily capture
+across several engines multiplies fast. Rows are the limit that bites first on a free
+account.
 
 ## Do not
 

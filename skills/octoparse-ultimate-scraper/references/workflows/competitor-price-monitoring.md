@@ -91,9 +91,9 @@ There is no scheduler in this toolset. Monitoring over time means re-running:
 
     start_or_stop_task(taskId="<taskId>", action="start")
 
-This bills again at full rate. Say so before setting up a cadence, and size the run
-against the template's live `pricing` — daily collection across a large product set adds
-up quickly.
+This bills again at full rate and draws on the weekly row allowance again. Say so before
+setting up a cadence: 500 products collected daily is 3,500 rows a week, well past the
+2,000 a free account gets. Size against rows first, price second.
 
 Re-running loses nothing: each run creates a new `lotNo`, and `search_tasks` finds prior
 runs by `taskName`. Use a stable, descriptive `taskName` so the history stays readable.

@@ -177,9 +177,12 @@ Point it at `skills/octoparse-ultimate-scraper/SKILL.md` and register
 
 ## Pricing
 
-Templates bill **per output line**, and many are free. The agent confirms scope before
-running anything that produces a list, and tells you the expected cost at your result
-size. Some templates require a paid plan; the agent flags this before running.
+**A free account includes 2,000 rows per week** through MCP and the API — enough to run
+real workloads, and it applies to paid templates too, not just the free ones.
+
+Beyond that allowance, templates bill per output line and many remain free. The agent
+sizes every run in rows before starting it, so you know what a job will consume before it
+runs rather than after.
 
 See [octoparse.com/pricing](https://www.octoparse.com/pricing) for plan details.
 

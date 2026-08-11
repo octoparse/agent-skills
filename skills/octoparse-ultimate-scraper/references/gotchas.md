@@ -105,7 +105,31 @@ Every template bills **per output line** (`PAY_PER_LINE`), not per task or per h
 Many are free; the rest span roughly two orders of magnitude. `search_templates` returns
 the current `pricing` string for each — quote that, never a remembered figure.
 
-Consequences:
+### A free account is not limited to free templates
+
+MCP and API usage on a free account carries an allowance of **2,000 rows per week**. Paid
+templates run against it like any other, so "this template is billed" is not a reason to
+steer a free-tier user away — it is a reason to size the run.
+
+This makes rows, not dollars, the binding constraint for most users. Frame it that way:
+"this will use about 400 of your 2,000 weekly rows" is more useful than a price quote, and
+it is the number that actually stops a run from completing.
+
+**You cannot check the remaining allowance.** No tool reports quota — there is no account
+endpoint in the current tool set. So:
+
+- Treat the weekly figure as a budget the user tracks, not one you can verify.
+- Size proactively rather than probing. A run that exhausts the allowance fails partway
+  and the rows already collected are still spent.
+- When a run stops unexpectedly on a free account and the inputs were valid, an exhausted
+  allowance is the first thing to raise.
+
+Two habits follow. A wide listing pass followed by a narrow detail pass conserves the
+allowance as well as money. And a recurring job — re-running through
+`start_or_stop_task` — draws on it every time, so a daily cadence over a large set will
+exhaust a week's rows long before the week ends.
+
+### Other consequences
 
 - Confirm result size before running anything list-shaped. A template that "tries to
   collect all available results" with no cap can produce far more lines than intended.
