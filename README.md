@@ -74,15 +74,17 @@ when one genuinely helps, and reports what it collected.
 
 | Use case | Example prompt |
 |---|---|
-| **Lead generation** | Find plumbers in Munich on Gelbe Seiten, then crawl their websites for emails and social links, and export a CSV for my CRM. |
-| **Price monitoring** | Track these 40 ASINs on Amazon Germany and flag anything that drops more than 10%. |
-| **Market research** | Show me what's selling in Amazon Best Sellers for wireless earbuds, plus the price band across the top 50 listings. |
-| **Reputation analysis** | Pull the latest reviews for our hotel from TripAdvisor, Booking, and Google Maps, and summarise the top complaint themes. |
-| **Supplier research** | Shortlist industrial suppliers on IPROS and Kompass, then check each one's filings on North Data before I contact them. |
-| **Talent market** | Who is hiring backend engineers in Japan right now? Pull Hello Work and Indeed listings with salary ranges. |
-| **Social listening** | Collect Reddit and X mentions of our brand from the last month, plus the comment threads, for sentiment analysis. |
-| **Search visibility** | Capture Google and Naver results for these 20 keywords and tell me where we rank versus our two competitors. |
-| **Property research** | Scrape Suumo used-apartment listings in Setagaya with layout, age, and station distance. |
+| **Lead generation** | Find dentists in Chicago on Google Maps, then crawl their websites for emails and social links, and export a CSV for my CRM. |
+| **Competitor pricing** | Pull the current price, stock, and seller for these 40 Amazon ASINs and put them in a spreadsheet. |
+| **Market research** | Show me what's selling in Amazon Best Sellers for wireless earbuds, with the price band across the top 50 listings. |
+| **Reputation analysis** | Pull recent reviews for our hotel from TripAdvisor, Booking, and Google Maps, and summarise the top complaint themes. |
+| **Social listening** | Collect Reddit and X posts mentioning our brand, plus the comment threads, so I can analyse sentiment. |
+| **Local market depth** | Find plumbers in Munich on Gelbe Seiten with phone numbers, or pull Suumo apartment listings in Setagaya with layout and station distance. |
+| **Supplier vetting** | Shortlist suppliers on Kompass, then check each one's filings on North Data before I contact them. |
+
+Two things the agent will tell you rather than fake: there is no scheduler, so tracking
+change over time means re-running and keeping the results; and a search-results capture is
+one observation from one location, not a ranking.
 
 ---
 
