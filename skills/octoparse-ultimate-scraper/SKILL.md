@@ -111,6 +111,12 @@ things from it:
 
 If exact lookup returns nothing, the template is not currently served by MCP. Say so and stop; do not substitute a different template silently, and do not retry.
 
+**If `templates/<id>-*/` exists for the chosen template, read its `LIMITATIONS.md`.** A
+few high-traffic templates carry a knowledge pack with operational behaviour that no
+schema exposes — result caps, how the template splits a region, whether one task can span
+several locations. Most templates have no pack; skip this step when the directory is
+absent.
+
 ### Step 4 — Confirm scope, then run
 
 Skip confirmation for small lookups. For anything that produces a list, settle target site/region, result size, and required fields first — templates bill per output line.

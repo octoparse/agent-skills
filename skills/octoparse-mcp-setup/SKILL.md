@@ -118,15 +118,10 @@ yourself:
 | Works in one client, not another | wrapper key differs | `mcpServers` vs `servers` — see the table above |
 | Two `octoparse` entries | re-registered instead of authorizing | remove the duplicate, keep one |
 
-Client-specific detail lives in `references/` — read one only when the symptom is
-specific to that client:
-[claude-code](references/claude-code.md) ·
-[cursor](references/cursor.md) ·
-[vs-code](references/vs-code.md) ·
-[gemini-cli](references/gemini-cli.md) ·
-[qwen-code](references/qwen-code.md) ·
-[trae](references/trae.md) ·
-[openclaw](references/openclaw.md)
+Config paths, wrapper keys, and per-client quirks are in
+[references/clients.md](references/clients.md). Read it when a symptom is specific to one
+client — a missing tool ceiling in Cursor, tool filtering in Gemini or Qwen, `mcporter`
+in OpenClaw.
 
 If everything fails: check https://status.octoparse.com, then contact support@octoparse.com.
 

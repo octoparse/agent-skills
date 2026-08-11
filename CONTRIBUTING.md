@@ -19,7 +19,7 @@ Notes for maintainers. User-facing documentation lives in [README.md](README.md)
 │   └── octoparse-mcp-setup/
 ├── data/catalog.json                   routing projection, generated
 ├── scripts/build_catalog.py            build · validate · candidates
-└── templates/                          per-template knowledge packs
+└── templates/<id>-<slug>/              optional per-template knowledge packs
 ```
 
 Both plugin manifest sets are maintained: Claude Code does not read the Agent Plugins
@@ -60,6 +60,18 @@ Run it after any catalog rebuild or workflow edit.
 python3 scripts/build_catalog.py validate
 claude plugin validate .
 ```
+
+## Template knowledge packs
+
+`templates/<id>-<slug>/` holds operational behaviour for a single template that no schema
+exposes — result caps, how a location is split internally, whether one task can span
+several inputs. `SKILL.md` reads a pack's `LIMITATIONS.md` when one exists for the chosen
+template and skips the step otherwise.
+
+Directories are keyed by `template_id` so they join to the catalog the same way curated
+recommendations do. Packs are deliberately sparse: write one when a template is a
+high-traffic default and its real behaviour keeps surprising people, not as a goal to
+cover the library.
 
 ## Writing workflow guides
 

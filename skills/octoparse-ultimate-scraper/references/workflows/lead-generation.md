@@ -59,6 +59,16 @@ neighbouring-market template.
 1577 is the default for "find businesses in <place>". Flag two things before running it:
 it needs a **STANDARD** account, and it bills $2 per 1,000 lines.
 
+**One location per task.** "Dentists in New York, Boston, and Chicago" is three runs, not
+one — the template is built around a single location and will not fan out. It widens
+coverage internally by splitting the location into a grid of search points, which has two
+consequences worth stating: the same business can appear more than once in raw output
+(deduplication happens in billing, so overlap does not automatically mean paying twice),
+and a location given too precisely oversplits into redundant, inefficient passes. Give it
+a city or district, not a street address.
+
+See `templates/1577-google-maps-scraper/` for the full behaviour notes.
+
 **By market**
 
 | id | Template | Market | Acct | Price |
