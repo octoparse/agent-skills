@@ -27,6 +27,22 @@ Check in this order:
 Do not reconfigure a server that is already registered. Re-registering does not fix an
 authorization failure and usually creates a duplicate entry.
 
+## Identify the client
+
+You need this only to pick the right config path. Work down the list and stop at the first
+match:
+
+1. **Ask the running environment.** Check for `CLAUDE_CODE_VERSION`, `CURSOR_VERSION`,
+   `GEMINI_CLI_VERSION`, `QWEN_CODE_VERSION`, `TRAE_VERSION`, `OPENCLAW_VERSION`, or
+   `VSCODE_PID` / `VSCODE_CWD`.
+2. **Look for an existing config.** The presence of `~/.claude.json`, `~/.cursor/mcp.json`,
+   `~/.gemini/settings.json`, `~/.qwen/settings.json`, `.vscode/mcp.json`, `.trae/mcp.json`,
+   or `~/.config/openclaw/` identifies the client that wrote it.
+3. **Ask the user.** One question — "which editor or CLI are you using?" — beats guessing.
+
+If several match, ask which one to configure rather than picking. Configuring the wrong
+client produces a setup that validates fine and never loads.
+
 ## Register the server
 
 Only needed when the plugin is not installed, or the client does not read plugin-provided

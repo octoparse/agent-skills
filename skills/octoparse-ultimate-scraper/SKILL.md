@@ -172,7 +172,12 @@ to export. Poll only when `execute_task` returned `running`:
 
 `collectedRows` defaults to `0`, so it cannot distinguish "running, nothing yet" from "finished, found nothing". Read `status` for that.
 
-Poll at widening intervals. If `status` is still `running` after several minutes, report progress and current `collectedRows` rather than blocking further.
+Poll at widening intervals — 10s, 30s, 60s, then 60s thereafter — for **at most 8 checks**.
+
+If `status` is still `running` at that point, stop polling and hand back to the user:
+report the `taskId`, `lotNo`, and current `collectedRows`, and say the run continues in the
+cloud and can be exported later. Do not keep polling; a large collection can take far
+longer than a session, and the task survives independently of this conversation.
 
 ### Step 6 — Export
 

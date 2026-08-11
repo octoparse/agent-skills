@@ -124,3 +124,5 @@ trusts a placeholder will call it, retry, and improvise around the failure.
 ## Skill quality standard
 
 Every skill change is evaluated against the AI Native standard in [CLAUDE.md](CLAUDE.md).
+The current assessment is in [docs/ai-native-evaluation.md](docs/ai-native-evaluation.md);
+update it when skill behaviour changes.
