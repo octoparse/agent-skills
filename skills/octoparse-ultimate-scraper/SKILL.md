@@ -1,17 +1,19 @@
 ---
 name: octoparse-ultimate-scraper
-description: Universal web data extraction through Octoparse cloud templates. Scrape business listings, leads, contacts, e-commerce products and prices, reviews, job postings, real-estate and travel listings, social media, directories, and search results across Google Maps, Google Search, Amazon, Temu, TikTok Shop, LinkedIn, Indeed, Yellow Pages, Zillow, Booking, and hundreds of regional sites in 8 languages. Use for lead generation, price monitoring, review analysis, competitor tracking, recruitment research, market research, or any request to scrape, crawl, collect, or extract structured data from a website.
+description: Octoparse's web data collection, driven by an agent. Scrape business listings, leads, contacts, e-commerce products and prices, reviews, job postings, real-estate and travel listings, social media, directories, and search results across Google Maps, Google Search, Amazon, Temu, TikTok Shop, LinkedIn, Indeed, Yellow Pages, Zillow, Booking, and hundreds of regional sites in 8 languages. Use for lead generation, price monitoring, review analysis, competitor tracking, recruitment research, market research, or any request to scrape, crawl, collect, or extract structured data from a website.
 ---
 
-# Octoparse universal scraper
+# Octoparse data collection
 
-Data extraction through ~670 preset Octoparse templates, run as cloud tasks via the Octoparse MCP server.
+The Octoparse platform's collection capability, exposed for an agent to drive through the MCP server.
+
+Collection reaches the user through more than one path, and Step 1 picks between them. Preset templates are the largest today; managed datasets already beat templates where they overlap; agent-generated tasks are planned for the long tail. Route to the capability that fits the request, not to templates by default.
 
 **Division of responsibility — read this before anything else:**
 
-- **This skill routes.** Which template fits, which is the default, which pairs are real chains, what to avoid.
-- **The MCP service executes and holds truth about schemas.** Input/output fields, `sourceTree`, and current availability come from `search_templates` at run time, never from memory.
-- **`data/catalog.json` is a routing projection only** (id, name, category, language, `run_on`, price). It is regenerated from upstream and carries no schemas.
+- **This skill routes.** Which capability applies, which template fits within it, which pairs are real chains, what to avoid.
+- **The MCP service executes and holds truth about schemas.** Input/output fields, `sourceTree`, pricing, and current availability come from `search_templates` at run time, never from memory.
+- **`data/catalog.json` is a routing projection only** (id, name, category, language, `run_on`). It is regenerated from upstream and carries no schemas.
 
 Never assemble `parameters` from this skill's prose or from a remembered field name. Always read the live `inputSchema` first.
 

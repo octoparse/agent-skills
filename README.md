@@ -7,7 +7,7 @@
 <h1 align="center">Octoparse Agent Skills</h1>
 
 <p align="center">
-  <strong>Web data extraction for AI agents — hundreds of ready-made templates, no scraper to build</strong>
+  <strong>Octoparse's web data collection, driven by your agent</strong>
 </p>
 
 <p align="center">
@@ -34,8 +34,9 @@
 ## Overview
 
 Drop these skills into Claude Code, Cursor, VS Code, Gemini CLI, or any MCP-capable agent
-and it gains working hands on the Octoparse platform — ready-made extraction templates for
-hundreds of sites, run in the cloud. With one install, agents can:
+and it gains working hands on Octoparse's collection platform. Nothing to build, nothing
+to host — the agent picks the right collection path, runs it in the cloud, and hands back
+structured rows. With one install, agents can:
 
 - **Extract from hundreds of sites** — Google Maps, Amazon, LinkedIn, Indeed, Trustpilot,
   Reddit, TikTok, YouTube, and many more across e-commerce, directories, jobs, property,
@@ -48,10 +49,19 @@ hundreds of sites, run in the cloud. With one install, agents can:
   the best-fitting template for the market, account tier, and budget.
 - **Run and export** — creates the cloud task, tracks it to completion, and returns
   structured rows ready for CSV, a CRM, or further analysis.
-- **Query managed datasets** — Temu and TikTok Shop ship as typed, filterable datasets
-  with richer fields than page scraping provides.
-- **Chain templates safely** — knows which templates genuinely feed each other, and which
+- **Query managed datasets** — Temu and TikTok Shop are served as typed, filterable
+  datasets with richer fields than page scraping provides, and the set is growing.
+- **Chain steps safely** — knows which templates genuinely feed each other, and which
   already collect detail pages internally so you are not billed twice.
+
+Collection reaches you through more than one path, and the agent picks between them before
+anything else:
+
+| Path | What it covers | Status |
+|---|---|---|
+| **Templates** | hundreds of preset collectors across the web | available |
+| **Datasets** | typed, filterable, server-side queries | available, expanding |
+| **Agent-generated tasks** | the long tail no preset reaches | planned |
 
 ---
 
