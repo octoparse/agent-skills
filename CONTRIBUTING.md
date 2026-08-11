@@ -19,6 +19,7 @@ Notes for maintainers. User-facing documentation lives in [README.md](README.md)
 │   └── octoparse-mcp-setup/
 ├── data/catalog.json                   routing projection, generated
 ├── scripts/build_catalog.py            build · validate · candidates
+├── scripts/check_evals.py              eval-set consistency
 └── templates/<id>-<slug>/              optional per-template knowledge packs
 ```
 
@@ -99,7 +100,8 @@ worksheets.
 Each guide should carry:
 
 - a first step that narrows by intent, then by market
-- a curated shortlist with account tier and per-line price visible in the row
+- a curated shortlist with the account tier visible in the row — but **not** the price,
+  which the service returns live and which decays the moment it is written down
 - real chains only — verify the upstream field type matches the downstream input, and
   check the upstream actually populates it
 - an explicit **Do not** section
