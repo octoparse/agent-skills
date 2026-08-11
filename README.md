@@ -1,7 +1,7 @@
 [![skills.sh](https://skills.sh/b/octoparse/agent-skills)](https://skills.sh/octoparse/agent-skills)
 
 <p align="center">
-  <img src="https://avatars.githubusercontent.com/u/301218921?s=192" alt="Octoparse" width="96" height="96">
+  <img src="assets/logo.png" alt="Octoparse" width="96" height="96">
 </p>
 
 <h1 align="center">Octoparse Agent Skills</h1>
