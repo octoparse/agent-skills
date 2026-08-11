@@ -108,6 +108,13 @@ things from it:
   documentation, memory, or a previous template.
 - **`executionMode`** — confirm it contains `"Cloud"`. Exact lookup returns local-only
   templates too.
+- **`pricing`** — the current per-line cost. Workflow guides describe cost only in
+  relative terms because absolute figures decay; quote the actual number from here.
+
+The account tier a template requires is **not** in the service response. Workflow guides
+carry it from a snapshot, so treat a `STANDARD` marking as a warning to raise with the
+user rather than a fact to assert — and if a run fails on entitlement despite the guide
+saying `FREE`, trust the failure.
 
 If exact lookup returns nothing, the template is not currently served by MCP. Say so and stop; do not substitute a different template silently, and do not retry.
 

@@ -24,14 +24,14 @@ price-band questions. They are not interchangeable.
 
 ## Bestsellers and demand signals
 
-| id | Template | Market | Acct | Price |
-|---|---|---|---|---|
-| 2015 <!-- id:2015 --> | Amazon Best Sellers Scraper | global | FREE | free |
-| 2008 <!-- id:2008 --> | Amazon Best Sellers Scraper (by Category) | global | FREE | free |
-| 2009 <!-- id:2009 --> | Amazon Most Wished For Scraper (by Category) | global | FREE | free |
-| 2011 <!-- id:2011 --> | Amazon Most Gifted Scraper (by category) | global | FREE | free |
-| 1061 <!-- id:1061 --> | Amazon Kindle Rankings Scraper | Japan | **STANDARD** | free |
-| 2035 <!-- id:2035 --> | Hwahae Category Trending Ranking Scraper | Korea | FREE | free |
+| id | Template | Market | Acct |
+|---|---|---|---|
+| 2015 <!-- id:2015 --> | Amazon Best Sellers Scraper | global | FREE |
+| 2008 <!-- id:2008 --> | Amazon Best Sellers Scraper (by Category) | global | FREE |
+| 2009 <!-- id:2009 --> | Amazon Most Wished For Scraper (by Category) | global | FREE |
+| 2011 <!-- id:2011 --> | Amazon Most Gifted Scraper (by category) | global | FREE |
+| 1061 <!-- id:1061 --> | Amazon Kindle Rankings Scraper | Japan | **STANDARD** |
+| 2035 <!-- id:2035 --> | Hwahae Category Trending Ranking Scraper | Korea | FREE |
 
 All free. The Amazon four are the highest-value free templates in the library for demand
 research — Best Sellers shows what moves, Most Wished For shows unmet demand.
@@ -46,61 +46,61 @@ research — Best Sellers shows what moves, Most Wished For shows unmet demand.
 `input_required` round-trip is needed. One template usually replaces the whole country
 list below.
 
-| id | Template | Market | Acct | Price |
-|---|---|---|---|---|
-| 1153 <!-- id:1153 --> | Amazon Scraper | **21 marketplaces** | FREE | free |
-| 1117 <!-- id:1117 --> | Amazon Japan Product Scraper | Japan | **STANDARD** | $0.1/1k |
-| 98 <!-- id:98 --> | Amazon Product Scraper | Germany | **STANDARD** | $0.1/1k |
-| 112 <!-- id:112 --> | Amazon Product Listing Scraper | Spain | **STANDARD** | free |
-| 114 <!-- id:114 --> | Amazon Product Listing Scraper | France | **STANDARD** | free |
-| 186 <!-- id:186 --> | Amazon Product Listing Scraper | UK | **STANDARD** | $0.1/1k |
-| 109 <!-- id:109 --> | Amazon Product Listing Scraper | India | **STANDARD** | $0.1/1k |
+| id | Template | Market | Acct |
+|---|---|---|---|
+| 1153 <!-- id:1153 --> | Amazon Scraper | **21 marketplaces** | FREE |
+| 1117 <!-- id:1117 --> | Amazon Japan Product Scraper | Japan | **STANDARD** |
+| 98 <!-- id:98 --> | Amazon Product Scraper | Germany | **STANDARD** |
+| 112 <!-- id:112 --> | Amazon Product Listing Scraper | Spain | **STANDARD** |
+| 114 <!-- id:114 --> | Amazon Product Listing Scraper | France | **STANDARD** |
+| 186 <!-- id:186 --> | Amazon Product Listing Scraper | UK | **STANDARD** |
+| 109 <!-- id:109 --> | Amazon Product Listing Scraper | India | **STANDARD** |
 
 **Marketplaces and retailers by market**
 
-| id | Template | Market | Acct | Price |
-|---|---|---|---|---|
-| 1063 <!-- id:1063 --> | eBay Listing Page Scraper (by keyword) | US/EN | FREE | free |
-| 1383 <!-- id:1383 --> | eBay Product Listing Scraper | Italy | FREE | free |
-| 748 <!-- id:748 --> | eBay Product Listing Scraper | Germany | **STANDARD** | free |
-| 804 <!-- id:804 --> | AliExpress Scraper | global | **STANDARD** | $0.06/1k |
-| 1855 <!-- id:1855 --> | DHgate Listing Scraper | global | **STANDARD** | free |
-| 822 <!-- id:822 --> | Shein Scraper (Product Listing by Keyword) | global | **STANDARD** | $2/1k |
-| 1378 <!-- id:1378 --> | Google Shopping Price Monitor (by Keyword) | US/EN | **STANDARD** | free |
-| 356 <!-- id:356 --> | Rakuten Product Listing Scraper | Japan | **STANDARD** | free |
-| 1294 <!-- id:1294 --> | Yahoo Shopping Scraper | Japan | **STANDARD** | $0.1/1k |
-| 101 <!-- id:101 --> | Yahoo Auctions Product Scraper | Japan | FREE | free |
-| 1197 <!-- id:1197 --> | Mercari Product Listings Scraper | Japan | **STANDARD** | $0.05/1k |
-| 559 <!-- id:559 --> | Buyma Product Listing Scraper | Japan | FREE | free |
-| 2134 <!-- id:2134 --> | Monotaro Product Search Results Scraper | Japan | FREE | free |
-| 913 <!-- id:913 --> | Otto Scraper (Produkt Liste) | Germany | **STANDARD** | free |
-| 750 <!-- id:750 --> | Kleinanzeigen Scraper (Product Listing) | Germany | **STANDARD** | free |
-| 1057 <!-- id:1057 --> | REWE Scraper (Lieferung) | Germany | FREE | free |
-| 1609 <!-- id:1609 --> | Decathlon.fr Data Scraper | France | FREE | free |
-| 2275 <!-- id:2275 --> | ManoMano Produit Listing Scraper | France | FREE | free |
-| 1601 <!-- id:1601 --> | Vinted Data Scraper (by keywords) | France | FREE | free |
-| 1928 <!-- id:1928 --> | Zalando.fr Product Scraper | France | FREE | free |
-| 1477 <!-- id:1477 --> | Leroy Merlin Product Scraper | Italy | **STANDARD** | $0.05/1k |
-| 1623 <!-- id:1623 --> | Mercadona Scraper | Spain | FREE | free |
-| 1627 <!-- id:1627 --> | Carrefour Spain Listing Scraper | Spain | FREE | free |
-| 1537 <!-- id:1537 --> | Wallapop Scraper (by Keywords) | Spain | **STANDARD** | $0.3/1k |
-| 2272 <!-- id:2272 --> | MercadoLibre Listing Pages Scraper (by URL) | LatAm | FREE | $1/1k |
-| 1104 <!-- id:1104 --> | Falabella Retails Listing Scraper (Keywords) | LatAm | FREE | free |
-| 2107 <!-- id:2107 --> | Frávega Product Listing Scraper (Keyword) | Argentina | FREE | free |
+| id | Template | Market | Acct |
+|---|---|---|---|
+| 1063 <!-- id:1063 --> | eBay Listing Page Scraper (by keyword) | US/EN | FREE |
+| 1383 <!-- id:1383 --> | eBay Product Listing Scraper | Italy | FREE |
+| 748 <!-- id:748 --> | eBay Product Listing Scraper | Germany | **STANDARD** |
+| 804 <!-- id:804 --> | AliExpress Scraper | global | **STANDARD** |
+| 1855 <!-- id:1855 --> | DHgate Listing Scraper | global | **STANDARD** |
+| 822 <!-- id:822 --> | Shein Scraper (Product Listing by Keyword) | global | **STANDARD** |
+| 1378 <!-- id:1378 --> | Google Shopping Price Monitor (by Keyword) | US/EN | **STANDARD** |
+| 356 <!-- id:356 --> | Rakuten Product Listing Scraper | Japan | **STANDARD** |
+| 1294 <!-- id:1294 --> | Yahoo Shopping Scraper | Japan | **STANDARD** |
+| 101 <!-- id:101 --> | Yahoo Auctions Product Scraper | Japan | FREE |
+| 1197 <!-- id:1197 --> | Mercari Product Listings Scraper | Japan | **STANDARD** |
+| 559 <!-- id:559 --> | Buyma Product Listing Scraper | Japan | FREE |
+| 2134 <!-- id:2134 --> | Monotaro Product Search Results Scraper | Japan | FREE |
+| 913 <!-- id:913 --> | Otto Scraper (Produkt Liste) | Germany | **STANDARD** |
+| 750 <!-- id:750 --> | Kleinanzeigen Scraper (Product Listing) | Germany | **STANDARD** |
+| 1057 <!-- id:1057 --> | REWE Scraper (Lieferung) | Germany | FREE |
+| 1609 <!-- id:1609 --> | Decathlon.fr Data Scraper | France | FREE |
+| 2275 <!-- id:2275 --> | ManoMano Produit Listing Scraper | France | FREE |
+| 1601 <!-- id:1601 --> | Vinted Data Scraper (by keywords) | France | FREE |
+| 1928 <!-- id:1928 --> | Zalando.fr Product Scraper | France | FREE |
+| 1477 <!-- id:1477 --> | Leroy Merlin Product Scraper | Italy | **STANDARD** |
+| 1623 <!-- id:1623 --> | Mercadona Scraper | Spain | FREE |
+| 1627 <!-- id:1627 --> | Carrefour Spain Listing Scraper | Spain | FREE |
+| 1537 <!-- id:1537 --> | Wallapop Scraper (by Keywords) | Spain | **STANDARD** |
+| 2272 <!-- id:2272 --> | MercadoLibre Listing Pages Scraper (by URL) | LatAm | FREE |
+| 1104 <!-- id:1104 --> | Falabella Retails Listing Scraper (Keywords) | LatAm | FREE |
+| 2107 <!-- id:2107 --> | Frávega Product Listing Scraper (Keyword) | Argentina | FREE |
 
 **Korea** — the deepest non-Japanese market here, and the only place Korean coverage is
 strong. Reach for it confidently.
 
-| id | Template | Acct | Price |
-|---|---|---|---|
-| 1456 <!-- id:1456 --> | Gmarket Product List Scraper | FREE | free |
-| 2180 <!-- id:2180 --> | SSG Product List Scraper | FREE | free |
-| 2056 <!-- id:2056 --> | ZIGZAG Product Listing Crawler | FREE | free |
-| 2038 <!-- id:2038 --> | 29cm Product Listing Crawler | FREE | free |
-| 2074 <!-- id:2074 --> | Kurly product list scraper | FREE | free |
-| 2181 <!-- id:2181 --> | Oasis Product List Scraper | FREE | free |
-| 2041 <!-- id:2041 --> | WConcept Product Listing Crawler | FREE | free |
-| 1478 <!-- id:1478 --> | Ali Express Product List Scraper (Korean) | **STANDARD** | $0.06/1k |
+| id | Template | Acct |
+|---|---|---|
+| 1456 <!-- id:1456 --> | Gmarket Product List Scraper | FREE |
+| 2180 <!-- id:2180 --> | SSG Product List Scraper | FREE |
+| 2056 <!-- id:2056 --> | ZIGZAG Product Listing Crawler | FREE |
+| 2038 <!-- id:2038 --> | 29cm Product Listing Crawler | FREE |
+| 2074 <!-- id:2074 --> | Kurly product list scraper | FREE |
+| 2181 <!-- id:2181 --> | Oasis Product List Scraper | FREE |
+| 2041 <!-- id:2041 --> | WConcept Product Listing Crawler | FREE |
+| 1478 <!-- id:1478 --> | Ali Express Product List Scraper (Korean) | **STANDARD** |
 
 ## Listing then detail
 

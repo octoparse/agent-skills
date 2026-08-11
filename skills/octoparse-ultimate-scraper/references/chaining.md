@@ -85,5 +85,6 @@ The first is the most reusable in the library: 1386 is free, takes any website U
 attaches to the end of most discovery templates.
 
 Cost order matters. Run the cheap wide pass first, filter, then run the expensive narrow
-pass. Stepstone listing is $0.1/1k against $2/1k for detail; Kompass France is $0.05
-against $0.15; Idealista Italy is $0.04 against $0.3.
+pass. The gap is routinely an order of magnitude — Stepstone bills roughly twenty times
+more per line for detail than for listing, and Kompass France and Idealista Italy show the
+same shape. Read both templates' live `pricing` before committing to a chain.

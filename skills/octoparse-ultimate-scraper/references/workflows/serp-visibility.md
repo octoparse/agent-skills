@@ -27,29 +27,29 @@ Naver leads in Korea and Yahoo holds real share in Japan.
 
 ## Templates
 
-| id | Template | Engine | Market | Acct | Price | Fields |
-|---|---|---|---|---|---|---|
-| 15 <!-- id:15 --> | Google Search Scraper | Google | global | FREE | $0.6/1k | 35 |
-| 652 <!-- id:652 --> | Google SERP scraper (Top 5 results) | Google | global | FREE | $0.15/1k | 2 |
-| 1901 <!-- id:1901 --> | Google AI Mode Scraper | Google | global | FREE | free | 7 |
-| 2167 <!-- id:2167 --> | Google Image Scraper | Google | global | FREE | free | 9 |
-| 1734 <!-- id:1734 --> | Yahoo! Japan Searching Scraper | Yahoo | Japan | FREE | free | 13 |
-| 1381 <!-- id:1381 --> | Naver Search Scraper | Naver | Korea | FREE | free | 7 |
-| 2032 <!-- id:2032 --> | RISS Academic Information Search Scraper | RISS | Korea | FREE | free | 15 |
-| 1180 <!-- id:1180 --> | Yahoo Search Scraper | Yahoo | US/EN | FREE | free | 6 |
-| 1181 <!-- id:1181 --> | Yahoo Recherche Scraper | Yahoo | France | FREE | free | 6 |
-| 1194 <!-- id:1194 --> | Yahoo Spain Search Scraper | Yahoo | Spain | FREE | free | 6 |
-| 1471 <!-- id:1471 --> | Bing Search Results Scraper | Bing | global | **STANDARD** | free | 5 |
-| 1488 <!-- id:1488 --> | Qwant Scraper | Qwant | France | FREE | free | 6 |
-| 1091 <!-- id:1091 --> | Ecosia Search Results Scraper | Ecosia | global | FREE | free | 6 |
-| 1040 <!-- id:1040 --> | DuckDuckGo Scraper | DuckDuckGo | global | FREE | free | 5 |
-| 1469 <!-- id:1469 --> | Baidu Scraper | Baidu | China | FREE | free | 5 |
-| 1479 <!-- id:1479 --> | Startpage Scraper | Startpage | global | FREE | free | 4 |
-| 1473 <!-- id:1473 --> | AOL Search Result Scraper | AOL | US | FREE | free | 4 |
-| 1490 <!-- id:1490 --> | Dogpile Scraper | Dogpile | US | FREE | free | 5 |
-| 1492 <!-- id:1492 --> | OneSearch Scraper | OneSearch | US | FREE | free | 4 |
-| 1493 <!-- id:1493 --> | Search Engine Aggregator | multiple | global | **STANDARD** | free | 5 |
-| 1747 <!-- id:1747 --> | Google News Scraper (by URL) | Google News | global | FREE | free | 8 |
+| id | Template | Engine | Market | Acct | Fields |
+|---|---|---|---|---|---|
+| 15 <!-- id:15 --> | Google Search Scraper | Google | global | FREE | 35 |
+| 652 <!-- id:652 --> | Google SERP scraper (Top 5 results) | Google | global | FREE | 2 |
+| 1901 <!-- id:1901 --> | Google AI Mode Scraper | Google | global | FREE | 7 |
+| 2167 <!-- id:2167 --> | Google Image Scraper | Google | global | FREE | 9 |
+| 1734 <!-- id:1734 --> | Yahoo! Japan Searching Scraper | Yahoo | Japan | FREE | 13 |
+| 1381 <!-- id:1381 --> | Naver Search Scraper | Naver | Korea | FREE | 7 |
+| 2032 <!-- id:2032 --> | RISS Academic Information Search Scraper | RISS | Korea | FREE | 15 |
+| 1180 <!-- id:1180 --> | Yahoo Search Scraper | Yahoo | US/EN | FREE | 6 |
+| 1181 <!-- id:1181 --> | Yahoo Recherche Scraper | Yahoo | France | FREE | 6 |
+| 1194 <!-- id:1194 --> | Yahoo Spain Search Scraper | Yahoo | Spain | FREE | 6 |
+| 1471 <!-- id:1471 --> | Bing Search Results Scraper | Bing | global | **STANDARD** | 5 |
+| 1488 <!-- id:1488 --> | Qwant Scraper | Qwant | France | FREE | 6 |
+| 1091 <!-- id:1091 --> | Ecosia Search Results Scraper | Ecosia | global | FREE | 6 |
+| 1040 <!-- id:1040 --> | DuckDuckGo Scraper | DuckDuckGo | global | FREE | 5 |
+| 1469 <!-- id:1469 --> | Baidu Scraper | Baidu | China | FREE | 5 |
+| 1479 <!-- id:1479 --> | Startpage Scraper | Startpage | global | FREE | 4 |
+| 1473 <!-- id:1473 --> | AOL Search Result Scraper | AOL | US | FREE | 4 |
+| 1490 <!-- id:1490 --> | Dogpile Scraper | Dogpile | US | FREE | 5 |
+| 1492 <!-- id:1492 --> | OneSearch Scraper | OneSearch | US | FREE | 4 |
+| 1493 <!-- id:1493 --> | Search Engine Aggregator | multiple | global | **STANDARD** | 5 |
+| 1747 <!-- id:1747 --> | Google News Scraper (by URL) | Google News | global | FREE | 8 |
 
 ## The field-depth cliff
 
@@ -63,8 +63,8 @@ Consequences for cross-engine work:
 
 - Comparing across engines is limited to **title, URL, and rough position**. Rich
   snippets, ratings, and sitelinks exist only for Google.
-- 652 at $0.15/1k returns **2 fields** and only the top 5 results. It is a cheap
-  presence check, not a SERP capture. Use 15 for anything analytical.
+- 652 is cheap but returns **2 fields** and only the top 5 results. It is a presence
+  check, not a SERP capture. Use 15 for anything analytical.
 - 1493 Search Engine Aggregator queries several engines but returns 5 fields, so it
   inherits the shallow schema rather than Google's.
 
@@ -75,8 +75,9 @@ yourself:
 
     start_or_stop_task(taskId="<taskId>", action="start")
 
-Each run bills again. Size it: 100 keywords weekly through 15 at $0.6/1,000 lines is a
-few dollars a month, but daily capture across several engines multiplies fast.
+Each run bills again. Size it before committing to a cadence: weekly capture of a keyword
+set is modest, but daily capture across several engines multiplies fast. Quote the cost
+from the live `pricing` at the user's result size.
 
 ## Do not
 

@@ -49,15 +49,16 @@ neighbouring-market template.
 
 **Global**
 
-| id | Template | Acct | Price | Yields |
-|---|---|---|---|---|
-| 1577 <!-- id:1577 --> | Google Maps Scraper | **STANDARD** | $2/1k | 45 fields; phone, website, hours, coords |
-| 1074 <!-- id:1074 --> | Google Maps Listings Scraper (by URLs) | FREE | free | 17 fields; when the user already has map URLs |
-| 1875 <!-- id:1875 --> | Superpages Details Page Scraper | FREE | free | US directory; phone, website |
-| 1918 <!-- id:1918 --> | BBB Listing Scraper | FREE | free | US; phone plus accreditation signal |
+| id | Template | Acct | Yields |
+|---|---|---|---|
+| 1577 <!-- id:1577 --> | Google Maps Scraper | **STANDARD** | 45 fields; phone, website, hours, coords |
+| 1074 <!-- id:1074 --> | Google Maps Listings Scraper (by URLs) | FREE | 17 fields; when the user already has map URLs |
+| 1875 <!-- id:1875 --> | Superpages Details Page Scraper | FREE | US directory; phone, website |
+| 1918 <!-- id:1918 --> | BBB Listing Scraper | FREE | US; phone plus accreditation signal |
 
 1577 is the default for "find businesses in <place>". Flag two things before running it:
-it needs a **STANDARD** account, and it bills $2 per 1,000 lines.
+it needs a **STANDARD** account, and it is one of the more expensive templates per line —
+quote the figure from its live `pricing`.
 
 **One location per task.** "Dentists in New York, Boston, and Chicago" is three runs, not
 one — the template is built around a single location and will not fan out. It widens
@@ -71,29 +72,29 @@ See `templates/1577-google-maps-scraper/` for the full behaviour notes.
 
 **By market**
 
-| id | Template | Market | Acct | Price |
-|---|---|---|---|---|
-| 1059 <!-- id:1059 --> | Gelbe Seiten Scraper | Germany | FREE | free |
-| 908 <!-- id:908 --> | Das Telefonbuch Lead Scraper | Germany | FREE | free |
-| 1675 <!-- id:1675 --> | Dialo.de Leads Scraper | Germany | FREE | free |
-| 1678 <!-- id:1678 --> | Golocal Leads Scraper | Germany | FREE | free |
-| 2196 <!-- id:2196 --> | Editus data scraper | Luxembourg | FREE | $0.4/1k |
-| 2188 <!-- id:2188 --> | Pagesdor data scraper | Belgium | FREE | $0.8/1k |
-| 2261 <!-- id:2261 --> | Local.ch lead Scraper | Switzerland | FREE | $0.6/1k |
-| 1865 <!-- id:1865 --> | Google Maps advanced Scraper for Japan | Japan | **STANDARD** | $0.2/1k |
-| 1677 <!-- id:1677 --> | Itown Page Listing scraper | Japan | **STANDARD** | $0.65/1k |
-| 1129 <!-- id:1129 --> | Hot Pepper Beauty Hair Salons URL Scraper | Japan | FREE | free |
-| 1398 <!-- id:1398 --> | Pagine Gialle Shop Detail Scraper | Italy | FREE | free |
-| 1726 <!-- id:1726 --> | Pagine Bianche Shop List Scraper | Italy | FREE | free |
-| 1352 <!-- id:1352 --> | Yellow Pages Latin Scraper (Details) | LatAm | **STANDARD** | free |
-| 1741 <!-- id:1741 --> | Todo Está En Madrid Scraper by URL | Spain | FREE | free |
-| 1108 <!-- id:1108 --> | Yellow Pages Details Scraper | Australia | FREE | free |
-| 1118 <!-- id:1118 --> | Yellow Pages Canada (Details) | Canada | FREE | free |
-| 1453 <!-- id:1453 --> | Fonecta Scraper | Finland | FREE | free |
-| 1457 <!-- id:1457 --> | Krak Scraper | Denmark | FREE | free |
-| 1458 <!-- id:1458 --> | Gulesider Scraper | Norway | FREE | free |
-| 1392 <!-- id:1392 --> | Eniro Scraper | Sweden | FREE | free |
-| 1454 <!-- id:1454 --> | Goudengids Scraper | Netherlands | FREE | free |
+| id | Template | Market | Acct |
+|---|---|---|---|
+| 1059 <!-- id:1059 --> | Gelbe Seiten Scraper | Germany | FREE |
+| 908 <!-- id:908 --> | Das Telefonbuch Lead Scraper | Germany | FREE |
+| 1675 <!-- id:1675 --> | Dialo.de Leads Scraper | Germany | FREE |
+| 1678 <!-- id:1678 --> | Golocal Leads Scraper | Germany | FREE |
+| 2196 <!-- id:2196 --> | Editus data scraper | Luxembourg | FREE |
+| 2188 <!-- id:2188 --> | Pagesdor data scraper | Belgium | FREE |
+| 2261 <!-- id:2261 --> | Local.ch lead Scraper | Switzerland | FREE |
+| 1865 <!-- id:1865 --> | Google Maps advanced Scraper for Japan | Japan | **STANDARD** |
+| 1677 <!-- id:1677 --> | Itown Page Listing scraper | Japan | **STANDARD** |
+| 1129 <!-- id:1129 --> | Hot Pepper Beauty Hair Salons URL Scraper | Japan | FREE |
+| 1398 <!-- id:1398 --> | Pagine Gialle Shop Detail Scraper | Italy | FREE |
+| 1726 <!-- id:1726 --> | Pagine Bianche Shop List Scraper | Italy | FREE |
+| 1352 <!-- id:1352 --> | Yellow Pages Latin Scraper (Details) | LatAm | **STANDARD** |
+| 1741 <!-- id:1741 --> | Todo Está En Madrid Scraper by URL | Spain | FREE |
+| 1108 <!-- id:1108 --> | Yellow Pages Details Scraper | Australia | FREE |
+| 1118 <!-- id:1118 --> | Yellow Pages Canada (Details) | Canada | FREE |
+| 1453 <!-- id:1453 --> | Fonecta Scraper | Finland | FREE |
+| 1457 <!-- id:1457 --> | Krak Scraper | Denmark | FREE |
+| 1458 <!-- id:1458 --> | Gulesider Scraper | Norway | FREE |
+| 1392 <!-- id:1392 --> | Eniro Scraper | Sweden | FREE |
+| 1454 <!-- id:1454 --> | Goudengids Scraper | Netherlands | FREE |
 
 Yellow-Pages-style sites usually ship a **Listing** and a **Details** template — 1087/1108
 for Australia, 1112/1118 for Canada, 1339/1398 for Italy. Listing is broader and cheaper;
@@ -107,12 +108,12 @@ URL-driven or higher-volume collection.
 
 **Global**
 
-| id | Template | Acct | Price | Yields |
-|---|---|---|---|---|
-| 15 <!-- id:15 --> | Google Search Scraper | FREE | $0.6/1k | SERP results, **no contact data** |
-| 2150 <!-- id:2150 --> | Google Search Email Finder (Premium) | FREE | $0.6/1k | search + contact extraction in one pass |
-| 2059 <!-- id:2059 --> | b2bMAP Suppliers Scraper | FREE | free | supplier directory |
-| 2075 <!-- id:2075 --> | Social Media Finder | FREE | $1/1k | social profiles from a name |
+| id | Template | Acct | Yields |
+|---|---|---|---|
+| 15 <!-- id:15 --> | Google Search Scraper | FREE | SERP results, **no contact data** |
+| 2150 <!-- id:2150 --> | Google Search Email Finder (Premium) | FREE | search + contact extraction in one pass |
+| 2059 <!-- id:2059 --> | b2bMAP Suppliers Scraper | FREE | supplier directory |
+| 2075 <!-- id:2075 --> | Social Media Finder | FREE | social profiles from a name |
 
 Contacts not needed → **15**. Contacts needed → **2150**.
 
@@ -121,29 +122,29 @@ These two are **not a chain.** Both take a search query, but 15's output does no
 
 **By market**
 
-| id | Template | Market | Acct | Price |
-|---|---|---|---|---|
-| 1034 <!-- id:1034 --> | North Data Scraper | Germany | FREE | free |
-| 1053 <!-- id:1053 --> | Kompass Leads Scraper | Germany | **STANDARD** | $3/1k |
-| 895 <!-- id:895 --> | wlw.de Lead Scraper | Germany | FREE | free |
-| 1680 <!-- id:1680 --> | Marktplatz Mittelstand Leads Scraper | Germany | FREE | free |
-| 2143 <!-- id:2143 --> | Pappers.fr Entreprise Info Scraper | France | FREE | $1.5/1k |
-| 2171 <!-- id:2171 --> | Kompass annuaire (détail) | France | FREE | $0.15/1k |
-| 2186 <!-- id:2186 --> | Verif annuaire des entreprises (liste) | France | FREE | free |
-| 1611 <!-- id:1611 --> | Societe.com Recherche Scraper | France | FREE | free |
-| 2178 <!-- id:2178 --> | IPROS Company Search Results Scraper | Japan | FREE | free |
-| 2048 <!-- id:2048 --> | Europages Listing Scraper | Italy | FREE | free |
+| id | Template | Market | Acct |
+|---|---|---|---|
+| 1034 <!-- id:1034 --> | North Data Scraper | Germany | FREE |
+| 1053 <!-- id:1053 --> | Kompass Leads Scraper | Germany | **STANDARD** |
+| 895 <!-- id:895 --> | wlw.de Lead Scraper | Germany | FREE |
+| 1680 <!-- id:1680 --> | Marktplatz Mittelstand Leads Scraper | Germany | FREE |
+| 2143 <!-- id:2143 --> | Pappers.fr Entreprise Info Scraper | France | FREE |
+| 2171 <!-- id:2171 --> | Kompass annuaire (détail) | France | FREE |
+| 2186 <!-- id:2186 --> | Verif annuaire des entreprises (liste) | France | FREE |
+| 1611 <!-- id:1611 --> | Societe.com Recherche Scraper | France | FREE |
+| 2178 <!-- id:2178 --> | IPROS Company Search Results Scraper | Japan | FREE |
+| 2048 <!-- id:2048 --> | Europages Listing Scraper | Italy | FREE |
 
-France's Kompass splits list (2195, $0.05/1k) from detail (2171, $0.15/1k) — run the list
-first, then the detail pass only on rows worth enriching.
+France's Kompass splits list (2195) from detail (2171), with detail several times the
+per-line cost — run the list first, then the detail pass only on rows worth enriching.
 
 ## Enrichment
 
-| id | Template | Input | Acct | Price |
-|---|---|---|---|---|
-| 1386 <!-- id:1386 --> | Contact Details Scraper | any website URL | FREE | free |
-| 1853 <!-- id:1853 --> | Google Maps Email Finder (by URLs) | Google Maps URLs | FREE | free |
-| 1576 <!-- id:1576 --> | Google Maps Email Finder | search term + location | **STANDARD** | $0.5/1k |
+| id | Template | Input | Acct |
+|---|---|---|---|
+| 1386 <!-- id:1386 --> | Contact Details Scraper | any website URL | FREE |
+| 1853 <!-- id:1853 --> | Google Maps Email Finder (by URLs) | Google Maps URLs | FREE |
+| 1576 <!-- id:1576 --> | Google Maps Email Finder | search term + location | **STANDARD** |
 
 **1386 is the default.** Free, takes any website URL, crawls to a configurable depth, and
 returns emails, phones, and eleven social networks. It attaches to the end of nearly every

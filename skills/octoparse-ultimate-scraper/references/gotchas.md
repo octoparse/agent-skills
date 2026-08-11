@@ -102,7 +102,8 @@ The signed link is short-lived. Fetch promptly or re-request it.
 ## Billing
 
 Every template bills **per output line** (`PAY_PER_LINE`), not per task or per hour.
-Some are free; the rest range from `$0.05/1,000 lines` to `$3/1,000 lines`.
+Many are free; the rest span roughly two orders of magnitude. `search_templates` returns
+the current `pricing` string for each — quote that, never a remembered figure.
 
 Consequences:
 
@@ -113,6 +114,17 @@ Consequences:
 - There is no dry-run. The old docs mention `validateOnly` and `targetMaxRows`; neither
   parameter exists. Preflight validates inputs automatically but does not simulate a run.
 - Re-running via `start_or_stop_task(action="start")` bills again.
+
+### Price is live; the account gate is not
+
+`search_templates` returns a current `pricing` string. Use it. Workflow guides deliberately
+describe cost in relative terms only — "detail costs roughly twenty times listing" — so
+they stay correct when prices change.
+
+The account tier has no field in the service response at all. It comes from the offline
+snapshot, which means it can be wrong in both directions: a template marked `FREE` may
+still fail on entitlement, and a `STANDARD` marking may have since been relaxed. Raise it
+as a caution, act on the actual failure.
 
 ### Account level gates templates, not just quota
 
