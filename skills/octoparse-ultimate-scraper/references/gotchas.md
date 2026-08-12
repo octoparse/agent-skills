@@ -90,6 +90,23 @@ It defaults to `0`, so it means either "running, nothing yet" or "finished, foun
 nothing". Only `status` separates them. Never report "no results" off `collectedRows`
 while `status` is `running`.
 
+Verified on an existing completed task: `status: completed` with `collectedRows: 0` and a
+valid `lotNo` in the same response. The count is unreliable on tasks that ran before this
+session; export the lot and count the rows instead of trusting the field.
+
+### `search_tasks` sees the whole account, and `status` cannot reach `Ready`
+
+It returns tasks the user configured in the Octoparse client alongside anything MCP
+created, which is what makes re-running someone's own work possible at all.
+
+The `status` filter accepts `Running`, `Stopped`, `Completed`, and `Failed` only. A
+configured task that has never run reports `taskStatusLabel: "Ready"` (`rawTaskStatusCode`
+5), so no filter value reaches it — and it is a likely thing to be asked for. Search by
+keyword without `status` and filter what comes back.
+
+Task names are not unique. Three tasks sharing one name in three different states is
+normal; list the matches rather than picking one.
+
 ### Export 50+ rows via curl, not paging
 
 At 50 or more rows the `export_data` response carries `directAccess` with a signed link

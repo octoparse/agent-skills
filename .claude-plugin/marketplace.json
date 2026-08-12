@@ -7,14 +7,14 @@
   },
   "metadata": {
     "description": "Official Octoparse agent skills — agent-driven web data collection",
-    "version": "2.2.0"
+    "version": "2.3.0"
   },
   "plugins": [
     {
       "name": "octoparse",
       "source": "./",
       "description": "Everything an agent needs to use Octoparse. Collect web data through 670+ maintained templates or the tasks you configured yourself, run it in Octoparse's cloud, and get structured rows back — with the MCP connection and authorization handled by the same install.",
-      "version": "2.2.0",
+      "version": "2.3.0",
       "author": {
         "name": "Octoparse",
         "url": "https://www.octoparse.com",

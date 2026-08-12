@@ -4,6 +4,23 @@ Claude Code delivers updates only when the manifest `version` changes — pushin
 without bumping it has no effect, and `/plugin update` will report "already at the latest
 version". Every user-visible change therefore needs an entry and a bump.
 
+## 2.3.0 — 2026-08-12
+
+### Added
+
+- **The tasks you configured in Octoparse yourself are now reachable.** `search_tasks`
+  returns the whole account, not only what MCP created, so the agent can find a task you
+  built in the client, export what it already collected, or start a fresh run. Exporting a
+  finished lot costs nothing; starting a run bills like any other.
+
+### Fixed
+
+- The agent no longer filters `search_tasks` by `status` when looking for your work. A
+  configured task that has never run reports `Ready`, which no filter value matches, so
+  filtering hid exactly the tasks people ask about.
+- `collectedRows` is not trusted on a task that ran before the session. A completed task
+  returned `0` alongside a valid lot; row counts come from the export now.
+
 ## 2.2.0 — 2026-08-12
 
 **Action required if you installed 2.1.0 or earlier in Claude Code.** The plugin and the

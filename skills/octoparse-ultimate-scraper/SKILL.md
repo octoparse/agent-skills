@@ -1,13 +1,13 @@
 ---
 name: octoparse-ultimate-scraper
-description: Octoparse's web data collection, driven by an agent. Scrape business listings, leads, contacts, e-commerce products and prices, reviews, job postings, real-estate and travel listings, social media, directories, and search results across Google Maps, Google Search, Amazon, Temu, TikTok Shop, LinkedIn, Indeed, Yellow Pages, Zillow, Booking, and hundreds of regional sites in 8 languages. Use for lead generation, price monitoring, review analysis, competitor tracking, recruitment research, market research, or any request to scrape, crawl, collect, or extract structured data from a website.
+description: Octoparse's web data collection, driven by an agent. Scrape business listings, leads, contacts, e-commerce products and prices, reviews, job postings, real-estate and travel listings, social media, directories, and search results across Google Maps, Google Search, Amazon, Temu, TikTok Shop, LinkedIn, Indeed, Yellow Pages, Zillow, Booking, and hundreds of regional sites in 8 languages. Also runs and exports the tasks a user already configured in their own Octoparse account. Use for lead generation, price monitoring, review analysis, competitor tracking, recruitment research, market research, re-running or exporting an existing Octoparse task, or any request to scrape, crawl, collect, or extract structured data from a website.
 ---
 
 # Octoparse data collection
 
 The Octoparse platform's collection capability, exposed for an agent to drive through the MCP server.
 
-Collection reaches the user through more than one path, and Step 1 picks between them. Preset templates are the largest today; managed datasets already beat templates where they overlap; agent-generated tasks are planned for the long tail. Route to the capability that fits the request, not to templates by default.
+Collection reaches the user through more than one path, and Step 1 picks between them. Preset templates are the largest today; the tasks the user built themselves are already on the account and cost nothing to look up; managed datasets beat templates where they overlap; agent-generated tasks are planned for the long tail. Route to the capability that fits the request, not to templates by default.
 
 **Division of responsibility — read this before anything else:**
 
@@ -30,9 +30,14 @@ else.
 
 | Request | Capability | Status |
 |---|---|---|
+| Something the user already set up in Octoparse — "re-run my…", "the task I built", "export what I collected last week" | **Existing task** — [Tasks the user already has](#tasks-the-user-already-has) | available |
 | Product details, reviews, or keyword search on a **dataset-covered platform** — today Temu and TikTok Shop | **Dataset** — `references/dataset-capability.md` | available, expanding |
 | A site covered by a preset template | **Template** — continue below | available |
 | A site no template and no dataset covers | **Agent-generated task** | not yet available |
+
+Check the account before assuming a request needs a template. When someone describes a
+collection they have run before, or names something that sounds like their own
+configuration, `search_tasks` is one call and settles it.
 
 The dataset capability is expanding beyond those two platforms, and for a platform it
 covers it is the better choice, not a fallback — typed schema, server-side filtering, and
@@ -202,10 +207,44 @@ None of the template rules above apply.
 Read `references/dataset-capability.md` for the sequence, dataset names, limits, and
 traps.
 
-## Managing existing work
+## Tasks the user already has
 
-- `search_tasks(keyword=…, status=…)` — find a prior run; also the recovery path after a client timeout.
-- `start_or_stop_task(taskId=…, action="start"|"stop")` — re-run or halt. Rejects if the task is already in the target state.
+`search_tasks` returns **every task on the account**, not only the ones created through
+MCP — including tasks the user built in the Octoparse client. Nothing in Steps 2–4 applies
+here: there is no template to choose, no `inputSchema` to read, and no `execute_task`.
+
+    search_tasks(keyword="<fragment of the name>")
+
+Returns `taskId`, `taskName`, and `taskStatusLabel` per task. Then pick a path:
+
+**They want what was already collected** — no new run, no cost:
+
+    get_task_status(taskId="<taskId>")   → carries lotNo when a lot exists
+    export_data(taskId=…, lotNo=…, page=1, pageSize=20)
+
+**They want fresh data** — this bills exactly like a template run, at the same per-row
+cost against the same allowance, so confirm scope first:
+
+    start_or_stop_task(taskId="<taskId>", action="start")
+
+Then poll and export as in Steps 5 and 6. `start_or_stop_task` rejects a task that is
+already in the target state.
+
+Three things to know before searching:
+
+- **`status` cannot find a task that has never run.** The filter accepts `Running`,
+  `Stopped`, `Completed`, and `Failed`, but a configured task that has never run comes
+  back labelled `Ready` — often exactly the one being asked about. Search by keyword and
+  filter the results yourself.
+- **Names repeat.** The client does not enforce unique task names, and several tasks with
+  the same name in different states is normal. Show the matches with their status and let
+  the user choose rather than picking the first.
+- **A saved task's inputs cannot be changed from here.** It runs the configuration it was
+  built with. If the user wants different inputs, they edit the task in Octoparse, or the
+  request is a template job after all.
+
+Also the recovery path after a client timeout: `search_tasks(keyword="<taskName>")` is the
+only way back to the `taskId` of a run that started before the call returned.
 
 ## Troubleshooting
 

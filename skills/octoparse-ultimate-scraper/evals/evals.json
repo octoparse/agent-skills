@@ -253,6 +253,44 @@
         "Describes the kind of data returned rather than naming exact columns before a run"
       ],
       "files": []
+    },
+    {
+      "id": 23,
+      "prompt": "Re-run the BC IELTS Scraper task I set up last month and give me the results.",
+      "expected_output": "Recognises this as an existing account task rather than a template request, finds it with search_tasks, surfaces that several tasks share the name, and confirms the run bills before starting it.",
+      "assertions": [
+        "Calls search_tasks with a keyword instead of search_templates",
+        "Does not attempt execute_task or read an inputSchema",
+        "Presents the matching tasks with their status rather than starting the first hit",
+        "States that starting the task bills per row against the same allowance",
+        "Starts with start_or_stop_task action=start once the user confirms"
+      ],
+      "files": []
+    },
+    {
+      "id": 24,
+      "prompt": "What did my Octoparse task collect the last time it ran? I don't want to run it again.",
+      "expected_output": "Exports the existing lot without starting anything: search_tasks to find the task, get_task_status for the lotNo, then export_data.",
+      "assertions": [
+        "Finds the task with search_tasks",
+        "Reads lotNo from get_task_status rather than asking the user for it",
+        "Calls export_data with both taskId and lotNo",
+        "Never calls start_or_stop_task",
+        "Does not report 'no results' from collectedRows: 0 on a completed task"
+      ],
+      "files": []
+    },
+    {
+      "id": 25,
+      "prompt": "Run my saved Amazon task but change the search keyword to 'wireless earbuds'.",
+      "expected_output": "Explains that a saved task runs the configuration it was built with and its inputs cannot be changed through MCP, then offers the two real options.",
+      "assertions": [
+        "Does not claim to have changed the task's inputs",
+        "Says the configuration can only be edited in Octoparse itself",
+        "Offers a template run as the alternative for different inputs",
+        "Does not start the saved task as though the request had been satisfied"
+      ],
+      "files": []
     }
   ]
 }

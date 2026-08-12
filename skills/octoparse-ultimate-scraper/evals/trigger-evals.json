@@ -138,5 +138,20 @@
     "query": "Build me a custom Scrapy spider with rotating proxies.",
     "should_trigger": false,
     "note": "Octoparse MCP runs preset templates only; it cannot author custom scraping logic."
+  },
+  {
+    "group": "positive-existing-task",
+    "query": "Re-run the task I built in Octoparse last week.",
+    "should_trigger": true
+  },
+  {
+    "group": "positive-existing-task",
+    "query": "Export whatever my saved scraper collected already.",
+    "should_trigger": true
+  },
+  {
+    "group": "positive-existing-task",
+    "query": "What tasks do I have in my Octoparse account?",
+    "should_trigger": true
   }
 ]

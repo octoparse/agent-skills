@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "octoparse",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Everything an agent needs to use Octoparse. Collect web data through 670+ maintained templates or the tasks you configured yourself, run it in Octoparse's cloud, and get structured rows back — with the MCP connection and authorization handled by the same install.",
   "author": {
     "name": "Octoparse",
