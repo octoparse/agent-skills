@@ -1,5 +1,3 @@
-[![skills.sh](https://skills.sh/b/octoparse/agent-skills)](https://skills.sh/octoparse/agent-skills)
-
 <p align="center">
   <img src="assets/logo.png" alt="Octoparse" width="96" height="96">
 </p>
@@ -11,20 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="#skills"><img src="https://img.shields.io/badge/Templates-670%2B-0055FF?style=for-the-badge&labelColor=1F2328" alt="670+ templates"></a>
-  <a href="https://mcp.octoparse.com"><img src="https://img.shields.io/badge/MCP-Compatible-1F2328?style=for-the-badge&labelColor=1F2328" alt="MCP compatible"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-1F2328?style=for-the-badge&labelColor=1F2328" alt="MIT"></a>
-</p>
-
-<p align="center">
-  <a href="#quick-start">Quick start</a> &bull;
-  <a href="#skills">Skills</a> &bull;
-  <a href="#example-use-cases">Use cases</a> &bull;
-  <a href="#installation">Installation</a> &bull;
-  <a href="#prerequisites">Prerequisites</a> &bull;
-  <a href="#useful-resources">Resources</a> &bull;
-  <a href="#pricing">Pricing</a> &bull;
-  <a href="#support">Support</a>
+  <a href="https://skills.sh/octoparse/agent-skills"><img src="https://skills.sh/b/octoparse/agent-skills" alt="skills.sh installs"></a>
 </p>
 
 ---
