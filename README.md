@@ -11,11 +11,11 @@
 </p>
 
 <p align="center">
-  <a href="https://www.octoparse.com"><img src="https://img.shields.io/badge/Powered%20by-Octoparse-2E6BE6?style=for-the-badge" alt="Powered by Octoparse"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-555555?style=for-the-badge" alt="MIT"></a>
-  <a href="#skills"><img src="https://img.shields.io/badge/Templates-670%2B-F86606?style=for-the-badge" alt="670+ templates"></a>
-  <a href="https://agent-plugins.org"><img src="https://img.shields.io/badge/Agent%20Plugins-1.0.0-9D97F4?style=for-the-badge" alt="Agent Plugins 1.0.0"></a>
-  <a href="https://mcp.octoparse.com"><img src="https://img.shields.io/badge/MCP-Compatible-15C1E6?style=for-the-badge" alt="MCP compatible"></a>
+  <a href="https://www.octoparse.com"><img src="https://img.shields.io/badge/Powered%20by-Octoparse-0055FF?style=for-the-badge" alt="Powered by Octoparse"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-3C4A5C?style=for-the-badge" alt="MIT"></a>
+  <a href="#skills"><img src="https://img.shields.io/badge/Templates-670%2B-0040C8?style=for-the-badge" alt="670+ templates"></a>
+  <a href="https://agent-plugins.org"><img src="https://img.shields.io/badge/Agent%20Plugins-1.0.0-2E6BE6?style=for-the-badge" alt="Agent Plugins 1.0.0"></a>
+  <a href="https://mcp.octoparse.com"><img src="https://img.shields.io/badge/MCP-Compatible-002E8A?style=for-the-badge" alt="MCP compatible"></a>
 </p>
 
 <p align="center">
@@ -78,8 +78,8 @@ Authorize with `/mcp`, then ask for what you want:
 
 > *Find dentists in Chicago with phone numbers and websites, and export them as CSV.*
 
-That's it. The skill handles template selection, input shaping, run management, and result
-formatting.
+From there the agent works out which template fits, what its inputs are actually called,
+what the run will cost in rows, and where the results end up.
 
 ---
 
@@ -94,8 +94,8 @@ formatting.
 
 ## Example use cases
 
-Describe the outcome in plain language. The agent selects the template, adds a second pass
-when one genuinely helps, and reports what it collected.
+Each of these is a whole job rather than a single call — the agent picks the template, adds
+a second pass when one genuinely helps, and tells you what it came back with.
 
 | Use case | Example prompt |
 |---|---|
@@ -211,7 +211,7 @@ See [octoparse.com/pricing](https://www.octoparse.com/pricing) for plan details.
 ---
 
 <p align="center">
-  Built by the <a href="https://www.octoparse.com">Octoparse</a> team for AI agents everywhere.
+  Maintained by the <a href="https://www.octoparse.com">Octoparse</a> team. Missing a site you need? <a href="https://github.com/octoparse/agent-skills/issues">Open an issue</a>.
 </p>
 
 <p align="center">
