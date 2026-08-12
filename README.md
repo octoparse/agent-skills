@@ -61,7 +61,7 @@ Or, in Claude Code:
 
 ```
 /plugin marketplace add octoparse/agent-skills
-/plugin install octoparse
+/plugin install octoparse@octoparse
 ```
 
 Authorize with `/mcp`, then ask for what you want:
@@ -102,39 +102,34 @@ a second pass when one genuinely helps, and tells you what it came back with.
 
 ## Installation
 
-### Any agent (20+ supported)
+### Any agent (70+ supported)
 
 ```bash
 npx skills add octoparse/agent-skills
 ```
 
 Installs both skills for the agent it detects. Add `--skill octoparse-ultimate-scraper`
-for just the scraper, or `--global` to install user-wide. Then register the MCP server:
+for just the scraper, `-g` to install user-wide, or `--list` to preview first.
 
-```bash
-claude mcp add --transport http octoparse https://mcp.octoparse.com
-```
+Then connect the MCP server: ask your agent to run the `octoparse-mcp-setup` skill, which
+finds the right config file for your client and walks the authorization.
 
 ### Claude Code
 
 ```
 /plugin marketplace add octoparse/agent-skills
-/plugin install octoparse
+/plugin install octoparse@octoparse
 ```
 
 The MCP server is declared by the plugin — no manual configuration. Run `/mcp` to
 authorize.
 
-### Cursor, VS Code, Windsurf
-
-These read the Claude Code plugin format. Add the repo to your workspace, or register the
-MCP server directly with the command above.
-
 ### Agent Plugins clients
 
 The repo ships a root `plugin.json` and `mcp.json` conforming to
-[Agent Plugins 1.0.0](https://agent-plugins.org). Clients implementing that specification
-discover the skills and the MCP server without further configuration.
+[Agent Plugins 1.0.0](https://agent-plugins.org), the vendor-neutral packaging standard
+whose steering committee includes Amazon, Cursor, Microsoft, OpenAI, and Vercel. Clients
+implementing it discover the skills and the MCP server without further configuration.
 
 ### Any other agent that reads Markdown
 
