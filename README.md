@@ -33,35 +33,26 @@
 
 ## Overview
 
-Drop these skills into Claude Code, Cursor, VS Code, Gemini CLI, or any MCP-capable agent
-and it gains working hands on Octoparse's collection platform. Nothing to build, nothing
-to host — the agent picks the right collection path, runs it in the cloud, and hands back
-structured rows. With one install, agents can:
+Ask in plain language. Your agent picks the right collector, runs it in Octoparse's cloud,
+and hands back structured rows — nothing to write, host, or debug.
 
-- **Extract from hundreds of sites** — Google Maps, Amazon, LinkedIn, Indeed, Trustpilot,
-  Reddit, TikTok, YouTube, and many more across e-commerce, directories, jobs, property,
-  travel, social, reviews, and search.
-- **Reach the sites that matter locally** — Gelbe Seiten and Das Telefonbuch in Germany,
-  Pagesjaunes and Kompass in France, Naver and Gmarket in Korea, Suumo and Hello Work in
-  Japan, Pagine Gialle in Italy, MercadoLibre across Latin America. Regional coverage is
-  built per market, not translated from the English set.
-- **Choose the right template** — nine workflow guides turn a plain-language request into
-  the best-fitting template for the market, account tier, and budget.
-- **Run and export** — creates the cloud task, tracks it to completion, and returns
-  structured rows ready for CSV, a CRM, or further analysis.
-- **Query managed datasets** — Temu and TikTok Shop are served as typed, filterable
-  datasets with richer fields than page scraping provides, and the set is growing.
-- **Chain steps safely** — knows which templates genuinely feed each other, and which
-  already collect detail pages internally so you are not billed twice.
+- **Local businesses and contacts** — Google Maps, Yellow Pages, and national directories,
+  with phones, websites, and emails.
+- **Products, prices, and stock** — Amazon, Temu, TikTok Shop, and other marketplaces,
+  whether you follow a fixed list or survey a whole category.
+- **Reviews and ratings** — Trustpilot, TripAdvisor, Booking, Google Maps.
+- **Jobs, property, travel, and social posts** — Indeed, Zillow, Suumo, Reddit, TikTok,
+  YouTube.
+- **Search results** — what a keyword actually returns, captured as rows.
 
-Collection reaches you through more than one path, and the agent picks between them before
-anything else:
+The tasks you already configured in Octoparse are reachable the same way: the agent finds
+one by name, runs it, and exports the results — so a workflow you built by hand becomes
+something you can trigger by asking.
 
-| Path | What it covers | Status |
-|---|---|---|
-| **Templates** | hundreds of preset collectors across the web | available |
-| **Datasets** | typed, filterable, server-side queries | available, expanding |
-| **Agent-generated tasks** | the long tail no preset reaches | planned |
+Coverage is built per market rather than translated, so Gelbe Seiten, Pagesjaunes, Naver,
+Suumo, and MercadoLibre are first-class alongside the English-language set. Every run is
+sized in rows before it starts, because collection bills per output line and a free account
+includes 2,000 rows a month.
 
 ---
 
