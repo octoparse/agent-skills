@@ -82,7 +82,9 @@ Run the behavioural evals manually against a live connection before a release.
 `templates/<id>-<slug>/` holds operational behaviour for a single template that no schema
 exposes — result caps, how a location is split internally, whether one task can span
 several inputs. `SKILL.md` reads a pack's `LIMITATIONS.md` when one exists for the chosen
-template and skips the step otherwise.
+template and skips the step otherwise. `LIMITATIONS.md` is the only file a pack carries:
+input and output fields belong to the live schema, and a second copy in the repository is
+a copy that goes stale and invites the agent to trust it.
 
 Directories are keyed by `template_id` so they join to the catalog the same way curated
 recommendations do. Packs are deliberately sparse: write one when a template is a
@@ -154,22 +156,7 @@ Standing gaps, not bugs. Worth knowing before trusting an area more than it dese
   and can be wrong either way. Allowance cannot be read at all, so run sizing is an
   estimate and an exhausted allowance shows up as a partial failure with rows already
   spent. Both are service-side gaps worth closing.
-- **Template knowledge packs cover 2 of ~670 templates**, both written in March. Their
-  input documentation predates the field-name normalisation and should be re-verified
-  before being trusted.
+- **Template knowledge packs cover 2 of ~670 templates**, both written in March, and
+  nothing re-checks them against the running service.
 - **Behavioural evals do not run in CI.** `check_evals.py` enforces internal consistency
   only; actual behaviour is a manual pre-release check.
-
-## Skill quality standard
-
-[CLAUDE.md](CLAUDE.md) carries a 20-item AI Native checklist. Use it as a review aid when
-writing or reworking a skill — walking it caught two real defects during the restructure,
-a missing polling cap and missing client detection, that ordinary review had passed over.
-
-It measures form, not accuracy: nothing in it asks whether documented behaviour matches
-the running service. A skill can score full marks while instructing an agent to call an
-API that does not work as described. Pair it with the rule above — verify against a live
-call before documenting.
-
-Enforcement lives in CI, not in a written assessment. A committed score is a snapshot that
-stops being true on the next change and that nobody returns to update.

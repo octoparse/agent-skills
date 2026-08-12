@@ -13,7 +13,7 @@ Collection reaches the user through more than one path, and Step 1 picks between
 
 - **This skill routes.** Which capability applies, which template fits within it, which pairs are real chains, what to avoid.
 - **The MCP service executes and holds truth about schemas.** Input/output fields, `sourceTree`, pricing, and current availability come from `search_templates` at run time, never from memory.
-- **`data/catalog.json` is a routing projection only** (id, name, category, language, `run_on`). It is regenerated from upstream and carries no schemas.
+- **`data/catalog.json` is a routing projection only** — it is regenerated from upstream, carries no input or output schemas, and is read by this repository's checks rather than by you at run time.
 
 Never assemble `parameters` from this skill's prose or from a remembered field name. Always read the live `inputSchema` first.
 
@@ -120,11 +120,10 @@ saying `FREE`, trust the failure.
 
 If exact lookup returns nothing, the template is not currently served by MCP. Say so and stop; do not substitute a different template silently, and do not retry.
 
-**If `templates/<id>-*/` exists for the chosen template, read its `LIMITATIONS.md`.** A
-few high-traffic templates carry a knowledge pack with operational behaviour that no
-schema exposes — result caps, how the template splits a region, whether one task can span
-several locations. Most templates have no pack; skip this step when the directory is
-absent.
+**If `templates/<id>-*/LIMITATIONS.md` exists for the chosen template, read it.** A few
+high-traffic templates carry one, covering operational behaviour that no schema exposes —
+result caps, how the template splits a region, whether one task can span several
+locations. Most templates have none; skip this step when the file is absent.
 
 ### Step 4 — Confirm scope, then run
 
