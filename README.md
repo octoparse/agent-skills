@@ -35,19 +35,16 @@ An agent is only as useful as the data it can reach. These skills extend that re
 describe what you need, and Octoparse collects it from the live web and returns it as rows
 your agent can work with straight away.
 
-- **The sites most requests are about** — 670+ maintained scrapers covering Google Maps,
-  Google Search, Amazon, eBay, LinkedIn, Indeed, Zillow, Booking, TripAdvisor, Trustpilot,
-  Yellow Pages, Reddit, TikTok, and YouTube, alongside the sites people rely on locally in
-  eight languages: Gelbe Seiten, Pagesjaunes, Kompass, Naver, Suumo, MercadoLibre. A
-  request as short as *restaurants in Berlin with phone numbers* is enough to begin.
+- **The sites most requests are about** — 670+ maintained scrapers across Google Maps,
+  Amazon, LinkedIn, Indeed, Booking, TripAdvisor, Reddit, TikTok, and YouTube, plus local
+  directories in eight languages: Gelbe Seiten, Pagesjaunes, Naver, Suumo, MercadoLibre.
 - **The scrapers you have already built** — tasks configured in your own Octoparse account
-  can be run and exported by name, side by side with the maintained ones.
+  run and export by name, side by side with the maintained ones.
 - **Workflows that move from one site to the next** — collect a list of businesses, follow
-  their websites, and gather contact details from there. The skills know which handoffs
-  hold up, and which would cost you a pass that leads nowhere.
-- **A cloud that carries the work** — collection runs on Octoparse's servers rather than
-  your machine. Nothing to host, nothing to keep open, and a long job continues after the
-  conversation ends, ready to export when you return.
+  their websites, gather contact details there. The skills know which handoffs hold up.
+- **A cloud that carries the work** — collection runs on Octoparse's servers, not your
+  machine, and a long job keeps going after the conversation ends, ready to export when
+  you return.
 
 When your agent has access to all these data sources, it can suggest workflows you wouldn't
 have thought to build yourself.
