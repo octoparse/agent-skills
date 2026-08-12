@@ -31,9 +31,10 @@
 
 ## Overview
 
-The Octoparse MCP server gives an agent the tools. These skills give it the judgment to use
-them well — which of 670+ templates answers a given request, what its inputs are really
-called, what the run will cost, and when the honest answer is that nothing covers the site.
+Two skills that take an agent from a request to rows. One connects and authorizes the
+Octoparse MCP server; the other knows how to drive it — which of 670+ templates answers a
+given request, what its inputs are really called, what the run will cost, and when the
+honest answer is that nothing covers the site.
 
 - **Routing, not keyword matching** — nine workflow guides map a request to a shortlist
   that fits the market, the budget, and the account tier, then verify the choice against
@@ -81,7 +82,7 @@ what the run will cost in rows, and where the results end up.
 | Skill | What it does |
 |---|---|
 | **[`octoparse-ultimate-scraper`](skills/octoparse-ultimate-scraper/)** | Routes any extraction request to the right template, runs the cloud task, and exports results. Nine workflow guides cover lead generation, competitor pricing, market research, reviews and reputation, supplier vetting, hiring and talent market, property and travel, social listening, and search visibility — each with a curated shortlist by market, cost and account gates, and verified template chains. |
-| **[`octoparse-mcp-setup`](skills/octoparse-mcp-setup/)** | Connects and authorizes the MCP server. Only needed when tools are missing or a call returns an authorization error. |
+| **[`octoparse-mcp-setup`](skills/octoparse-mcp-setup/)** | Gets the tools reachable. Detects which client you are running, registers `https://mcp.octoparse.com` in the right config file, and walks the authorization — then hands back to the scraper. Also the recovery path when a call later returns 401 or 403. |
 
 ---
 
