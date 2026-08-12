@@ -77,8 +77,8 @@ what the run will cost in rows, and where the results end up.
 
 | Skill | What it does |
 |---|---|
-| **[`octoparse-ultimate-scraper`](skills/octoparse-ultimate-scraper/)** | Routes any extraction request to the right template, runs the cloud task, and exports results. Nine workflow guides cover lead generation, competitor pricing, market research, reviews and reputation, supplier vetting, hiring and talent market, property and travel, social listening, and search visibility — each with a curated shortlist by market, cost and account gates, and verified template chains. |
-| **[`octoparse-mcp-setup`](skills/octoparse-mcp-setup/)** | Gets the tools reachable. Detects which client you are running, registers `https://mcp.octoparse.com` in the right config file, and walks the authorization — then hands back to the scraper. Also the recovery path when a call later returns 401 or 403. |
+| **[`octoparse-ultimate-scraper`](skills/octoparse-ultimate-scraper/)** | Picks the template a request calls for, runs it in the cloud, and exports the rows. Nine workflow guides carry the shortlists and the traps for each kind of job, from lead generation to price tracking. |
+| **[`octoparse-mcp-setup`](skills/octoparse-mcp-setup/)** | Connect and authorize the Octoparse MCP server in any client. A bundled reference covers config paths and quirks for Claude Code, Cursor, VS Code, Gemini CLI, Qwen Code, TRAE, and OpenClaw, plus what to do about 401 and 403. |
 
 ---
 
@@ -97,10 +97,6 @@ a second pass when one genuinely helps, and tells you what it came back with.
 | **Local market depth** | Find plumbers in Munich on Gelbe Seiten with phone numbers, or pull Suumo apartment listings in Setagaya with layout and station distance. |
 | **Supplier vetting** | Shortlist suppliers on Kompass, then check each one's filings on North Data before I contact them. |
 
-Three things the agent will tell you rather than fake: there is no scheduler, so tracking
-change over time means re-running and keeping the results; a search-results capture is one
-observation from one location, not a ranking; and when nothing in the library covers a
-site, it says so instead of collecting something close.
 
 ---
 
@@ -149,8 +145,9 @@ Point it at `skills/octoparse-ultimate-scraper/SKILL.md` and register
 
 ## Prerequisites
 
-1. **Octoparse account** — sign up at [octoparse.com](https://www.octoparse.com). The free
-   tier covers most templates.
+1. **Octoparse account** — sign up at [octoparse.com](https://www.octoparse.com). Every
+   account carries a free quota of 2,000 rows a month through MCP and the API, and it
+   applies to paid templates as well as free ones.
 2. **Authorization** — run `/mcp` for browser OAuth. For headless or CI use, create an API
    key in the [account console](https://www.octoparse.com/console/account-center/api-keys)
    and add it as an `x-api-key` header in your own client configuration.
