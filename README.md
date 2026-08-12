@@ -61,7 +61,7 @@ Or, in Claude Code:
 
 ```
 /plugin marketplace add octoparse/agent-skills
-/plugin install octoparse@octoparse
+/plugin install octoparse@octoparse-agent-skills
 ```
 
 Authorize with `/mcp`, then ask for what you want:
@@ -118,7 +118,7 @@ finds the right config file for your client and walks the authorization.
 
 ```
 /plugin marketplace add octoparse/agent-skills
-/plugin install octoparse@octoparse
+/plugin install octoparse@octoparse-agent-skills
 ```
 
 The MCP server is declared by the plugin — no manual configuration. Run `/mcp` to

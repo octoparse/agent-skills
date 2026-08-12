@@ -4,6 +4,29 @@ Claude Code delivers updates only when the manifest `version` changes — pushin
 without bumping it has no effect, and `/plugin update` will report "already at the latest
 version". Every user-visible change therefore needs an entry and a bump.
 
+## 2.2.0 — 2026-08-12
+
+**Action required if you installed 2.1.0 or earlier in Claude Code.** The plugin and the
+marketplace were both named `octoparse`, so installing meant typing
+`/plugin install octoparse@octoparse`. Remove the old entry and reinstall:
+
+```
+/plugin marketplace add octoparse/agent-skills
+/plugin install octoparse@octoparse-agent-skills
+```
+
+### Changed
+
+- The marketplace is now `octoparse-agent-skills`, and the plugin inside it is `octoparse`.
+  One marketplace, one plugin: every official Octoparse capability an agent can use arrives
+  through this single install, so nothing has to be discovered or installed twice as more
+  skills ship. Nothing about the skills themselves changed.
+- `support@octoparse.com` is published in the manifests, so the plugin listing carries a
+  way to reach us.
+- README: the overview leads with the data an agent can reach, install instructions are
+  corrected against the actual CLI syntax, and the free quota is described as a quota
+  rather than a tier.
+
 ## 2.1.0 — 2026-08-11
 
 Corrections and hardening on top of 2.0.0. **Update if you installed at any point during

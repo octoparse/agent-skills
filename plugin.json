@@ -1,11 +1,12 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "octoparse",
-  "version": "2.1.0",
-  "description": "Octoparse's web data collection, driven by an agent — leads, contacts, e-commerce prices, product research, reviews, jobs, property, social listening, and search results across hundreds of sites worldwide.",
+  "version": "2.2.0",
+  "description": "Everything an agent needs to use Octoparse. Collect web data through 670+ maintained templates or the tasks you configured yourself, run it in Octoparse's cloud, and get structured rows back — with the MCP connection and authorization handled by the same install.",
   "author": {
     "name": "Octoparse",
-    "url": "https://www.octoparse.com"
+    "url": "https://www.octoparse.com",
+    "email": "support@octoparse.com"
   },
   "homepage": "https://www.octoparse.com/mcp",
   "repository": "https://github.com/octoparse/agent-skills",
