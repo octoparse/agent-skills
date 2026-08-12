@@ -21,10 +21,8 @@
   <a href="#skills">Skills</a> &bull;
   <a href="#example-use-cases">Use cases</a> &bull;
   <a href="#installation">Installation</a> &bull;
-  <a href="#prerequisites">Prerequisites</a> &bull;
-  <a href="#useful-resources">Resources</a> &bull;
   <a href="#pricing">Pricing</a> &bull;
-  <a href="#support">Support</a>
+  <a href="#resources">Resources</a>
 </p>
 
 ---
@@ -102,27 +100,18 @@ a second pass when one genuinely helps, and tells you what it came back with.
 
 ## Installation
 
-### Any agent (70+ supported)
+Quick start covers the two common paths — `npx skills add` for any of 70+ agents, or the
+plugin in Claude Code. What follows is everything around them.
 
-```bash
-npx skills add octoparse/agent-skills
-```
+### Options and MCP
 
-Installs both skills for the agent it detects. Add `--skill octoparse-ultimate-scraper`
-for just the scraper, `-g` to install user-wide, or `--list` to preview first.
+`npx skills add` takes `--skill octoparse-ultimate-scraper` to install just the scraper,
+`-g` to install user-wide, and `--list` to preview without installing.
 
-Then connect the MCP server: ask your agent to run the `octoparse-mcp-setup` skill, which
-finds the right config file for your client and walks the authorization.
-
-### Claude Code
-
-```
-/plugin marketplace add octoparse/agent-skills
-/plugin install octoparse@octoparse-agent-skills
-```
-
-The MCP server is declared by the plugin — no manual configuration. Run `/mcp` to
-authorize.
+It installs skill files only. The Claude Code plugin declares the MCP server itself, so
+`/mcp` is all that is left there; with any other client, ask your agent to run the
+`octoparse-mcp-setup` skill once the skills are in place — it finds the right config file
+for your client and walks the authorization.
 
 ### Agent Plugins clients
 
@@ -140,27 +129,24 @@ Point it at `skills/octoparse-ultimate-scraper/SKILL.md` and register
 
 ## Prerequisites
 
-1. **Octoparse account** — sign up at [octoparse.com](https://www.octoparse.com). Every
-   account carries a free quota of 2,000 rows a month through MCP and the API, and it
-   applies to paid templates as well as free ones.
-2. **Authorization** — run `/mcp` for browser OAuth. For headless or CI use, create an API
+1. **An Octoparse account** — sign up at [octoparse.com](https://www.octoparse.com).
+2. **Authorization** — `/mcp` opens browser OAuth. For headless or CI use, create an API
    key in the [account console](https://www.octoparse.com/console/account-center/api-keys)
-   and add it as an `x-api-key` header in your own client configuration.
+   and send it as an `x-api-key` header.
 
 ---
 
-## Useful resources
+## Resources
 
-- **[Octoparse MCP](https://www.octoparse.com/mcp)** — the hosted MCP server these skills
-  drive, and its client setup guides.
-- **[Template library](https://www.octoparse.com/template)** — browse every template with
-  its inputs, outputs, and pricing.
 - **[MCP documentation](https://www.octoparse.com/docs/en/mcp)** — tool reference and
-  authorization details.
-- **[Help center](https://helpcenter.octoparse.com)** — account, plan, and platform
-  guidance.
-- **[CONTRIBUTING.md](CONTRIBUTING.md)** — repository layout, catalog regeneration, and
-  the validation workflow.
+  authorization.
+- **[Template library](https://www.octoparse.com/template)** — every template with its
+  inputs, outputs, and pricing.
+- **[Help center](https://helpcenter.octoparse.com)** — account and plan questions.
+- **[Issues](https://github.com/octoparse/agent-skills/issues)** or support@octoparse.com —
+  when something here is wrong or a site you need is missing.
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** — repository layout and the checks that run on
+  every change.
 
 ---
 
@@ -178,15 +164,6 @@ See [octoparse.com/pricing](https://www.octoparse.com/pricing) for plan details.
 
 ---
 
-## Support
-
-- [Octoparse documentation](https://www.octoparse.com/docs/en/mcp)
-- [Help center](https://helpcenter.octoparse.com)
-- [Issues](https://github.com/octoparse/agent-skills/issues) on this repo
-- support@octoparse.com
-
----
-
 ## License
 
 [MIT](LICENSE)
@@ -194,7 +171,7 @@ See [octoparse.com/pricing](https://www.octoparse.com/pricing) for plan details.
 ---
 
 <p align="center">
-  Maintained by the <a href="https://www.octoparse.com">Octoparse</a> team. Missing a site you need? <a href="https://github.com/octoparse/agent-skills/issues">Open an issue</a>.
+  Maintained by the <a href="https://www.octoparse.com">Octoparse</a> team.
 </p>
 
 <p align="center">
