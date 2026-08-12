@@ -7,7 +7,7 @@
 <h1 align="center">Octoparse Agent Skills</h1>
 
 <p align="center">
-  <strong>Octoparse's web data collection, driven by your agent</strong>
+  <strong>Octoparse web scraping skills for coding agents</strong>
 </p>
 
 <p align="center">
