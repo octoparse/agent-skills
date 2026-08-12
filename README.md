@@ -1,18 +1,10 @@
-<p align="center">
-  <img src="assets/logo.png" alt="Octoparse" width="96" height="96">
-</p>
+<img src="assets/logo.png" alt="Octoparse" width="88" align="right">
 
-<h1 align="center">Octoparse Agent Skills</h1>
+# Octoparse Agent Skills
 
-<p align="center">
-  <strong>Octoparse web scraping skills for coding agents</strong>
-</p>
+**Octoparse web scraping skills for coding agents**
 
-<p align="center">
-  <a href="https://skills.sh/octoparse/agent-skills"><img src="https://skills.sh/b/octoparse/agent-skills" alt="skills.sh installs"></a>
-</p>
-
----
+[![skills.sh](https://skills.sh/b/octoparse/agent-skills)](https://skills.sh/octoparse/agent-skills)
 
 ## Overview
 
