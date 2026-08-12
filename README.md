@@ -33,26 +33,31 @@
 
 ## Overview
 
-Ask in plain language. Your agent picks the right collector, runs it in Octoparse's cloud,
-and hands back structured rows — nothing to write, host, or debug.
+Install the skills and your agent can operate your Octoparse account: describe the data you
+want, and it finds the right template, fills in the inputs, runs it in the cloud, and gives you
+back rows. Nothing to write, host, or debug.
 
-- **Local businesses and contacts** — Google Maps, Yellow Pages, and national directories,
-  with phones, websites, and emails.
-- **Products, prices, and stock** — Amazon, Temu, TikTok Shop, and other marketplaces,
-  whether you follow a fixed list or survey a whole category.
-- **Reviews and ratings** — Trustpilot, TripAdvisor, Booking, Google Maps.
-- **Jobs, property, travel, and social posts** — Indeed, Zillow, Suumo, Reddit, TikTok,
-  YouTube.
-- **Search results** — what a keyword actually returns, captured as rows.
-
-The tasks you already configured in Octoparse are reachable the same way: the agent finds
-one by name, runs it, and exports the results — so a workflow you built by hand becomes
-something you can trigger by asking.
-
-Coverage is built per market rather than translated, so Gelbe Seiten, Pagesjaunes, Naver,
-Suumo, and MercadoLibre are first-class alongside the English-language set. Every run is
-sized in rows before it starts, because collection bills per output line and a free account
-includes 2,000 rows a month.
+- **Template routing from plain language** — *dentists in Chicago with phone numbers*
+  resolves to the Google Maps template with the right region and fields; *current prices
+  for these 40 ASINs* to the Amazon product template. 670+ maintained templates, and the
+  agent reads each one's live input schema before filling it in rather than guessing field
+  names.
+- **Your own tasks, on call** — whatever you configured in Octoparse is reachable by name.
+  Re-run it and export the result without opening the app.
+- **Coverage built per market, not translated** — Gelbe Seiten and Das Telefonbuch in
+  Germany, Pagesjaunes and Kompass in France, Naver in Korea, Suumo in Japan, MercadoLibre
+  across Latin America, alongside the English-language set.
+- **Cost known before the run** — collection bills per output line, so the agent sizes the
+  job in rows and tells you before it spends anything. A free account includes 2,000 rows a
+  month.
+- **Cloud runs you can walk away from** — a large collection keeps going after the
+  conversation ends. The agent hands back the task id so the results can be exported later.
+- **Results where you need them** — a short answer in chat, or the whole set as rows your
+  agent can write to CSV or hand to the next tool. Past 50 rows the export arrives as a
+  direct download link instead of being paged into the conversation.
+- **Chains only when they're real** — the agent links two templates when one genuinely
+  feeds the other, and tells you when they don't connect instead of billing you for a pass
+  that leads nowhere.
 
 ---
 
