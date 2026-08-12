@@ -11,9 +11,9 @@
 </p>
 
 <p align="center">
-  <a href="#skills"><img src="https://img.shields.io/badge/Templates-670%2B-0055FF?style=for-the-badge" alt="670+ templates"></a>
-  <a href="https://mcp.octoparse.com"><img src="https://img.shields.io/badge/MCP-Compatible-0055FF?style=for-the-badge" alt="MCP compatible"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-0055FF?style=for-the-badge" alt="MIT"></a>
+  <a href="#skills"><img src="https://img.shields.io/badge/Templates-670%2B-0055FF?style=for-the-badge&labelColor=1F2328" alt="670+ templates"></a>
+  <a href="https://mcp.octoparse.com"><img src="https://img.shields.io/badge/MCP-Compatible-1F2328?style=for-the-badge&labelColor=1F2328" alt="MCP compatible"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-1F2328?style=for-the-badge&labelColor=1F2328" alt="MIT"></a>
 </p>
 
 <p align="center">
@@ -31,23 +31,23 @@
 
 ## Overview
 
-An agent is limited by the data it can reach. These skills give it a way to go and get
-more — live web data, pulled on demand, collected by the Octoparse platform and handed back
-as rows it can use straight away.
+An agent is only as useful as the data it can reach. These skills extend that reach:
+describe what you need, and Octoparse collects it from the live web and returns it as rows
+your agent can work with straight away.
 
-- **Data from the sites people ask for most** — 670+ ready-made scrapers across Google
-  Maps, Google Search, Amazon, eBay, LinkedIn, Indeed, Zillow, Booking, TripAdvisor,
-  Trustpilot, Yellow Pages, Reddit, TikTok, and YouTube — and, in eight languages, the
-  sites people use locally: Gelbe Seiten, Pagesjaunes, Kompass, Naver, Suumo, MercadoLibre.
-  *Restaurants in Berlin with phone numbers* is enough to start one.
-- **Data from the scrapers you built yourself** — anything already set up in your Octoparse
-  account runs by name, alongside the ready-made ones.
-- **Workflows that cross from one site to the next** — collect a list of businesses, take
-  their websites, and pull contact details from those; the skills know which handoffs
-  genuinely work and which leave you paying for a pass that connects to nothing.
-- **A cloud that does the collecting** — the run happens on Octoparse's servers, not in
-  your terminal. Nothing to host, no browser to drive, and a long job keeps going after the
-  conversation ends, ready to export when you come back.
+- **The sites most requests are about** — 670+ maintained scrapers covering Google Maps,
+  Google Search, Amazon, eBay, LinkedIn, Indeed, Zillow, Booking, TripAdvisor, Trustpilot,
+  Yellow Pages, Reddit, TikTok, and YouTube, alongside the sites people rely on locally in
+  eight languages: Gelbe Seiten, Pagesjaunes, Kompass, Naver, Suumo, MercadoLibre. A
+  request as short as *restaurants in Berlin with phone numbers* is enough to begin.
+- **The scrapers you have already built** — tasks configured in your own Octoparse account
+  can be run and exported by name, side by side with the maintained ones.
+- **Workflows that move from one site to the next** — collect a list of businesses, follow
+  their websites, and gather contact details from there. The skills know which handoffs
+  hold up, and which would cost you a pass that leads nowhere.
+- **A cloud that carries the work** — collection runs on Octoparse's servers rather than
+  your machine. Nothing to host, nothing to keep open, and a long job continues after the
+  conversation ends, ready to export when you return.
 
 When your agent has access to all these data sources, it can suggest workflows you wouldn't
 have thought to build yourself.
