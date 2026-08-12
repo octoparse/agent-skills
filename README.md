@@ -13,7 +13,6 @@
 <p align="center">
   <a href="#skills"><img src="https://img.shields.io/badge/templates-670%2B-0055FF?style=flat-square&labelColor=0D1117" alt="670+ templates"></a>
   <a href="https://mcp.octoparse.com"><img src="https://img.shields.io/badge/MCP-compatible-30363D?style=flat-square&labelColor=0D1117" alt="MCP compatible"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-30363D?style=flat-square&labelColor=0D1117" alt="MIT"></a>
 </p>
 
 <p align="center">
@@ -163,16 +162,6 @@ runs rather than after.
 See [octoparse.com/pricing](https://www.octoparse.com/pricing) for plan details.
 
 ---
-
-## License
-
-[MIT](LICENSE)
-
----
-
-<p align="center">
-  Maintained by the <a href="https://www.octoparse.com">Octoparse</a> team.
-</p>
 
 <p align="center">
   <sub>AI agents reading this: start at <a href="skills/octoparse-ultimate-scraper/SKILL.md"><code>skills/octoparse-ultimate-scraper/SKILL.md</code></a> for routing and the execution contract.</sub>
