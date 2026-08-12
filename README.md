@@ -31,27 +31,26 @@
 
 ## Overview
 
-Two skills that take an agent from a request to rows. One connects and authorizes the
-Octoparse MCP server; the other knows how to drive it — which of 670+ templates answers a
-given request, what its inputs are really called, what the run will cost, and when the
-honest answer is that nothing covers the site.
+An agent is limited by the data it can reach. These skills give it a way to go and get
+more — live web data, pulled on demand, collected by the Octoparse platform and handed back
+as rows it can use straight away.
 
-- **Routing, not keyword matching** — nine workflow guides map a request to a shortlist
-  that fits the market, the budget, and the account tier, then verify the choice against
-  the live library.
-- **Right inputs on the first call** — the agent reads each template's live schema and its
-  dependent option tree before building parameters, instead of carrying a field name over
-  from memory or documentation.
-- **Cost discipline** — every list-shaped job is sized in rows before it runs, and the
-  agent knows which templates already collect detail pages so a second pass is not bought
-  twice.
-- **Chains that actually connect** — two templates are linked only when the upstream
-  output type matches the downstream input, because a failed downstream pass does not
-  refund the upstream rows.
-- **A straight no** — when no template or dataset covers a site, the agent says so rather
-  than bending a nearby template onto it and billing you for the wrong page's data.
-- **Your own tasks, in reach** — a task you configured in Octoparse can be found by name,
-  run, and exported without opening the app.
+- **Data from the sites people ask for most** — 670+ ready-made scrapers across Google
+  Maps, Google Search, Amazon, eBay, LinkedIn, Indeed, Zillow, Booking, TripAdvisor,
+  Trustpilot, Yellow Pages, Reddit, TikTok, and YouTube — and, in eight languages, the
+  sites people use locally: Gelbe Seiten, Pagesjaunes, Kompass, Naver, Suumo, MercadoLibre.
+  *Restaurants in Berlin with phone numbers* is enough to start one.
+- **Data from the scrapers you built yourself** — anything already set up in your Octoparse
+  account runs by name, alongside the ready-made ones.
+- **Workflows that cross from one site to the next** — collect a list of businesses, take
+  their websites, and pull contact details from those; the skills know which handoffs
+  genuinely work and which leave you paying for a pass that connects to nothing.
+- **A cloud that does the collecting** — the run happens on Octoparse's servers, not in
+  your terminal. Nothing to host, no browser to drive, and a long job keeps going after the
+  conversation ends, ready to export when you come back.
+
+When your agent has access to all these data sources, it can suggest workflows you wouldn't
+have thought to build yourself.
 
 ---
 
@@ -101,9 +100,10 @@ a second pass when one genuinely helps, and tells you what it came back with.
 | **Local market depth** | Find plumbers in Munich on Gelbe Seiten with phone numbers, or pull Suumo apartment listings in Setagaya with layout and station distance. |
 | **Supplier vetting** | Shortlist suppliers on Kompass, then check each one's filings on North Data before I contact them. |
 
-Two things the agent will tell you rather than fake: there is no scheduler, so tracking
-change over time means re-running and keeping the results; and a search-results capture is
-one observation from one location, not a ranking.
+Three things the agent will tell you rather than fake: there is no scheduler, so tracking
+change over time means re-running and keeping the results; a search-results capture is one
+observation from one location, not a ranking; and when nothing in the library covers a
+site, it says so instead of collecting something close.
 
 ---
 
